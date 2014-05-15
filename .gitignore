@@ -1,0 +1,14 @@
+# Python + Eclipse
+*.pyc
+*.pyo
+*.py~
+*.xm~
+.project
+.pydevproject
+.settings/
+
+# Git cacharra
+*.orig
+
+# sqlite3
+*.db
