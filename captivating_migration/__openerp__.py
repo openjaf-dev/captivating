@@ -29,7 +29,9 @@
     'depends': ['travel'],
     "description": """ Migration module from Captivating.""",
     'init_xml': [],
-    'update_xml': [],
+    'update_xml': [
+        'view/data.xml'
+    ],
     'demo_xml': [],
     'test': [],
     'installable': True,

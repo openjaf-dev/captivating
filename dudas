@@ -1,0 +1,9 @@
+Dudas:
+
+- room_types y ventas sencillas o de programas ... como registramos esas ventas?
+- incluir numero de vuelo?
+- referencia de la venta, debiera ser nombre pero hay algunos repetidos; en cualquier caso OpenERP genera un nombre
+- los nombres de los clientes yo los ponia en la referencia, pero son muchos ....  los ponemos como paxs?
+- que categorias de productos de las que no tenemos agregamos? [Casa, Rep Fee, Excursion, Car Hire]
+- interesa para el nuevo sistema la fecha de salida del vuelo en que llegan los clientes?
+- todas las ventas son en EUR? cual es la moneda base de la empresa?
