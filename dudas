@@ -7,3 +7,10 @@ Dudas:
 - que categorias de productos de las que no tenemos agregamos? [Casa, Rep Fee, Excursion, Car Hire]
 - interesa para el nuevo sistema la fecha de salida del vuelo en que llegan los clientes?
 - todas las ventas son en EUR? cual es la moneda base de la empresa?
+
+
+
+Posibles mejoras:
+
+- Virgin Atlantic Flights LGW-HAV (economy) ... Esto realmente es el producto vuelo que se vende en clase economica
+- EXC TRF HAV HTL - HAV APT (10 pax) ... La informacion del pax sobre en la definicion del producto

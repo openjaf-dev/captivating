@@ -36,6 +36,7 @@ CATEGORIES = {
     'Tour': 'Activity',
     'Casa': 'Hotel'
 }
+ROOM = {'simple': 1, 'double': 2, 'triple': 3}
 
 
 class import_data(TransientModel):
@@ -118,13 +119,40 @@ class import_data(TransientModel):
                    'end_date': self.get_date(cell("END DATE")),
                    'supplier_id': supplier_id,
                    'price_unit': self.get_float(cell("SERVICE INVOICED PRICE")),
+                   'price_unit_cost': self.get_float(cell("SERVICE NET PRICE")), # TODO: este precio puede estar en otra moneda
                    'reservation_number': cell("CONFIRM. NUMBER")
                 }
                 if cell('MEAL PLAN'):
                     mp = self.get_option_value(cr, uid, cell('MEAL PLAN'), 'mp', context)
-                    order_line_vals['hotel_2_meal_plan_id'] = mp
+                    order_line_vals['hotel_3_meal_plan_id'] = mp
+                if cell('ROOM TYPE'):
+                    # TODO: falta tener en cuenta el caso de los ninnos
+                    occuppation = []
+                    rooms = cell('ROOM TYPE').split(' & ')
+                    for r in rooms:
+                        d = {}
+                        attrs = r.split(' ')
+                        try:
+                            d['quantity'] = int(attrs.pop(0))
+                        except:
+                            continue
+                        if attrs[0] in ['Single', 'Double', 'Triple']:
+                            room = attrs.pop(0).lower()
+                            d['room'] = room == 'single' and 'simple' or room
+                            d['adults'] = ROOM[d['room']]
+                        else:
+                            d['room'] = 'double'
+                            d['adults'] = 2
+                        occuppation.append((0, 0, d))
+                        if '+' in attrs:
+                            continue
+                        if attrs:
+                            room_type = ' '.join(attrs)
+                            rt = self.get_option_value(cr, uid, room_type, 'rt', context)
+                            order_line_vals['hotel_2_room_type_id'] = rt
+                    order_line_vals['hotel_1_rooming_ids'] = occuppation
                 order_line.create(cr, uid, order_line_vals, context)
-                print ("    Added line " + cell("SERVICE NAME"))
+                #print ("    Added line " + str(cell('SERVICE NAME')))
         return True
 
     def get_category(self, cr, uid, name, context=None):
@@ -135,8 +163,7 @@ class import_data(TransientModel):
 
     def get_product(self, cr, uid, categ_id, name, context=None):
         product = self.pool.get('product.product')
-        product_id = product.search(cr, uid, [('name', '=', name)],
-                                    context=context)
+        product_id = product.search(cr, uid, [('name', '=', name)], context=context)
         if product_id:
             product_id = product_id[0]
         else:
@@ -152,12 +179,16 @@ class import_data(TransientModel):
 
     def get_partner(self, cr, uid, name, customer, context=None):
         partner = self.pool.get('res.partner')
-        to_search = [('name', '=', name), ('customer', '=', customer), ('supplier', '=', not customer)]
-        partner_id = partner.search(cr, uid, to_search, context=context)
+        partner_id = partner.search(cr, uid, [('name', '=', name)],
+                                    context=context)
         if partner_id:
             partner_id = partner_id[0]
         else:
-            vals = {x[0]: x[2] for x in to_search}
+            vals = {
+                'name': name,
+                'customer': customer,
+                'supplier': not customer
+            }
             partner_id = partner.create(cr, uid, vals, context)
         return partner_id
 
@@ -173,10 +204,17 @@ class import_data(TransientModel):
         return pax_id
 
     def get_option_value(self, cr, uid, name, code, context=None):
+        ot = self.pool.get('option.type')
         ov = self.pool.get('option.value')
-        to_search = [('name', '=', name), ('option_type_id.code', '=', code)]
+
+        ot_id = ot.search(cr, uid, [('code', '=', code)], context=context)[0]
+        to_search = [('name', '=', name), ('option_type_id', '=', ot_id)]
         ov_ids = ov.search(cr, uid, to_search, context=context)
-        return ov_ids and ov_ids[0] or False
+        if ov_ids:
+            return ov_ids[0]
+        else:
+            to_create = {x[0]: x[2] for x in to_search}
+            return ov.create(cr, uid, to_create, context)
 
     def get_date(self, value):
         try:
