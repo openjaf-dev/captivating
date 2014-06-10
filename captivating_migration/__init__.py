@@ -22,4 +22,5 @@
 import res_partner
 import product
 import data
+import prices
 
