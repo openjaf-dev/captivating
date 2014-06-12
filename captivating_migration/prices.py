@@ -137,13 +137,24 @@ class import_prices(TransientModel):
             if cell('SUPPLIER'):
                 supplier_name = str(cell('SUPPLIER')).strip()
                 supplier_id = self.get_partner(cr, uid, supplier_name, False, context)
-            
-                svals = {
-                    'name': supplier_id,
-                    'product_id': product_hotel.product_tmpl_id.id,
-                    'min_qty': 0
-                }
-                suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+                
+                suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
+                                                                     ('name', '=', supplier_id), 
+                                                                     ('product_id', '=', product_hotel.product_tmpl_id.id)], 
+                                                           context=context)
+                if len(suppinfo_ids) == 0:
+
+                    svals = {
+                        'name': supplier_id,
+                        'product_id': product_hotel.product_tmpl_id.id,
+                        'min_qty': 0
+                    }
+                    
+                    suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+                else:
+                    suppinfo_id = suppinfo_ids[0]
+                    if len(suppinfo_ids) > 1:
+                        print 'supplinfo ohoho ...'
                 
                 #msg += str(supplier_id)
                 #suggestion, ratio = stringmatcher.find_closers(supplier_dict.keys(), supplier_name)
@@ -207,9 +218,28 @@ class import_prices(TransientModel):
                     'child': child1,
                     'second_child': child2,
                     'min_quantity': 0
-                 } 
-                 pricelist_partnerinfo.create(cr, uid, pvals, context)
-                 msg += 'Price list added \n'     
+                 }                 
+                 
+                 pricelist_ids = pricelist_partnerinfo.search(cr, uid, [('suppinfo_id', '=', suppinfo_id), 
+                                                                       ('start_date', '=', date_from), 
+                                                                       ('end_date', '=', date_to), 
+                                                                       ('room_type_id', '=', room_type_id),
+                                                                       ('meal_plan_id', '=', mp)], 
+                                                             context=context)
+                 if len(pricelist_ids) > 0:
+                     pricelist_partnerinfo.write(cr, uid, pricelist_ids[0], {'price': double_value, 
+                                                                           'simple': simple_value,
+                                                                           'triple': triple_value,
+                                                                           'child': child1,
+                                                                           'second_child': child2}, 
+                                                 context=context)
+                     if len(pricelist_ids) > 2:
+                         print 'pricelist ohoh ...'
+                     
+                 else:
+                     pricelist_partnerinfo.create(cr, uid, pvals, context)
+                     
+                 #msg += 'Price list added \n'     
                 
         return msg
         
