@@ -83,6 +83,8 @@ class import_data(TransientModel):
         for r in range(1, sheet.nrows):
 
             def cell(attr):
+                if sheet.cell_value(r, head[attr]).ctype == xlrd.XL_CELL_ERROR:
+                    return None
                 return sheet.cell_value(r, head[attr])
 
             if cell('REQUEST DATE'):
@@ -124,7 +126,7 @@ class import_data(TransientModel):
                 }
                 if cell('MEAL PLAN'):
                     mp = self.get_option_value(cr, uid, cell('MEAL PLAN'), 'mp', context)
-                    order_line_vals['hotel_3_meal_plan_id'] = mp
+                    order_line_vals['hotel_2_meal_plan_id'] = mp
                 if cell('ROOM TYPE'):
                     # TODO: falta tener en cuenta el caso de los ninnos
                     occuppation = []
@@ -143,13 +145,13 @@ class import_data(TransientModel):
                         else:
                             d['room'] = 'double'
                             d['adults'] = 2
-                        occuppation.append((0, 0, d))
                         if '+' in attrs:
                             continue
                         if attrs:
                             room_type = ' '.join(attrs)
                             rt = self.get_option_value(cr, uid, room_type, 'rt', context)
-                            order_line_vals['hotel_2_room_type_id'] = rt
+                            d['room_type_id'] = rt
+                        occuppation.append((0, 0, d))
                     order_line_vals['hotel_1_rooming_ids'] = occuppation
                 order_line.create(cr, uid, order_line_vals, context)
                 #print ("    Added line " + str(cell('SERVICE NAME')))
