@@ -227,13 +227,13 @@ class import_prices(TransientModel):
                                                                        ('meal_plan_id', '=', mp)], 
                                                              context=context)
                  if len(pricelist_ids) > 0:
-                     pricelist_partnerinfo.write(cr, uid, pricelist_ids[0], {'price': double_value, 
+                     pricelist_partnerinfo.write(cr, uid, [pricelist_ids[0]], {'price': double_value, 
                                                                            'simple': simple_value,
                                                                            'triple': triple_value,
                                                                            'child': child1,
                                                                            'second_child': child2}, 
                                                  context=context)
-                     if len(pricelist_ids) > 2:
+                     if len(pricelist_ids) > 1:
                          print 'pricelist ohoh ...'
                      
                  else:
@@ -247,13 +247,15 @@ class import_prices(TransientModel):
         categ = self.pool.get('product.category')
         to_search = [('name', '=', CATEGORIES.get(name, name))]
         categ_id = categ.search(cr, uid, to_search, context=context)
-        return categ_id and categ_id[0] or 7
+        return categ_id and categ_id[0] or 7 
 
     def get_product(self, cr, uid, categ_id, name, context=None):
         product = self.pool.get('product.product')
-        product_id = product.search(cr, uid, [('name', '=', name), ('categ_id', '=', categ_id)], context=context)
-        if product_id:
-            product_id = product_id[0]
+        product_ids = product.search(cr, uid, [('name', '=', name), ('categ_id', '=', categ_id)], context=context)
+        if not product_ids:
+            product_ids = self.get_match(cr, uid, product, name, [('categ_id', '=', categ_id)], context)
+        if product_ids:
+            product_id = product_ids[0]
         else:
             category = self.pool.get('product.category')
             categ = category.browse(cr, uid, categ_id)
@@ -267,9 +269,12 @@ class import_prices(TransientModel):
 
     def get_partner(self, cr, uid, name, customer, context=None):
         partner = self.pool.get('res.partner')
-        partner_id = partner.search(cr, uid, [('name', '=', name)], context=context)
-        if partner_id:
-            partner_id = partner_id[0]
+        partner_ids = partner.search(cr, uid, [('name', '=', name)], context=context)
+        if not partner_ids:
+            partner_ids = self.get_match(cr, uid, partner, name, [], context)
+            # TODO: preguntarle a Cesar si se puede hacer ['supplier', '=', False]
+        if partner_ids:
+            partner_id = partner_ids[0]
         else:
             vals = {
                 'name': name,
@@ -292,13 +297,16 @@ class import_prices(TransientModel):
             to_create = {x[0]: x[2] for x in to_search}
             return ov.create(cr, uid, to_create, context)
 
-    def get_match(self, model, name, context=None):
-       model_object = self.pool.get(model)
-       #dict = {x.name: x.id for x in model_object.browse(cr, uid, model_object.search(cr, uid, [], context=context))}
-       seq_list = [x.name for x in model_object.browse(cr, uid, model_object.search(cr, uid, [], context=context))]
-       seq_closer, ratio = stringmatcher.find_closers(dict, name)
-       
-       
+    def get_match(self, cr, uid, model_object, name, restrictions, context=None):
+       #model_object = self.pool.get(model)
+       ids = model_object.search(cr, uid, restrictions, context=context)
+       seq_list = [x.name for x in model_object.browse(cr, uid, ids, context=context)]
+       seq_closer, ratio = stringmatcher.find_closers(seq_list, name)
+       if seq_closer:
+           return model_object.search(cr, uid, [('name', '=', seq_closer)], context=context)
+       else:
+           return None
+             
     def get_date(self, value):
         try:
             d = BASE_DATE + int(value)
