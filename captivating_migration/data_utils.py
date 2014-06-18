@@ -45,7 +45,7 @@ class data_utils(object):
         partner = self.pool.get('res.partner')
         partner_ids = partner.search(cr, uid, [('name', '=', name)], context=context)
         if not partner_ids:
-            partner_ids = self.get_match(cr, uid, partner, name, [('supplier', '=', False)], context)
+            partner_ids = self.get_match(cr, uid, partner, name, [('supplier', '=', not customer)], context)
         if partner_ids:
             partner_id = partner_ids[0]
         else:
