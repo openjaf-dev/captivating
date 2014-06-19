@@ -23,39 +23,53 @@ class data_utils(object):
         categ_id = categ.search(cr, uid, to_search, context=context)
         return categ_id and categ_id[0] or 7 
 
-    def get_product(self, cr, uid, categ_id, name, context=None):
+    def get_product(self, cr, uid, categ_id, name, display_warning, context=None):
         product = self.pool.get('product.product')
         product_ids = product.search(cr, uid, [('name', '=', name), ('categ_id', '=', categ_id)], context=context)
-        if not product_ids:
-            product_ids = self.get_match(cr, uid, product, name, [('categ_id', '=', categ_id)], context)
+        ratio = None
+        product_id = None
         if product_ids:
             product_id = product_ids[0]
         else:
-            category = self.pool.get('product.category')
-            categ = category.browse(cr, uid, categ_id)
-            cname = categ.name == 'Miscellaneous' and 'misc' or categ.name.lower() 
-            model = self.pool.get('product.' + cname)
-            vals = {'name': name, 'categ_id': categ_id}
-            model_id = model.create(cr, uid, vals, context)
-            model_obj = model.browse(cr, uid, model_id, context)
-            product_id = model_obj.product_id.id
-        return product_id
+            product_ids, r = self.get_match(cr, uid, product, name, [('categ_id', '=', categ_id)], context)
+            if r == 1.0:
+                product_id = product_ids[0]
+            elif r > 0.8 and display_warning and product_ids:
+                product_id = product_ids[0]
+                ratio = r
+            else:
+                category = self.pool.get('product.category')
+                categ = category.browse(cr, uid, categ_id)
+                cname = categ.name == 'Miscellaneous' and 'misc' or categ.name.lower() 
+                model = self.pool.get('product.' + cname)
+                vals = {'name': name, 'categ_id': categ_id}
+                model_id = model.create(cr, uid, vals, context)
+                model_obj = model.browse(cr, uid, model_id, context)
+                product_id = model_obj.product_id.id
+        return product_id, ratio
 
-    def get_partner(self, cr, uid, name, customer, context=None):
+    def get_partner(self, cr, uid, name, customer, display_warning, context=None):
         partner = self.pool.get('res.partner')
         partner_ids = partner.search(cr, uid, [('name', '=', name)], context=context)
-        if not partner_ids:
-            partner_ids = self.get_match(cr, uid, partner, name, [('supplier', '=', not customer)], context)
+        ratio = None
+        partner_id = None
         if partner_ids:
             partner_id = partner_ids[0]
         else:
-            vals = {
-                'name': name,
-                'customer': customer,
-                'supplier': not customer
-            }
-            partner_id = partner.create(cr, uid, vals, context)
-        return partner_id
+            partner_ids, r = self.get_match(cr, uid, partner, name, [('supplier', '=', not customer)], context)
+            if r == 1.0:
+                partner_id = partner_ids[0]
+            elif r > 0.8 and display_warning:
+                partner_id = partner_ids[0]
+                ratio = r
+            else:
+                vals = {
+                    'name': name,
+                    'customer': customer,
+                    'supplier': not customer
+                }
+                partner_id = partner.create(cr, uid, vals, context)
+        return partner_id, ratio
 
     def get_option_value(self, cr, uid, name, code, context=None):
         ot = self.pool.get('option.type')
@@ -76,9 +90,9 @@ class data_utils(object):
        seq_list = [x.name for x in model_object.browse(cr, uid, ids, context=context)]
        seq_closer, ratio = stringmatcher.find_closers(seq_list, name)
        if seq_closer:
-           return model_object.search(cr, uid, [('name', '=', seq_closer)], context=context)
+           return model_object.search(cr, uid, [('name', '=', seq_closer)], context=context), ratio
        else:
-           return None
+           return None, None
              
     def get_date(self, value):
         try:

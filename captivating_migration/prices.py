@@ -35,11 +35,12 @@ class import_prices(data_utils, TransientModel):
         'result':
             fields.text('Result'),
         'accept':
-            fields.boolean('Accept')
+            fields.boolean('Display Warnings')
     }
 
     def import_file(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids[0], context)
+        display_warning = obj.accept
         if obj.file:
             data = base64.decodestring(obj.file)
             #try:
@@ -54,7 +55,9 @@ class import_prices(data_utils, TransientModel):
 #            suppl_ids = product_supplierinfo.search(cr, uid, [])
 #            for supplinfo_id in suppl_ids:                
 #                product_supplierinfo.unlink(cr, uid, supplinfo_id, context)
-             
+
+            
+            accept_suggestion = obj.accept 
             for sheet in document.sheets():
                 if sheet.nrows != 0:
                     destination = self.pool.get('destination')
@@ -62,7 +65,7 @@ class import_prices(data_utils, TransientModel):
                     destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)
                     if not destination_id:
                         destination_id = destination.create(cr, uid, destination_vals, context)
-                    msg += self.import_prices_data(cr, uid, sheet, destination_id, context)
+                    msg += self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context) + '\n'
                     
             #except:
             #    raise osv.except_osv('Error!', 'The file is not valid.')
@@ -81,7 +84,7 @@ class import_prices(data_utils, TransientModel):
         else:
             raise osv.except_osv('Error!', 'You must select a file.')
 
-    def import_prices_data(self, cr, uid, sheet, destination_id, context):
+    def import_prices_data(self, cr, uid, sheet, destination_id, display_warning, context):
         
         msg = ' '
         
@@ -117,30 +120,38 @@ class import_prices(data_utils, TransientModel):
             if cell('HOTEL NAME'):
                 hotel_name = cell('HOTEL NAME').strip()
                 category_id = self.get_category(cr, uid, 'Hotel', context)
-                product_id = self.get_product(cr, uid, category_id, hotel_name)
+                product_id, ratio = self.get_product(cr, uid, category_id, hotel_name, display_warning)
                 product_hotel = product_product.browse(cr, uid, product_id, context)
+                
+                if ratio:
+                    msg += "WARNING: " + hotel_name + " is " + product_hotel.name + "? " + ratio + '\n'   
+                    product_hotel = None
                 
             if cell('SUPPLIER'):
                 supplier_name = str(cell('SUPPLIER')).strip()
-                supplier_id = self.get_partner(cr, uid, supplier_name, False, context)
+                supplier_id, ratio = self.get_partner(cr, uid, supplier_name, False, display_warning, context)
                 
-                suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
-                                                                     ('name', '=', supplier_id), 
-                                                                     ('product_id', '=', product_hotel.product_tmpl_id.id)], 
-                                                           context=context)
-                if len(suppinfo_ids) == 0:
-
-                    svals = {
-                        'name': supplier_id,
-                        'product_id': product_hotel.product_tmpl_id.id,
-                        'min_qty': 0
-                    }
-                    
-                    suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
-                else:
-                    suppinfo_id = suppinfo_ids[0]
-                    if len(suppinfo_ids) > 1:
-                        print 'supplinfo ohoho ...'
+                if not ratio:
+                
+                    suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
+                                                                         ('name', '=', supplier_id), 
+                                                                         ('product_id', '=', product_hotel.product_tmpl_id.id)], 
+                                                               context=context)
+                    if len(suppinfo_ids) == 0:
+    
+                        svals = {
+                            'name': supplier_id,
+                            'product_id': product_hotel.product_tmpl_id.id,
+                            'min_qty': 0
+                        }
+                        
+                        suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+                    else:
+                        suppinfo_id = suppinfo_ids[0]
+                else:  
+                    supplier_warning = supplier.browse(cr, uid, supplier_id, context)
+                    msg += "WARNING: " + supplier_name + " is " + supplier_warning.name + "? " + str(ratio) + '\n'
+                    supplier_id = None    
                 
                 #msg += str(supplier_id)
                 #suggestion, ratio = stringmatcher.find_closers(supplier_dict.keys(), supplier_name)
@@ -191,7 +202,7 @@ class import_prices(data_utils, TransientModel):
                     triple_value = self.get_float(cell('NET RATE'))
                     triple_option = True                    
             
-            if simple_option and double_option and triple_option:
+            if simple_option and double_option and triple_option and product_hotel and supplier_id:
                  pvals = {
                     'suppinfo_id': suppinfo_id,
                     'start_date': date_from,

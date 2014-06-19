@@ -12,7 +12,7 @@ def string_cleaning(text):
 	text = text.replace(u'ñ', 'n')
 	return text.lower()
 	
-def find_closers(seq_list, seq_target, threshold=1.0):
+def find_closers(seq_list, seq_target, threshold=0.7):
 	
 	min_ratio = 0
 	closer = ''
@@ -25,7 +25,4 @@ def find_closers(seq_list, seq_target, threshold=1.0):
 			min_ratio = ratio
 			closer = seq
 	
-	if min_ratio >= threshold:
-		return closer, min_ratio
-	else:
-		return None, None
+	return closer, min_ratio

@@ -9,6 +9,7 @@
                 <form string="Import" version="7.0"> 
 				     <group>
 						<field name="file" />
+						<field name="accept" />
 				     </group>
 					 <group>
 					 	<field name="result" colspan="4"/>
