@@ -22,6 +22,7 @@
 import xlrd
 import datetime
 import base64
+from data_utils import data_utils
 
 from openerp.osv import fields, osv
 from openerp.osv.orm import TransientModel
@@ -39,7 +40,7 @@ CATEGORIES = {
 ROOM = {'simple': 1, 'double': 2, 'triple': 3}
 
 
-class import_data(TransientModel):
+class import_data(data_utils, TransientModel):
     _name = 'import.data'
     _columns = {
         'file':
@@ -83,7 +84,7 @@ class import_data(TransientModel):
         for r in range(1, sheet.nrows):
 
             def cell(attr):
-                if sheet.cell_value(r, head[attr]).ctype == xlrd.XL_CELL_ERROR:
+                if sheet.cell(r, head[attr]).ctype == xlrd.XL_CELL_ERROR:
                     return None
                 return sheet.cell_value(r, head[attr])
 
@@ -157,43 +158,6 @@ class import_data(TransientModel):
                 #print ("    Added line " + str(cell('SERVICE NAME')))
         return True
 
-    def get_category(self, cr, uid, name, context=None):
-        categ = self.pool.get('product.category')
-        to_search = [('name', '=', CATEGORIES.get(name, name))]
-        categ_id = categ.search(cr, uid, to_search, context=context)
-        return categ_id and categ_id[0] or 7
-
-    def get_product(self, cr, uid, categ_id, name, context=None):
-        product = self.pool.get('product.product')
-        product_id = product.search(cr, uid, [('name', '=', name)], context=context)
-        if product_id:
-            product_id = product_id[0]
-        else:
-            category = self.pool.get('product.category')
-            categ = category.browse(cr, uid, categ_id)
-            cname = categ.name == 'Miscellaneous' and 'misc' or categ.name.lower() 
-            model = self.pool.get('product.' + cname)
-            vals = {'name': name, 'categ_id': categ_id}
-            model_id = model.create(cr, uid, vals, context)
-            model_obj = model.browse(cr, uid, model_id, context)
-            product_id = model_obj.product_id.id
-        return product_id
-
-    def get_partner(self, cr, uid, name, customer, context=None):
-        partner = self.pool.get('res.partner')
-        partner_id = partner.search(cr, uid, [('name', '=', name)],
-                                    context=context)
-        if partner_id:
-            partner_id = partner_id[0]
-        else:
-            vals = {
-                'name': name,
-                'customer': customer,
-                'supplier': not customer
-            }
-            partner_id = partner.create(cr, uid, vals, context)
-        return partner_id
-
     def get_pax(self, cr, uid, name, context=None):
         partner = self.pool.get('res.partner')
         to_search = [('name', '=', name), ('pax', '=', True)]
@@ -204,29 +168,3 @@ class import_data(TransientModel):
             vals = {x[0]: x[2] for x in to_search}
             pax_id = partner.create(cr, uid, vals, context)
         return pax_id
-
-    def get_option_value(self, cr, uid, name, code, context=None):
-        ot = self.pool.get('option.type')
-        ov = self.pool.get('option.value')
-
-        ot_id = ot.search(cr, uid, [('code', '=', code)], context=context)[0]
-        to_search = [('name', '=', name), ('option_type_id', '=', ot_id)]
-        ov_ids = ov.search(cr, uid, to_search, context=context)
-        if ov_ids:
-            return ov_ids[0]
-        else:
-            to_create = {x[0]: x[2] for x in to_search}
-            return ov.create(cr, uid, to_create, context)
-
-    def get_date(self, value):
-        try:
-            d = BASE_DATE + int(value)
-            return datetime.datetime.fromordinal(d)
-        except:
-            return datetime.datetime(2017, 1, 1)
-
-    def get_float(self, value):
-        try:
-            return float(value)
-        except:
-            return 0.0

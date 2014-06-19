@@ -218,10 +218,7 @@ class import_prices(data_utils, TransientModel):
                                                                            'triple': triple_value,
                                                                            'child': child1,
                                                                            'second_child': child2}, 
-                                                 context=context)
-                     if len(pricelist_ids) > 1:
-                         print 'pricelist ohoh ...'
-                     
+                                                 context=context)                     
                  else:
                      pricelist_partnerinfo.create(cr, uid, pvals, context)
                      
