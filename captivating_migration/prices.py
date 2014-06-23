@@ -62,7 +62,7 @@ class import_prices(data_utils, TransientModel):
                 if sheet.nrows != 0:
                     destination = self.pool.get('destination')
                     destination_vals = { 'name': sheet.name.strip() }
-                    destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)
+                    destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)[0]
                     if not destination_id:
                         destination_id = destination.create(cr, uid, destination_vals, context)
                     msg += self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context) + '\n'
@@ -123,15 +123,18 @@ class import_prices(data_utils, TransientModel):
                 product_id, ratio = self.get_product(cr, uid, category_id, hotel_name, display_warning)
                 product_hotel = product_product.browse(cr, uid, product_id, context)
                 
+                hotel_id = hotel.search(cr, uid, [('name', '=', product_hotel.name)])[0]
+                hotel.write(cr, uid, hotel_id, {'destination': destination_id})
+                
                 if ratio:
-                    msg += "WARNING: " + hotel_name + " is " + product_hotel.name + "? " + ratio + '\n'   
+                    msg += "WARNING: " + hotel_name + " is " + product_hotel.name + "? " + str(ratio) + '\n'   
                     product_hotel = None
                 
             if cell('SUPPLIER'):
                 supplier_name = str(cell('SUPPLIER')).strip()
                 supplier_id, ratio = self.get_partner(cr, uid, supplier_name, False, display_warning, context)
-                
-                if not ratio:
+                print supplier_name
+                if not ratio and product_hotel:
                 
                     suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
                                                                          ('name', '=', supplier_id), 
