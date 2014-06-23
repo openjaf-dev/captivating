@@ -62,9 +62,11 @@ class import_prices(data_utils, TransientModel):
                 if sheet.nrows != 0:
                     destination = self.pool.get('destination')
                     destination_vals = { 'name': sheet.name.strip() }
-                    destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)[0]
+                    destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)
                     if not destination_id:
                         destination_id = destination.create(cr, uid, destination_vals, context)
+                    else:
+                        destination_id = destination_id[0]
                     msg += self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context) + '\n'
                     
             #except:
