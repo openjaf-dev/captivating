@@ -223,7 +223,7 @@ class import_data(TransientModel):
             d = BASE_DATE + int(value)
             return datetime.datetime.fromordinal(d)
         except:
-            return datetime.datetime(2017, 1, 1)
+            False
 
     def get_float(self, value):
         try:
