@@ -50,7 +50,7 @@ Chateau Miramar,Monte Barreto,Cubanacán,4,Hotel
 Tropicoco,Playas del Este,Cubanacán,2,Hotel
 Mégano,Playas del Este,Cubanacán,3,Hotel
 Blau Arenal,Playas del Este,Cubanacán,4,Hotel
-Faro Luna,Rancho Luna,Cubanacán,3,Hotel
+Hotel Faro Luna,Rancho Luna,Cubanacán,3,Hotel
 Club Amigo Rancho Luna,Rancho Luna,Cubanacán,3,Hotel
 Hostal Encanto El Rijo,Sancti Spíritus,Cubanacán,3,Hotel
 Hostal Encanto Plaza,Sancti Spíritus,Cubanacán,1,Hotel
@@ -185,8 +185,7 @@ Hotel Inglaterra,Centro Tradicional,Gran Caribe,4,Hotel
 Hotel Jagua,Cienfuegos,Gran Caribe,4,Hotel
 Hotel Colony,Colony,Gran Caribe,3,Hotel
 Hotel Villa Trópico,Jibacoa,Gran Caribe,3,Hotel
-Neptuno,Monte Barreto,Gran Caribe,3,Hotel
-Tritón,Monte Barreto,Gran Caribe,3,Hotel
+Hotel Neptuno - Tritón,Monte Barreto,Gran Caribe,3,Hotel
 Rancho del Tesoro,Nueva Gerona,Gran Caribe,2,Hotel
 Villa Isla de la Juventud,Nueva Gerona,Gran Caribe,2,Hotel
 Hotel Club Atlántico,Playas del Este,Gran Caribe,3,Hotel
@@ -217,8 +216,8 @@ Hotel Victoria,Vedado,Gran Caribe,4,Hotel
 Tryp Habana Libre,Vedado,Gran Caribe,5,Hotel
 Saint John's,Vedado,Gran Caribe,3,Hotel
 Hotel Vedado,Vedado,Gran Caribe,3,Hotel
-Hotel Encanto Casa Verde,Gran Caribe,4,Hotel
-Hotel Rancho Luna,Gran Caribe,3,Hotel
+Hotel Encanto Casa Verde,Cienfuegos,Gran Caribe,4,Hotel
+Hotel Rancho Luna,Cienfuegos,Gran Caribe,3,Hotel
 Beltrán de Santa Cruz,Centro Tradicional,Habaguanex,3,Hotel
 Hostal Los Frailes,Centro Tradicional,Habaguanex,3,Hotel
 O'Farrill,Centro Tradicional,Habaguanex,4,Hotel
