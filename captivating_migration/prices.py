@@ -67,7 +67,11 @@ class import_prices(data_utils, TransientModel):
                         destination_id = destination.create(cr, uid, destination_vals, context)
                     else:
                         destination_id = destination_id[0]
-                    msg += self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context) + '\n'
+                    new_msg = self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context)
+                    if new_msg != '':
+                        msg += new_msg + '\n'
+                    else:
+                        msg += new_msg
                     
             #except:
             #    raise osv.except_osv('Error!', 'The file is not valid.')
@@ -88,7 +92,7 @@ class import_prices(data_utils, TransientModel):
 
     def import_prices_data(self, cr, uid, sheet, destination_id, display_warning, context):
         
-        msg = ' '
+        msg = ''
         
         hotel = self.pool.get('product.hotel')
         product_product = self.pool.get('product.product')
@@ -133,31 +137,32 @@ class import_prices(data_utils, TransientModel):
                     product_hotel = None
                 
             if cell('SUPPLIER'):
-                supplier_name = str(cell('SUPPLIER')).strip()
-                supplier_id, ratio = self.get_partner(cr, uid, supplier_name, False, display_warning, context)
-                print supplier_name
-                if not ratio and product_hotel:
-                
-                    suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
-                                                                         ('name', '=', supplier_id), 
-                                                                         ('product_id', '=', product_hotel.product_tmpl_id.id)], 
-                                                               context=context)
-                    if len(suppinfo_ids) == 0:
-    
-                        svals = {
-                            'name': supplier_id,
-                            'product_id': product_hotel.product_tmpl_id.id,
-                            'min_qty': 0
-                        }
+                if product_hotel:
+                    supplier_name = str(cell('SUPPLIER')).strip()
+                    supplier_id, ratio = self.get_partner(cr, uid, supplier_name, False, display_warning, context)
+                    if display_warning and 0.8 < ratio < 1.0:  
                         
-                        suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
-                    else:
-                        suppinfo_id = suppinfo_ids[0]
-                else:  
-                    supplier_warning = supplier.browse(cr, uid, supplier_id, context)
-                    msg += "WARNING: " + supplier_name + " is " + supplier_warning.name + "? " + str(ratio) + '\n'
-                    supplier_id = None    
-                
+                        supplier_warning = supplier.browse(cr, uid, supplier_id, context)
+                        msg += "WARNING: " + supplier_name + " is " + supplier_warning.name + "? " + str(ratio) + '\n'
+                        supplier_id = None   
+                    else:  
+                    
+                        suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
+                                                                             ('name', '=', supplier_id), 
+                                                                             ('product_id', '=', product_hotel.product_tmpl_id.id)], 
+                                                                   context=context)
+                        if len(suppinfo_ids) == 0:
+        
+                            svals = {
+                                'name': supplier_id,
+                                'product_id': product_hotel.product_tmpl_id.id,
+                                'min_qty': 0
+                            }
+                            
+                            suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+                        else:
+                            suppinfo_id = suppinfo_ids[0] 
+                    
                 #msg += str(supplier_id)
                 #suggestion, ratio = stringmatcher.find_closers(supplier_dict.keys(), supplier_name)
                 #real_name = supplier.browse(cr, uid, supplier_dict[suggestion]).name

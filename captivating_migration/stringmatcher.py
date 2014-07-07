@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import xlrd
 from difflib import SequenceMatcher
 
 def string_cleaning(text):
@@ -9,7 +8,15 @@ def string_cleaning(text):
 	text = text.replace(u'í', 'i')
 	text = text.replace(u'ó', 'o')
 	text = text.replace(u'ú', 'u')
+	text = text.replace(u'ü', 'u')
 	text = text.replace(u'ñ', 'n')
+	text = text.replace(u'Á', 'A')
+	text = text.replace(u'É', 'E')
+	text = text.replace(u'Í', 'I')
+	text = text.replace(u'Ó', 'O')
+	text = text.replace(u'Ú', 'U')
+	text = text.replace(u'Ü', 'U')
+	text = text.replace(u'Ǹ', 'n')
 	return text.lower()
 	
 def find_closers(seq_list, seq_target, threshold=0.7):

@@ -55,6 +55,7 @@ class data_utils(object):
         partner_id = None
         if partner_ids:
             partner_id = partner_ids[0]
+            ratio = 1.0
         else:
             partner_ids, r = self.get_match(cr, uid, partner, name, [('supplier', '=', not customer)], context)
             if r == 1.0:
