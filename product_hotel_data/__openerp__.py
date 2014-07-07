@@ -19,8 +19,21 @@
 #
 ##############################################################################
 
-import res_partner
-import product
-import data
-import prices
 
+{
+    'name': 'Cuba Hotels',
+    'version': '1.0',
+    "author": "JAF S.A.",
+    "website": "http://www.jaf.com",
+    'category': '?',
+    'depends': ['travel'],
+    "description": """ List of cuban hotels.""",
+    'init_xml': ['data/destination.csv', 'data/res.partner.csv', 'data/product.hotel.csv'],
+    'update_xml': [],
+    'demo_xml': [],
+    'test': [],
+    'installable': True,
+    'active': False,
+    #'certificate': '0071515601309',
+}
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

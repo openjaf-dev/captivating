@@ -1,0 +1,350 @@
+name,destination,chain_id,stars,categ_id
+Palco,Fuera de Polo Ciudad Habana,Cons. Estado,4,Hotel
+Villa Guajimico,Fuera de Polo Cienfuegos,Cubamar,3,Hotel
+Aguas Claras,Fuera de Polo Pinar del Río,Cubamar,2,Hotel
+Dos Hermanas,Viñales,Cubamar,1,Hotel
+Club Amigo Costasur,Ancón,Cubanacán,3,Hotel
+Brisas Trinidad del Mar,Ancón,Cubanacán,4,Hotel
+Club Amigo Ancón,Ancón,Cubanacán,3,Hotel
+Villa El Colibrí (El Indio),Baconao,Cubanacán,3,Hotel
+Club Amigo Carisol,Baconao,Cubanacán,3,Hotel
+Club Amigo Los Corales,Baconao,Cubanacán,3,Hotel
+Guamá,Bahía de Cochinos,Cubanacán,2,Hotel
+Playa Girón,Bahía de Cochinos,Cubanacán,2,Hotel
+Playa Larga,Bahía de Cochinos,Cubanacán,2,Hotel
+Pío Cuá,Bahía de Cochinos,Cubanacán,,Hotel
+Batey Don Pedro,Bahía de Cochinos,Cubanacán,,Hotel
+Hostal Velasco,Matanzas,Cubanacán,,Hotel
+NH Krystal Villas & Resort,Cayo Coco,Cubanacán,4,Hotel
+Tryp Cayo Coco,Cayo Coco,Cubanacán,4,Hotel
+Colonial Cayo Coco,Cayo Coco,Cubanacán,5,Hotel
+Cayo Levisa,Cayo Levisa,Cubanacán,2,Hotel
+Parque Central,Centro Tradicional,Cubanacán,5,Hotel
+Hotel Palacio Azul,Cienfuegos,Cubanacán,3,Hotel
+Hotel La Unión,Cienfuegos,Cubanacán,4,Hotel
+Brisas Covarrubias,Covarrubias,Cubanacán,4,Hotel
+Bellocaribe,Fuera de Polo Ciudad Habana,Cubanacán,3,Hotel
+Mariposa,Fuera de Polo Ciudad Habana,Cubanacán,2,Hotel
+La Pradera,Fuera de Polo Ciudad Habana,Cubanacán,4,Hotel
+El Yarey,Fuera de Polo Granma,Cubanacán,2,Hotel
+El Saltón,Fuera de Polo Santiago de Cuba,Cubanacán,3,Hotel
+Hotel Mascote,Fuera de Polo Villa Clara,Cubanacán,3,Hotel
+Brisas Sierra Mar,Guamá,Cubanacán,4,Hotel
+Villa Los Galeones,Guamá,Cubanacán,4,Hotel
+Brisas Guardalavaca,Guardalavaca,Cubanacán,4,Hotel
+Club Amigo Atlántico Guardalavaca,Guardalavaca,Cubanacán,3,Hotel
+Secc Tropical Club Amigo Atlántico Guardalavaca,Guardalavaca,Cubanacán,3,Hotel
+Secc Standard Club Amigo Atlántico Guardalavaca,Guardalavaca,Cubanacán,3,Hotel
+Villa El Quinqué,Holguín,Cubanacán,3,Hotel
+Villa El Cocal,Holguín,Cubanacán,3,Hotel
+Breezes Jibacoa,Jibacoa,Cubanacán,4,Hotel
+Club Amigo Marea del Portillo,Marea del Portillo,Cubanacán,3,Hotel
+Club Amigo Farallón del Caribe,Marea del Portillo,Cubanacán,4,Hotel
+Punta Piedra,Marea del Portillo,Cubanacán,2,Hotel
+El Viejo y el Mar,Marina Hemingway,Cubanacán,4,Hotel
+Marina Hemingway,Marina Hemingway,Cubanacán,4,Hotel
+Copacabana,Monte Barreto,Cubanacán,4,Hotel
+Comodoro,Monte Barreto,Cubanacán,4,Hotel
+Meliá Habana,Monte Barreto,Cubanacán,5,Hotel
+Chateau Miramar,Monte Barreto,Cubanacán,4,Hotel
+Tropicoco,Playas del Este,Cubanacán,2,Hotel
+Mégano,Playas del Este,Cubanacán,3,Hotel
+Blau Arenal,Playas del Este,Cubanacán,4,Hotel
+Faro Luna,Rancho Luna,Cubanacán,3,Hotel
+Club Amigo Rancho Luna,Rancho Luna,Cubanacán,3,Hotel
+Hostal Encanto El Rijo,Sancti Spíritus,Cubanacán,3,Hotel
+Hostal Encanto Plaza,Sancti Spíritus,Cubanacán,1,Hotel
+La Granjita,Santa Clara,Cubanacán,3,Hotel
+Los Caneyes,Santa Clara,Cubanacán,3,Hotel
+América,Villa Clara,Cubanacán,3,Hotel
+Barcelona,Villa Clara,Cubanacán,3,Hotel
+Club Amigo Caracol,Santa Lucía,Cubanacán,3,Hotel
+Gran Club Santa Lucía,Santa Lucía,Cubanacán,3,Hotel
+Club Amigo Mayanabo,Santa Lucía,Cubanacán,3,Hotel
+Brisas Santa Lucía,Santa Lucía,Cubanacán,4,Hotel
+Meliá Santiago de Cuba,Santiago de Cuba,Cubanacán,5,Hotel
+Motel Versalles,Santiago de Cuba,Cubanacán,3,Hotel
+Hotel E San Basilio,Santiago de Cuba,Cubanacán,3,Hotel
+Villa Soroa,Soroa - Las Terrazas,Cubanacán,3,Hotel
+Las Cuevas,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
+La Ronda,Trinidad - Valle de los Ingenios,Cubanacán,1,Hotel
+Horizontes Finca María Dolores,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
+Iberostar Gran Hotel Trinidad,Trinidad - Valle de los Ingenios,Cubanacán,5,Hotel
+Brisas del Caribe,Varadero,Cubanacán,4,Hotel
+Aguas Azules,Varadero,Cubanacán,3,Hotel
+Club Amigo Tropical,Varadero,Cubanacán,3,Hotel
+Breezes Varadero,Varadero,Cubanacán,4,Hotel
+Breezes Bella Costa,Varadero,Cubanacán,4,Hotel
+Tuxpan,Varadero,Cubanacán,4,Hotel
+Meliá Las Américas,Varadero,Cubanacán,5,Hotel
+Meliá Varadero,Varadero,Cubanacán,5,Hotel
+Sol Palmeras,Varadero,Cubanacán,4,Hotel
+Blau Varadero,Varadero,Cubanacán,4,Hotel
+Sandals Royal Hicacos,Varadero,Cubanacán,5,Hotel
+Iberostar Varadero,Varadero,Cubanacán,5,Hotel
+Meliá Las Antillas,Varadero,Cubanacán,4,Hotel
+Meliá Cohiba,Vedado,Cubanacán,5,Hotel
+Los Jazmines,Viñales,Cubanacán,3,Hotel
+La Ermita,Viñales,Cubanacán,3,Hotel
+Rancho San Vicente,Viñales,Cubanacán,3,Hotel
+Hotel Telégrafo,Bayamo,Formatur,,Hotel
+Hotel Escuela Regis,Centro Tradicional,Formatur,,Hotel
+Hotel Escuela Gran Vía,Playas del Este,Formatur,2,Hotel
+Hotel Escuela Tararaco,Santa Lucía,Formatur,1,Hotel
+Hotel Escuela Gran hotel,Santiago de Cuba,Formatur,2,Hotel
+Unidad Docente EHT Trinidad,Trinidad - Valle de los Ingenios,Formatur,,Hotel
+Hotel Escuela Turquino,Varadero,Formatur,,Hotel
+Birancito,Bahía de Naranjo-Yuraguanal,Gaviota,3,Hotel
+Occidental Grand Playa Turquesa,Bahía de Naranjo-Yuraguanal,Gaviota,5,Hotel
+El Castillo,Baracoa,Gaviota,3,Hotel
+Porto Santo,Baracoa,Gaviota,2,Hotel
+Hostal 1511,Baracoa,Gaviota,3,Hotel
+Hostal La Rusa,Baracoa,Gaviota,1,Hotel
+Hostal La Habanera,Baracoa,Gaviota,3,Hotel
+Hostal Rio Miel,Baracoa,Gaviota,3,Hotel
+Villa Gaviota Cayo Coco,Cayo Coco,Gaviota,3,Hotel
+Oasis Playa Coco,Cayo Coco,Gaviota,4,Hotel
+Blue Bay Cayo Coco,Cayo Coco,Gaviota,4,Hotel
+Ensenachos,Cayo Ensenachos,Gaviota,5,Hotel
+Villa Las Brujas,Cayo Las Brujas,Gaviota,3,Hotel
+Cayo Saetía,Cayo Saetía,Gaviota,4,Hotel
+Sol Cayo Santa María,Cayo Santa María,Gaviota,4,Hotel
+Royalton Cayo Santa María,Cayo Santa María,Gaviota,5,Hotel
+Meliá Las Dunas,Cayo Santa María,Gaviota,5,Hotel
+Meliá Cayo Santa María,Cayo Santa María,Gaviota,5,Hotel
+La Estrella I,Cayo Santa María,Gaviota,5,Hotel
+Playa Coco,Ciego Camagüey,Gaviota,4,Hotel
+Memories Caribe,Ciego Camagüey,Gaviota,4,Hotel
+Memories Flamenco,Ciego Camagüey,Gaviota,5,Hotel
+Pestana Cayo Coco,Ciego Camagüey,Gaviota,4,Hotel
+Sol Río de Luna y Mares,Estero Ciego,Gaviota,4,Hotel
+Paradisus Río de Oro Resort & SPA,Holguín,Gaviota,5,Hotel
+Hotel Kohly,Fuera de Polo Ciudad Habana,Gaviota,3,Hotel
+El Bosque,Fuera de Polo Ciudad Habana,Gaviota,3,Hotel
+Pinares de Mayarí,Fuera de Polo Holguín,Gaviota,2,Hotel
+María La Gorda,Guanahacabibes,Gaviota,3,Hotel
+Villa Cabo San Antonio,Guanahacabibes,Gaviota,4,Hotel
+Villa Maguana,Maguana,Gaviota,3,Hotel
+Panorama,Monte Barreto,Gaviota,4,Hotel
+MonteHabana,Monte Barreto,Gaviota,3,Hotel
+Occidental Miramar,Monte Barreto,Gaviota,4,Hotel
+Playa Pesquero,Pesquero,Gaviota,5,Hotel
+Playa Costa Verde,Pesquero,Gaviota,4,Hotel
+Blau Costa Verde Beach & Resort,Pesquero,Gaviota,4,Hotel
+Blau Costa Verde Plus,Pesquero,Gaviota,4,Hotel
+Villa Gaviota,Santiago de Cuba,Gaviota,3,Hotel
+Villa Marqueti,Santiago de Cuba,Gaviota,3,Hotel
+Los Helechos,Topes de Collantes,Gaviota,3,Hotel
+Villa Caburní,Topes de Collantes,Gaviota,3,Hotel
+Centro de Rehabilitación Kurhotel Escambray,Topes de Collantes,Gaviota,3,Hotel
+Los Pinos,Topes de Collantes,Gaviota,3,Hotel
+Hotel Serrano,Topes de Collantes,Gaviota,3,Hotel
+Hotelera Los Eucaliptos,Topes de Collantes,Gaviota,3,Hotel
+Barceló Marina Palace,Varadero,Gaviota,5,Hotel
+Princesa del Mar,Varadero,Gaviota,5,Hotel
+Iberostar Playa Alameda,Varadero,Gaviota,4,Hotel
+Hotel Tryp Península,Varadero,Gaviota,5,Hotel
+Paradisus,Varadero,Gaviota,5,Hotel
+Oasis 1920,Varadero,Gaviota,4,Hotel
+Sol Sirenas Coral,Varadero,Gaviota,4,Hotel
+Sirenis Las Salinas,Varadero,Gaviota,4,Hotel
+Quinta Avenida,Varadero,Gaviota,5,Hotel
+Allegro Varadero,Varadero,Gaviota,4,Hotel
+Iberostar Laguna Azul,Varadero,Gaviota,5,Hotel
+Riu Laguna Dora,Varadero,Gaviota,5,Hotel
+Ocean El Patriarca,Varadero,Gaviota,5,Hotel
+Memories La Salina,Varadero,Gaviota,5,Hotel
+Blau Marina Palace,Varadero,Gaviota,5,Hotel
+Melia Marina Varadero,Varadero,Gaviota,5,Hotel
+Blau Marina Varadero Resort,Varadero,Gaviota,5,Hotel
+Blau Privilege Cayo Libertad,Varadero,Gaviota,5,Hotel
+Playa Cayo Santa Maria,Villa Clara,Gaviota,5,Hotel
+Iberostar Ensenachos,Villa Clara,Gaviota,5,Hotel
+Memories Paraíso Azul,Villa Clara,Gaviota,5,Hotel
+Husa Cayo Santa Maria,Villa Clara,Gaviota,4,Hotel
+Eurostar Cayo Santa Maria,Villa Clara,Gaviota,4,Hotel
+Bucanero,Baconao,Gran Caribe,3,Hotel
+Meliá Cayo Coco,Cayo Coco,Gran Caribe,5,Hotel
+Sol  Cayo Coco,Cayo Coco,Gran Caribe,4,Hotel
+Villa Cojímar,Cayo Guillermo,Gran Caribe,3,Hotel
+Iberostar Daiquirí,Cayo Guillermo,Gran Caribe,4,Hotel
+Meliá Cayo Guillermo,Cayo Guillermo,Gran Caribe,5,Hotel
+Sol  Cayo Guillermo,Cayo Guillermo,Gran Caribe,4,Hotel
+Sol Cayo Largo,Cayo Largo,Gran Caribe,4,Hotel
+Sol Pelícano,Cayo Largo,Gran Caribe,4,Hotel
+Complejo Isla del Sur (Villa Lindamar),Cayo Largo,Gran Caribe,4,Hotel
+Complejo Isla del Sur (Villa Soledad),Cayo Largo,Gran Caribe,3,Hotel
+Complejo Isla del Sur (Villa Coral),Cayo Largo,Gran Caribe,3,Hotel
+Hotel Isla del Sur,Cayo Largo,Gran Caribe,3,Hotel
+Hotel Playa Blanca,Cayo Largo,Gran Caribe,4,Hotel
+Marina Cayo Largo,Cayo Largo,Gran Caribe,3,Hotel
+Hotel Plaza,Centro Tradicional,Gran Caribe,4,Hotel
+Hotel Deauville,Centro Tradicional,Gran Caribe,3,Hotel
+Sevilla,Centro Tradicional,Gran Caribe,4,Hotel
+Hotel Inglaterra,Centro Tradicional,Gran Caribe,4,Hotel
+Hotel Jagua,Cienfuegos,Gran Caribe,4,Hotel
+Hotel Colony,Colony,Gran Caribe,3,Hotel
+Hotel Villa Trópico,Jibacoa,Gran Caribe,3,Hotel
+Neptuno,Monte Barreto,Gran Caribe,3,Hotel
+Tritón,Monte Barreto,Gran Caribe,3,Hotel
+Rancho del Tesoro,Nueva Gerona,Gran Caribe,2,Hotel
+Villa Isla de la Juventud,Nueva Gerona,Gran Caribe,2,Hotel
+Hotel Club Atlántico,Playas del Este,Gran Caribe,3,Hotel
+Hotel Villa Los Pinos,Playas del Este,Gran Caribe,3,Hotel
+Casagranda,Santiago de Cuba,Gran Caribe,4,Hotel
+Arenas Blancas,Varadero,Gran Caribe,4,Hotel
+Arenas Doradas,Varadero,Gran Caribe,4,Hotel
+Barlovento,Varadero,Gran Caribe,4,Hotel
+Cuatro Palmas,Varadero,Gran Caribe,4,Hotel
+Hotel Club Kawama,Varadero,Gran Caribe,4,Hotel
+Hotel Varadero Internacional,Varadero,Gran Caribe,4,Hotel
+Palma Real,Varadero,Gran Caribe,3,Hotel
+Playa Caleta,Varadero,Gran Caribe,4,Hotel
+Coralia Club Playa D'Oro,Varadero,Gran Caribe,4,Hotel
+Club Puntarena,Varadero,Gran Caribe,4,Hotel
+Be Live Las Morlas,Varadero,Gran Caribe,4,Hotel
+Be Live Turquesa,Varadero,Gran Caribe,4,Hotel
+Barceló Solymar,Varadero,Gran Caribe,4,Hotel
+Hotetur SunBeach,Varadero,Gran Caribe,3,Hotel
+Iberostar Tainos,Varadero,Gran Caribe,4,Hotel
+Hotel Villa Tortuga,Varadero,Gran Caribe,3,Hotel
+Hotel Villa Cuba,Varadero,Gran Caribe,4,Hotel
+NH Capri,Vedado,Gran Caribe,4,Hotel
+Hotel Nacional de Cuba,Vedado,Gran Caribe,5,Hotel
+Hotel Habana Riviera,Vedado,Gran Caribe,4,Hotel
+Presidente,Vedado,Gran Caribe,4,Hotel
+Hotel Victoria,Vedado,Gran Caribe,4,Hotel
+Tryp Habana Libre,Vedado,Gran Caribe,5,Hotel
+Saint John's,Vedado,Gran Caribe,3,Hotel
+Hotel Vedado,Vedado,Gran Caribe,3,Hotel
+Hotel Encanto Casa Verde,Gran Caribe,4,Hotel
+Hotel Rancho Luna,Gran Caribe,3,Hotel
+Beltrán de Santa Cruz,Centro Tradicional,Habaguanex,3,Hotel
+Hostal Los Frailes,Centro Tradicional,Habaguanex,3,Hotel
+O'Farrill,Centro Tradicional,Habaguanex,4,Hotel
+Telégrafo,Centro Tradicional,Habaguanex,4,Hotel
+San Miguel,Centro Tradicional,Habaguanex,3,Hotel
+Parkview,Centro Tradicional,Habaguanex,3,Hotel
+Conde de Villanueva,Centro Tradicional,Habaguanex,4,Hotel
+Hostal Valencia,Centro Tradicional,Habaguanex,3,Hotel
+Comendador,Centro Tradicional,Habaguanex,3,Hotel
+Hotel Florida,Centro Tradicional,Habaguanex,4,Hotel
+Palacio Marqués de Prado Ameno,Centro Tradicional,Habaguanex,4,Hotel
+Armadores de Santander,Centro Tradicional,Habaguanex,4,Hotel
+Hostal Tejadillo,Centro Tradicional,Habaguanex,3,Hotel
+Raquel,Centro Tradicional,Habaguanex,4,Hotel
+Saratoga,Centro Tradicional,Habaguanex,5,Hotel
+Santa Isabel,Centro Tradicional,Habaguanex,5,Hotel
+Mesón de la Flota,Centro Tradicional,Habaguanex,3,Hotel
+Ambos Mundos,Centro Tradicional,Habaguanex,4,Hotel
+Habana 612,Centro Tradicional,Habaguanex,4,Hotel
+Puntaventura,Baconao,Islazul,2,Hotel
+Costa Morena,Baconao,Islazul,3,Hotel
+Sierra Maestra,Bayamo,Islazul,3,Hotel
+Royalton,Bayamo,Islazul,2,Hotel
+Villa Bayamo,Bayamo,Islazul,2,Hotel
+Camagüey,Camagüey,Islazul,2,Hotel
+Gran Hotel Camagüey,Camagüey,Islazul,3,Hotel
+Isla de Cuba,Camagüey,Islazul,1,Hotel
+Colón,Camagüey,Islazul,2,Hotel
+Plaza,Camagüey,Islazul,2,Hotel
+Puerto Príncipe,Camagüey,Islazul,1,Hotel
+Villa Jardín de  Los Cocos,Cayo Coco,Islazul,,Hotel
+Villazul,Cayo Coco,Islazul,,Hotel
+Lido,Centro Tradicional,Islazul,2,Hotel
+Lincoln,Centro Tradicional,Islazul,3,Hotel
+Caribbean,Centro Tradicional,Islazul,2,Hotel
+Ciego de Ávila,Ciego de Ávila,Islazul,3,Hotel
+Santiago-Habana,Ciego de Ávila,Islazul,2,Hotel
+Villa Punta La Cueva,Cienfuegos,Islazul,1,Hotel
+AH Las Brisas,Cojímar,Islazul,2,Hotel
+AH Costazul,Cojímar,Islazul,2,Hotel
+Hotel Panamericano,Cojímar,Islazul,3,Hotel
+Hotel Elguea,Elguea,Islazul,3,Hotel
+Cabañas Elguea,Elguea,Islazul,2,Hotel
+Florida,Fuera de Polo Camagüey,Islazul,2,Hotel
+Caonaba,Fuera de Polo Camagüey,Islazul,1,Hotel
+Bruzón,Fuera de Polo Ciudad Habana,Islazul,1,Hotel
+Niquero,Fuera de Polo Granma,Islazul,2,Hotel
+Guacanayabo,Fuera de Polo Granma,Islazul,3,Hotel
+Balcón de la Sierra,Fuera de Polo Granma,Islazul,2,Hotel
+Villa Santo Domingo,Fuera de Polo Granma,Islazul,2,Hotel
+Caimanera,Fuera de Polo Guantánamo,Islazul,3,Hotel
+Don Lino,Fuera de Polo Holguín,Islazul,3,Hotel
+Miraflores,Fuera de Polo Holguín,Islazul,3,Hotel
+Las Yagrumas,Fuera de Polo La Habana,Islazul,3,Hotel
+Las Tunas,Fuera de Polo Las Tunas,Islazul,2,Hotel
+La Gran Piedra,Fuera de Polo Santiago de Cuba,Islazul,2,Hotel
+Hanabanilla,Fuera de Polo Villa Clara,Islazul,2,Hotel
+Brisas del Mar,Fuera de Polo Villa Clara,Islazul,2,Hotel
+Guantánamo,Guantánamo,Islazul,2,Hotel
+La Lupe,Guantánamo,Islazul,2,Hotel
+Villa Cabañas Guardalavaca,Guardalavaca,Islazul,2,Hotel
+Pernik,Holguín,Islazul,3,Hotel
+El Bosque,Holguín,Islazul,3,Hotel
+Mirador de Mayabe,Holguín,Islazul,3,Hotel
+Villa Camping,Jibacoa,Islazul,1,Hotel
+Villa Loma,Jibacoa,Islazul,2,Hotel
+Zona 22,Jibacoa,Islazul,1,Hotel
+Villa Laguna Grande,Laguna Grande,Islazul,1,Hotel
+Canimao,Matanzas,Islazul,3,Hotel
+Morón,Morón,Islazul,3,Hotel
+Parador San Fernando,Morón,Islazul,2,Hotel
+Vueltabajo,Pinar del Río,Islazul,3,Hotel
+Pinar del Río,Pinar del Río,Islazul,2,Hotel
+Villa Yaguanabo,Playa Inglés - Yaguanabo,Islazul,1,Hotel
+AH Atlántico Las Terrazas,Playas del Este,Islazul,3,Hotel
+Zona 6 Arenas Blancas Boca Ciega,Playas del Este,Islazul,1,Hotel
+Zona 10 Caletas Blancas Boca Ciega,Playas del Este,Islazul,1,Hotel
+Zona 8 Burbuja Azul Boca Ciega,Playas del Este,Islazul,1,Hotel
+Zona 9 Boca Ciega,Playas del Este,Islazul,1,Hotel
+Zona Veneciana Brisas del Mar,Playas del Este,Islazul,1,Hotel
+Mirador del Mar,Playas del Este,Islazul,2,Hotel
+Zona Agua Marina Brisas del Mar,Playas del Este,Islazul,1,Hotel
+Villa Sol y Mar Boca Ciega,Playas del Este,Islazul,2,Hotel
+Villa Los Laureles Boca Ciega,Playas del Este,Islazul,3,Hotel
+Zona 11 Solymar Boca Ciega,Playas del Este,Islazul,1,Hotel
+Mirador Santa María,Playas del Este,Islazul,1,Hotel
+Villa Playa Hermosa,Playas del Este,Islazul,2,Hotel
+Marea Blanca,Playas del Este,Islazul,1,Hotel
+Villa Los Marinos,Playas del Este,Islazul,1,Hotel
+Miramar,Playas del Este,Islazul,1,Hotel
+Motel Las Vistas,Playas del Este,Islazul,1,Hotel
+Pasacaballo,Rancho Luna,Islazul,3,Hotel
+Mirador San Diego,San Diego - La Güira,Islazul,3,Hotel
+Los Lagos,San José del Lago,Islazul,2,Hotel
+Los Laureles,Sancti Spíritus,Islazul,2,Hotel
+Zaza,Sancti Spíritus,Islazul,2,Hotel
+Rancho Hatuey,Sancti Spíritus,Islazul,3,Hotel
+Santa Clara Libre,Santa Clara,Islazul,2,Hotel
+Complejo de Alojamiento Playa Santa Lucía,Santa Lucía,Islazul,1,Hotel
+Las Américas,Santiago de Cuba,Islazul,3,Hotel
+Libertad,Santiago de Cuba,Islazul,2,Hotel
+Rex,Santiago de Cuba,Islazul,2,Hotel
+Hostal San Basilio,Santiago de Cuba,Islazul,3,Hotel
+San Juan,Santiago de Cuba,Islazul,3,Hotel
+Rancho Club,Santiago de Cuba,Islazul,2,Hotel
+Balcón del Caribe,Santiago de Cuba,Islazul,3,Hotel
+La Cecilia,Santiago de Cuba,Islazul,2,Hotel
+Oasis,Varadero,Islazul,3,Hotel
+Acuazul,Varadero,Islazul,3,Hotel
+Mar del Sur,Varadero,Islazul,2,Hotel
+Villa La Mar,Varadero,Islazul,2,Hotel
+Herradura,Varadero,Islazul,2,Hotel
+Los Delfines,Varadero,Islazul,3,Hotel
+Pullman,Varadero,Islazul,2,Hotel
+Dos Mares,Varadero,Islazul,3,Hotel
+Villa Artística,Varadero,Islazul,1,Hotel
+Ledo,Varadero,Islazul,1,Hotel
+Villa Bellosol,Varadero,Islazul,2,Hotel
+Colina,Vedado,Islazul,3,Hotel
+Moka,Soroa - Las Terrazas,Las Terrazas,4,Hotel
+Sitio La Guira,Cayo Coco,Palmares,2,Hotel
+Ranchón de Aguada,Fuera de Polo Cienfuegos,Palmares,,Hotel
+Hostal El Paseo,Fuera de Polo Las Tunas,Palmares,,Hotel
+La Casona,Morón,Palmares,3,Hotel
+Mesón del Regidor,Trinidad - Valle de los Ingenios,Palmares,3,Hotel
+Club de Golf,Varadero,Palmares,5,Hotel
+Finca San Vicente,Viñales,Palmares,1,Hotel
+Las Magnolias,Viñales,Palmares,1,Hotel
+Club Acuario,Miramar,Cubanacán,3,Hotel
