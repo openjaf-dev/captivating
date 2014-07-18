@@ -102,6 +102,7 @@ class import_prices(data_utils, TransientModel):
         
         head = {sheet.cell_value(0, x): x for x in range(sheet.ncols)} 
         product_hotel = False
+        hotel_info = ''
         supplier_id = False
         suppinfo_id = False
         meal_plan_id = False
@@ -124,6 +125,12 @@ class import_prices(data_utils, TransientModel):
                 return sheet.cell_value(r, head[attr])
                 
             if cell('HOTEL NAME'):
+                # insert additional information (room and hotel comments) of previous hotel
+                if suppinfo_id:
+                    product_supplierinfo.write(cr, uid, [suppinfo_id], {'info': hotel_info})
+                    print hotel_info
+                    hotel_info = ''
+                
                 hotel_name = cell('HOTEL NAME').strip()
                 category_id = self.get_category(cr, uid, 'Hotel', context)
                 product_id, ratio = self.get_product(cr, uid, category_id, hotel_name, display_warning)
@@ -210,7 +217,14 @@ class import_prices(data_utils, TransientModel):
                     simple_option = True                    
                 elif cell('ROOM TYPE') == 'T':
                     triple_value = self.get_float(cell('NET RATE'))
-                    triple_option = True                    
+                    triple_option = True    
+            
+            if cell('HOTEL COMMENTS') and cell('HOTEL COMMENTS').strip() != '':
+                hotel_info = cell('HOTEL COMMENTS') + '\n\n' + hotel_info 
+                                
+            if cell('ROOM COMMENTS') and cell('ROOM COMMENTS').strip() != '':
+                hotel_info += self.pool.get('option.value').name_get(cr, uid, room_type_id)[0][1] + '\n' 
+                hotel_info +=  cell('ROOM COMMENTS') + '\n\n' 
             
             if simple_option and double_option and triple_option and product_hotel and supplier_id:
                  pvals = {
@@ -243,7 +257,12 @@ class import_prices(data_utils, TransientModel):
                  else:
                      pricelist_partnerinfo.create(cr, uid, pvals, context)
                      
-                 #msg += 'Price list added \n'     
+           
+        # insert additional information (room and hotel comments) of previous hotel
+        # last hotel in sheet case
+        if suppinfo_id:
+            product_supplierinfo.write(cr, uid, [suppinfo_id], {'info': hotel_info})
+            hotel_info = ''      #msg += 'Price list added \n'     
                 
         return msg
         

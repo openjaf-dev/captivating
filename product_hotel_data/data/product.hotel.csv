@@ -9,11 +9,11 @@ Club Amigo Ancón,Ancón,Cubanacán,3,Hotel
 Villa El Colibrí (El Indio),Baconao,Cubanacán,3,Hotel
 Club Amigo Carisol,Baconao,Cubanacán,3,Hotel
 Club Amigo Los Corales,Baconao,Cubanacán,3,Hotel
-Guamá,Bahía de Cochinos,Cubanacán,2,Hotel
-Playa Girón,Bahía de Cochinos,Cubanacán,2,Hotel
-Playa Larga,Bahía de Cochinos,Cubanacán,2,Hotel
+Horizontes Villa Guamá,Bahía de Cochinos,Cubanacán,2,Hotel
+Hotel Playa Girón,Bahía de Cochinos,Cubanacán,3,Hotel
+Horizontes Playa Larga,Bahía de Cochinos,Cubanacán,2,Hotel
 Pío Cuá,Bahía de Cochinos,Cubanacán,,Hotel
-Batey Don Pedro,Bahía de Cochinos,Cubanacán,,Hotel
+Finca Don Pedro,Bahía de Cochinos,Cubanacán,3,Hotel
 Hostal Velasco,Matanzas,Cubanacán,,Hotel
 NH Krystal Villas & Resort,Cayo Coco,Cubanacán,4,Hotel
 Tryp Cayo Coco,Cayo Coco,Cubanacán,4,Hotel
@@ -24,7 +24,7 @@ Hotel Palacio Azul,Cienfuegos,Cubanacán,3,Hotel
 Hotel La Unión,Cienfuegos,Cubanacán,4,Hotel
 Brisas Covarrubias,Covarrubias,Cubanacán,4,Hotel
 Bellocaribe,Fuera de Polo Ciudad Habana,Cubanacán,3,Hotel
-Mariposa,Fuera de Polo Ciudad Habana,Cubanacán,2,Hotel
+Hotel Mariposa,Fuera de Polo Ciudad Habana,Cubanacán,2,Hotel
 La Pradera,Fuera de Polo Ciudad Habana,Cubanacán,4,Hotel
 El Yarey,Fuera de Polo Granma,Cubanacán,2,Hotel
 El Saltón,Fuera de Polo Santiago de Cuba,Cubanacán,3,Hotel
@@ -43,21 +43,22 @@ Club Amigo Farallón del Caribe,Marea del Portillo,Cubanacán,4,Hotel
 Punta Piedra,Marea del Portillo,Cubanacán,2,Hotel
 El Viejo y el Mar,Marina Hemingway,Cubanacán,4,Hotel
 Marina Hemingway,Marina Hemingway,Cubanacán,4,Hotel
-Copacabana,Monte Barreto,Cubanacán,4,Hotel
-Comodoro,Monte Barreto,Cubanacán,4,Hotel
+Hotel Copacabana,Monte Barreto,Cubanacán,4,Hotel
+Hotel Comodoro,Monte Barreto,Cubanacán,4,Hotel
 Meliá Habana,Monte Barreto,Cubanacán,5,Hotel
-Chateau Miramar,Monte Barreto,Cubanacán,4,Hotel
-Tropicoco,Playas del Este,Cubanacán,2,Hotel
+Hotel Chateau Miramar,Monte Barreto,Cubanacán,4,Hotel
+Hotel Tropicoco,Playas del Este,Cubanacán,2,Hotel
 Mégano,Playas del Este,Cubanacán,3,Hotel
 Blau Arenal,Playas del Este,Cubanacán,4,Hotel
 Hotel Faro Luna,Rancho Luna,Cubanacán,3,Hotel
 Club Amigo Rancho Luna,Rancho Luna,Cubanacán,3,Hotel
 Hostal Encanto El Rijo,Sancti Spíritus,Cubanacán,3,Hotel
 Hostal Encanto Plaza,Sancti Spíritus,Cubanacán,1,Hotel
-La Granjita,Santa Clara,Cubanacán,3,Hotel
-Los Caneyes,Santa Clara,Cubanacán,3,Hotel
+Villa La Granjita,Santa Clara,Cubanacán,3,Hotel
+Villa Los Caneyes,Santa Clara,Cubanacán,3,Hotel
 América,Villa Clara,Cubanacán,3,Hotel
-Barcelona,Villa Clara,Cubanacán,3,Hotel
+Hotel Encanto Barcelona,Villa Clara,Cubanacán,3,Hotel
+Hotel Encanto Mascotte,Villa Clara,Cubanacán,3,Hotel
 Club Amigo Caracol,Santa Lucía,Cubanacán,3,Hotel
 Gran Club Santa Lucía,Santa Lucía,Cubanacán,3,Hotel
 Club Amigo Mayanabo,Santa Lucía,Cubanacán,3,Hotel
@@ -65,17 +66,17 @@ Brisas Santa Lucía,Santa Lucía,Cubanacán,4,Hotel
 Meliá Santiago de Cuba,Santiago de Cuba,Cubanacán,5,Hotel
 Motel Versalles,Santiago de Cuba,Cubanacán,3,Hotel
 Hotel E San Basilio,Santiago de Cuba,Cubanacán,3,Hotel
-Villa Soroa,Soroa - Las Terrazas,Cubanacán,3,Hotel
-Las Cuevas,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
+Horizontes Villa Soroa,Soroa - Las Terrazas,Cubanacán,3,Hotel
+Hotel Las Cuevas,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
 La Ronda,Trinidad - Valle de los Ingenios,Cubanacán,1,Hotel
-Horizontes Finca María Dolores,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
+Horizontes Finca María Dolores,Trinidad - Valle de los Ingenios,Cubanacán,2,Hotel
 Iberostar Gran Hotel Trinidad,Trinidad - Valle de los Ingenios,Cubanacán,5,Hotel
 Brisas del Caribe,Varadero,Cubanacán,4,Hotel
 Aguas Azules,Varadero,Cubanacán,3,Hotel
 Club Amigo Tropical,Varadero,Cubanacán,3,Hotel
 Breezes Varadero,Varadero,Cubanacán,4,Hotel
 Breezes Bella Costa,Varadero,Cubanacán,4,Hotel
-Tuxpan,Varadero,Cubanacán,4,Hotel
+Hotel Tuxpan,Varadero,Cubanacán,4,Hotel
 Meliá Las Américas,Varadero,Cubanacán,5,Hotel
 Meliá Varadero,Varadero,Cubanacán,5,Hotel
 Sol Palmeras,Varadero,Cubanacán,4,Hotel
@@ -84,9 +85,9 @@ Sandals Royal Hicacos,Varadero,Cubanacán,5,Hotel
 Iberostar Varadero,Varadero,Cubanacán,5,Hotel
 Meliá Las Antillas,Varadero,Cubanacán,4,Hotel
 Meliá Cohiba,Vedado,Cubanacán,5,Hotel
-Los Jazmines,Viñales,Cubanacán,3,Hotel
-La Ermita,Viñales,Cubanacán,3,Hotel
-Rancho San Vicente,Viñales,Cubanacán,3,Hotel
+Horizontes Los Jazmines,Viñales,Cubanacán,3,Hotel
+Horizontes La Ermita,Viñales,Cubanacán,3,Hotel
+Horizontes Rancho San Vicente,Viñales,Cubanacán,3,Hotel
 Hotel Telégrafo,Bayamo,Formatur,,Hotel
 Hotel Escuela Regis,Centro Tradicional,Formatur,,Hotel
 Hotel Escuela Gran Vía,Playas del Este,Formatur,2,Hotel
@@ -342,7 +343,7 @@ Sitio La Guira,Cayo Coco,Palmares,2,Hotel
 Ranchón de Aguada,Fuera de Polo Cienfuegos,Palmares,,Hotel
 Hostal El Paseo,Fuera de Polo Las Tunas,Palmares,,Hotel
 La Casona,Morón,Palmares,3,Hotel
-Mesón del Regidor,Trinidad - Valle de los Ingenios,Palmares,3,Hotel
+Mesón del Regidor,Trinidad - Valle de los Ingenios,Palmares,2,Hotel
 Club de Golf,Varadero,Palmares,5,Hotel
 Finca San Vicente,Viñales,Palmares,1,Hotel
 Las Magnolias,Viñales,Palmares,1,Hotel

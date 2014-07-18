@@ -16,7 +16,7 @@ def string_cleaning(text):
 	text = text.replace(u'Ó', 'O')
 	text = text.replace(u'Ú', 'U')
 	text = text.replace(u'Ü', 'U')
-	text = text.replace(u'Ǹ', 'n')
+	text = text.replace(u'Ñ', 'n')
 	return text.lower()
 	
 def find_closers(seq_list, seq_target, threshold=0.7):
