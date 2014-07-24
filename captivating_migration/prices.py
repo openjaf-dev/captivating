@@ -117,6 +117,7 @@ class import_prices(data_utils, TransientModel):
         simple_option = False
         triple_value = False
         triple_option = False
+        candidates_dict = {}
         for r in range(1, sheet.nrows):
             
             def cell(attr):
