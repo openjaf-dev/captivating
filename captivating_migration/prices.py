@@ -169,30 +169,17 @@ class import_prices(data_utils, TransientModel):
                             suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
                         else:
                             suppinfo_id = suppinfo_ids[0] 
-                    
-                #msg += str(supplier_id)
-                #suggestion, ratio = stringmatcher.find_closers(supplier_dict.keys(), supplier_name)
-                #real_name = supplier.browse(cr, uid, supplier_dict[suggestion]).name
-                #msg += "Supplier " + supplier_name + ", sugs:"+ real_name + " - " + str(ratio) +"\n"
-                
-                # insert res_partner
-                
+                                   
             if cell('MEAL PLAN'):
                 meal_plan_id = cell('MEAL PLAN').strip()
                 mp = self.get_option_value(cr, uid, meal_plan_id, 'mp', context)
-                #msg += str(mp) + "\n"
-                #option_type = self.pool.get('option.type')
-                #option_type.search('Meal Plan')
-                #msg += 'ok'
                 
             if cell('ROOM CATEGORY'):
                 room_type_str = cell('ROOM CATEGORY').strip()
                 room_type_id = self.get_option_value(cr, uid, room_type_str, 'rt', context)
-                #msg += str(rt) + '\n'
                 
             if cell('DATEBAND FROM'):
                 date_from = self.get_date(cell('DATEBAND FROM'))
-                #msg += str(date_from)
                 double_value = False
                 double_option = False
                 simple_value = False
@@ -201,8 +188,7 @@ class import_prices(data_utils, TransientModel):
                 triple_option = False
                 
             if cell('DATEBAND TO'):
-                date_to = self.get_date(cell('DATEBAND TO'))
-                #msg += str(date_to)                
+                date_to = self.get_date(cell('DATEBAND TO'))  
         
             if cell('ROOM TYPE'):
                 if cell('ROOM TYPE') == 'C1':
