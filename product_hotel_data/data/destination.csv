@@ -1,68 +1,70 @@
-name
-Ancón
-Baconao
-Bahía de Cochinos
-Bahía de Naranjo-Yuraguanal
-Baracoa
-Bayamo
-Camagüey
-Cayo Coco
-Cayo Ensenachos
-Cayo Guillermo
-Cayo Largo
-Cayo Las Brujas
-Cayo Levisa
-Cayo Saetía
-Cayo Santa María
-Centro Tradicional
-Ciego Camagüey
-Ciego de Ávila
-Cienfuegos
-Cojímar
-Colony
-Covarrubias
-Elguea
-Estero Ciego
-Fuera de Polo Camagüey
-Fuera de Polo Cienfuegos
-Fuera de Polo Ciudad Habana
-Fuera de Polo Granma
-Fuera de Polo Guantánamo
-Fuera de Polo Holguín
-Fuera de Polo La Habana
-Fuera de Polo Las Tunas
-Fuera de Polo Pinar del Río
-Fuera de Polo Santiago de Cuba
-Fuera de Polo Villa Clara
-Guamá
-Guanahacabibes
-Guantánamo
-Guardalavaca
-Holguín
-Jibacoa
-Laguna Grande
-Maguana
-Marea del Portillo
-Marina Hemingway
-Matanzas
-Monte Barreto
-Morón
-Nueva Gerona
-Pesquero
-Pinar del Río
-Playa Inglés - Yaguanabo
-Playas del Este
-Rancho Luna
-San Diego - La Güira
-San José del Lago
-Sancti Spíritus
-Santa Clara
-Santa Lucía
-Santiago de Cuba
-Soroa - Las Terrazas
-Topes de Collantes
-Trinidad - Valle de los Ingenios
-Varadero
-Vedado
-Villa Clara
-Viñales
+name,parent_id
+"Havana",""
+"Matanzas",""
+"Varadero","Matanzas"
+"Ciego de Avila",""
+"Cayo Guillermo","Ciego de Avila"
+"Old Havana","Havana"
+"Villa Clara",""
+"Santa Clara City","Villa Clara"
+"Eastern Beaches","Havana"
+"Granma",""
+"Santiago de Cuba",""
+"Remedios","Villa Clara"
+"Cienaga de Zapata","Matanzas"
+"Holguin",""
+"Playa Pesquero","Holguin"
+"Cayo Coco","Ciego de Avila"
+"Mayabeque",""
+"Jibacoa","Mayabeque"
+"Las Tunas",""
+"Covarrubias","Las Tunas"
+"Guardalavaca","Holguin"
+"Camaguey",""
+"Santa Lucia","Camaguey"
+"Playa Chivirico","Santiago de Cuba"
+"Sancti Spiritus",""
+"Trinidad","Sancti Spiritus"
+"Las Tunas City","Las Tunas"
+"Guantanamo",""
+"Caimanera","Guantanamo"
+"Camaguey City","Camaguey"
+"Matanzas City","Matanzas"
+"Vedado","Havana"
+"Santiago de Cuba City","Santiago de Cuba"
+"Cienfuegos",""
+"Pinar del Rio",""
+"Cayo Levisa","Pinar del Rio"
+"Miramar","Havana"
+"Isla de la Juventud",""
+"Ciego de Avila City","Ciego de Avila"
+"Parque Baconao","Santiago de Cuba"
+"Marea del Portillo","Granma"
+"Holguin City","Holguin"
+"Baracoa","Guantanamo"
+"Corralillo","Villa Clara"
+"Cayo Santa Maria","Villa Clara"
+"Florida Town","Camaguey"
+"Manzanillo","Granma"
+"Guantanamo City","Guantanamo"
+"Hanabanilla","Villa Clara"
+"Sancti Spiritus City","Sancti Spiritus"
+"Cayo Ensenachos","Villa Clara"
+"Cayo Largo","Isla de la Juventud"
+"Topes de Collantes","Sancti Spiritus"
+"Vinales","Pinar del Rio"
+"Jardines de la Reina","Ciego de Avila"
+"Guanahacabibes","Pinar del Rio"
+"San Diego","Pinar del Rio"
+"Artemisa",""
+"Las Terrazas","Artemisa"
+"City of Moron","Ciego de Avila"
+"Gibara","Holguin"
+"Pinar del Rio City","Pinar del Rio"
+"Bayamo City","Granma"
+"Cayo Saetia","Holguin"
+"Sierra Maestra","Santiago de Cuba"
+"Cayo Las Brujas","Villa Clara"
+"Pinares de Mayari","Holguin"
+"Yaguajay","Sancti Spiritus"
+"Soroa","Artemisa"

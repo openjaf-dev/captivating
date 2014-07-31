@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	<record id="travel_product_hotel_form_view2" model="ir.ui.view">
+        	<field name="name">travel.product.hotel.form.view2</field>
+            <field name="model">product.hotel</field>
+            <field name="inherit_id" ref="travel_hotel.travel_product_hotel_form_view"/>
+            <field name="arch" type="xml">
+				<xpath expr="/form/sheet/group/group/field[@name='destination']" position="after">
+					<field name="address" />
+				</xpath>     	
+				<xpath expr="/form/sheet/group/group/field[@name='stars']" position="before">
+					<field name="phone" />
+					<field name="fax" />
+				</xpath>   
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,11 +1,31 @@
 name,customer,supplier
-Cons. Estado,FALSE,TRUE
-Cubamar,FALSE,TRUE
-Cubanacán,FALSE,TRUE
-Formatur,FALSE,TRUE
-Gaviota,FALSE,TRUE
-Gran Caribe,FALSE,TRUE
-Habaguanex,FALSE,TRUE
-Islazul,FALSE,TRUE
-Las Terrazas,FALSE,TRUE
-Palmares,FALSE,TRUE
+"Cubanacan Hoteles",FALSE,TRUE
+"Islazul",FALSE,TRUE
+"Occidental Hotels & Resorts",FALSE,TRUE
+"Habaguanex S.A.",FALSE,TRUE
+"Gran Caribe",FALSE,TRUE
+"Barcelo Hotels & Resorts",FALSE,TRUE
+"Servimed",FALSE,TRUE
+"Blau Hotels & Resorts",FALSE,TRUE
+"Hotetur",FALSE,TRUE
+"Superclubs",FALSE,TRUE
+"NH Hotels",FALSE,TRUE
+"Gaviota Hoteles",FALSE,TRUE
+"HOTUSA Hotels",FALSE,TRUE
+"H10 Hotels",FALSE,TRUE
+"HUSA Hoteles",FALSE,TRUE
+"Iberostar Hotels & Resorts",FALSE,TRUE
+"Avalon",FALSE,TRUE
+"Be Live",FALSE,TRUE
+"Melia Hotels Int.",FALSE,TRUE
+"Blue Diamond Hotels & Resorts",FALSE,TRUE
+"Accor",FALSE,TRUE
+"Las Terrazas",FALSE,TRUE
+"BelleVue",FALSE,TRUE
+"Pestana Hotels & Resorts",FALSE,TRUE
+"RIU Hotels & Resorts",FALSE,TRUE
+"ROC Hotels",FALSE,TRUE
+"Cubamar",FALSE,TRUE
+"MINFAR",FALSE,TRUE
+"CIMEX",FALSE,TRUE
+"Varadero Golf Course",FALSE,TRUE
