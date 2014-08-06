@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from collections import Counter
 from difflib import SequenceMatcher
 import operator
@@ -15,8 +14,10 @@ class CorpusDict:
 				self.termsDict[term][0] += 1
 				self.termsDict[term][1].append(item)
 		self.duplicates = [key for key, value in Counter(self.item_list).iteritems() if value>1]
-		
+
 	def get_terms(self, item_string):
+		item_string = item_string.replace(u'-', ' ')
+		item_string = item_string.replace(u'&', ' ')
 		terms = [self.string_cleaning(i) for i in item_string.split(' ')]
 		try:
 			terms.remove('')
@@ -24,7 +25,7 @@ class CorpusDict:
 			pass
 		return terms
 
-	def get_closer(self, target_item, min_ratio=0.5, min_rratio=0.7):
+	def get_closers(self, target_item, min_ratio=0.4, min_rratio=0.7):
 		terms = self.get_terms(target_item)
 		asociated_terms = {}
 		candidate_items = []
@@ -37,7 +38,7 @@ class CorpusDict:
 		candidates_values = {}
 		for item in candidate_items:
 			candidates_values[item] = self.compute_distance(asociated_terms.copy(), item)
-		
+
 		candidates = sorted(candidates_values.iteritems(), key=operator.itemgetter(1))
 		if len(candidates) == 0 or (len(candidates) == 1 and candidates[-1][1] <= min_ratio):
 			result = []
@@ -56,9 +57,8 @@ class CorpusDict:
 		# to detect cases of repeated elements in item_list
 		for elem in result:
 			counter = self.item_list.count(elem[0])
-			if counter > 1:
-				idx = result.index(elem)
-				result[idx] = (result[idx][0] + ' ('+str(counter)+')', result[idx][1])
+			idx = result.index(elem)
+			result[idx] = (result[idx][0], counter, result[idx][1])
 		return result
 
 		#return sorted(candidates_values.iteritems(), key=operator.itemgetter(1))
@@ -80,23 +80,28 @@ class CorpusDict:
 		unionsum = 0
 		for term in union:
 			unionsum += asociated_terms[term]
+		if intersum/unionsum > 0.99999:
+			return 1.0
 		return intersum/unionsum
 
 	def string_cleaning(self, text):
-		text = text.replace('á', 'a')
-		text = text.replace('é', 'e')
-		text = text.replace('í', 'i')
-		text = text.replace('ó', 'o')
-		text = text.replace('ú', 'u')
-		text = text.replace('ü', 'u')
-		text = text.replace('ñ', 'n')
-		text = text.replace('Á', 'A')
-		text = text.replace('É', 'E')
-		text = text.replace('Í', 'I')
-		text = text.replace('Ó', 'O')
-		text = text.replace('Ú', 'U')
-		text = text.replace('Ü', 'U')
-		text = text.replace('Ñ', 'n')
+		text = text.replace(u'á', 'a')
+		text = text.replace(u'é', 'e')
+		text = text.replace(u'í', 'i')
+		text = text.replace(u'ó', 'o')
+		text = text.replace(u'ú', 'u')
+		text = text.replace(u'ü', 'u')
+		text = text.replace(u'ñ', 'n')
+		text = text.replace(u'Á', 'A')
+		text = text.replace(u'É', 'E')
+		text = text.replace(u'Í', 'I')
+		text = text.replace(u'Ó', 'O')
+		text = text.replace(u'Ú', 'U')
+		text = text.replace(u'Ü', 'U')
+		text = text.replace(u'Ñ', 'n')
+		text = text.replace(u'"', '')
+		text = text.replace(u'-', ' ')
+		text = text.replace(u'&', ' ')
 		return text.lower()
 
 	def get_closer_term(self, target_term):
