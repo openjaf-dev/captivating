@@ -1,6 +1,4 @@
-import stringmatcher
-import datetime
-import base64
+import stringmatcher, datetime, base64, json
 
 BASE_DATE = 693594
 CATEGORIES = {
@@ -47,7 +45,45 @@ class data_utils(object):
                 model_obj = model.browse(cr, uid, model_id, context)
                 product_id = model_obj.product_id.id
         return product_id, ratio
-
+        
+    def get_product_new(self, cr, uid, categ_id, name, item_dict, corpus, context):
+        # this method also modified item_dict
+        product_hotel = None
+        candidates = []
+        if name in item_dict:
+            if item_dict[name] in ["Create new", []]:
+                category = self.pool.get('product.category')
+                categ = category.browse(cr, uid, categ_id)
+                cname = categ.name == 'Miscellaneous' and 'misc' or categ.name.lower() 
+                model = self.pool.get('product.' + cname)
+                vals = {'name': name, 'categ_id': categ_id}
+                model_id = model.create(cr, uid, vals, context)
+                model_obj = model.browse(cr, uid, model_id, context)
+                del item_dict[name]
+                return model_obj
+            # hacer algo si hay ambiguous
+            else:
+                candidates = corpus.get_closers(item_dict[name][0])
+        else:
+            candidates = corpus.get_closers(name)
+        
+        if len(candidates) == 0:
+            item_dict[name] = "Create new"
+        else:
+            if candidates[0][1] == 1 and candidates[0][2] == 1.0:
+                product = self.pool.get('product.hotel')
+                product_id = product.search(cr, uid, [('name', '=', candidates[0][0]), ('categ_id', '=', categ_id)], context=context)
+                if name in item_dict: del item_dict[name]
+                return product.browse(cr, uid, product_id, context)[0]
+            else:
+                item_dict.setdefault(name, [])
+                for prod in candidates:
+                    extra = ""
+                    if prod[1] > 1:
+                        extra = " (Ambiguos name)"
+                    item_dict[name].append(prod[0]+extra)
+        return product_hotel
+                
     def get_partner(self, cr, uid, name, customer, display_warning, context=None):
         partner = self.pool.get('res.partner')
         partner_ids = partner.search(cr, uid, [('name', '=', name)], context=context)
@@ -107,3 +143,9 @@ class data_utils(object):
             return float(value)
         except:
             return 0.0
+    
+    def get_hotel_candidates(self, text):
+        if text:
+            return json.loads(text)
+        return {}
+

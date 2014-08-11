@@ -19,9 +19,7 @@
 #
 ##############################################################################
 
-import xlrd
-import datetime
-import base64
+import xlrd, datetime, base64, itemmatcher, json
 from data_utils import data_utils
 
 from openerp.osv import fields, osv
@@ -56,6 +54,12 @@ class import_prices(data_utils, TransientModel):
 #            for supplinfo_id in suppl_ids:                
 #                product_supplierinfo.unlink(cr, uid, supplinfo_id, context)
 
+            hotel = self.pool.get('product.product')
+            categ_id = self.get_category(cr, uid, 'Hotel', context)
+            hotel_ids = hotel.search(cr, uid, [('categ_id', '=', categ_id)], context=context)
+            hotel_names = [x['name'] for x in hotel.read(cr, uid, hotel_ids, ['name'])]
+            hotel_corpus = itemmatcher.CorpusDict(hotel_names)
+            hotel_candidates = self.get_hotel_candidates(self.read(cr, uid, obj.id, ['result'], context)['result'])            
             
             accept_suggestion = obj.accept 
             for sheet in document.sheets():
@@ -67,15 +71,13 @@ class import_prices(data_utils, TransientModel):
                         destination_id = destination.create(cr, uid, destination_vals, context)
                     else:
                         destination_id = destination_id[0]
-                    new_msg = self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context)
+                    new_msg = self.import_prices_data(cr, uid, sheet, destination_id, display_warning, hotel_corpus, hotel_candidates, context)
                     if new_msg != '':
                         msg += new_msg + '\n'
                     else:
                         msg += new_msg
-                    
-            #except:
-            #    raise osv.except_osv('Error!', 'The file is not valid.')
-
+                        
+            msg = json.dumps(hotel_candidates, indent=4, separators=(',', ': '))
             self.write(cr, uid, obj.id, {'result': msg}, context)
             return {
                 'name': 'Import Prices',
@@ -90,7 +92,7 @@ class import_prices(data_utils, TransientModel):
         else:
             raise osv.except_osv('Error!', 'You must select a file.')
 
-    def import_prices_data(self, cr, uid, sheet, destination_id, display_warning, context):
+    def import_prices_data(self, cr, uid, sheet, destination_id, display_warning, hotel_corpus, hotel_candidates, context):
         
         msg = ''
         
@@ -117,7 +119,6 @@ class import_prices(data_utils, TransientModel):
         simple_option = False
         triple_value = False
         triple_option = False
-        candidates_dict = {}
         for r in range(1, sheet.nrows):
             
             def cell(attr):
@@ -129,20 +130,11 @@ class import_prices(data_utils, TransientModel):
                 # insert additional information (room and hotel comments) of previous hotel
                 if suppinfo_id:
                     product_supplierinfo.write(cr, uid, [suppinfo_id], {'info': hotel_info})
-                    print hotel_info
                     hotel_info = ''
                 
                 hotel_name = cell('HOTEL NAME').strip()
                 category_id = self.get_category(cr, uid, 'Hotel', context)
-                product_id, ratio = self.get_product(cr, uid, category_id, hotel_name, display_warning)
-                product_hotel = product_product.browse(cr, uid, product_id, context)
-                
-                hotel_id = hotel.search(cr, uid, [('name', '=', product_hotel.name)])[0]
-                hotel.write(cr, uid, hotel_id, {'destination': destination_id})
-                
-                if ratio:
-                    msg += "WARNING: " + hotel_name + " is " + product_hotel.name + "? " + str(ratio) + '\n'   
-                    product_hotel = None
+                product_hotel = self.get_product_new(cr, uid, category_id, hotel_name, hotel_candidates, hotel_corpus, context)
                 
             if cell('SUPPLIER'):
                 if product_hotel:
