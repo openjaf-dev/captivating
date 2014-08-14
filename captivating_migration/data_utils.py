@@ -121,6 +121,8 @@ class data_utils(object):
                     'supplier': not customer
                 }
                 partner_id = partner_model.create(cr, uid, vals, context)
+                del item_dict[name]
+                return partner_model.browse(cr, uid, [partner_id], context)[0]
             # hacer algo si hay ambiguous
             else:
                 candidates = corpus.get_closers(item_dict[name][0])

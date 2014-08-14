@@ -37,7 +37,7 @@ class CorpusDict:
 		candidate_items = []
 		for term in terms:
 			closer, ratio = self.get_closer_term(term)
-			asociated_terms[closer] = ratio * (1.0/self.termsDict[closer][0])
+			asociated_terms[closer] = ratio
 			candidate_items.extend(self.termsDict[closer][1])
 
 		candidate_items = list(set(candidate_items))
@@ -83,6 +83,10 @@ class CorpusDict:
 		intersum = 0
 		for term in intersection:
 			intersum += asociated_terms[term]
+		
+		for term in target_terms:
+			asociated_terms[term] = 1.0
+		
 		unionsum = 0
 		for term in union:
 			unionsum += asociated_terms[term]

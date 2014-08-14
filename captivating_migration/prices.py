@@ -150,8 +150,6 @@ class import_prices(data_utils, TransientModel):
                 if product_hotel:
                    suppinfo_id = None
                    supplier_name = str(cell('SUPPLIER')).strip()
-                   if supplier_name == 'HAVANATOUR':
-                       pass
                    supplier = self.get_partner_new(cr, uid, supplier_name, False, partner_candidates, partner_corpus, context)
                    if supplier:  
                        suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
