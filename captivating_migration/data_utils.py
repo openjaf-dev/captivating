@@ -108,6 +108,41 @@ class data_utils(object):
                 partner_id = partner.create(cr, uid, vals, context)
         return partner_id, ratio
 
+    def get_partner_new(self, cr, uid, name, customer, item_dict, corpus, context):
+        # this method also modified item_dict
+        partner_model = self.pool.get('res.partner')
+        partner = None
+        candidates = []
+        if name in item_dict:
+            if item_dict[name] in ["Create new", []]:
+                vals = {
+                    'name': name,
+                    'customer': customer,
+                    'supplier': not customer
+                }
+                partner_id = partner_model.create(cr, uid, vals, context)
+            # hacer algo si hay ambiguous
+            else:
+                candidates = corpus.get_closers(item_dict[name][0])
+        else:
+            candidates = corpus.get_closers(name)
+        
+        if len(candidates) == 0:
+            item_dict[name] = "Create new"
+        else:
+            if candidates[0][1] == 1 and candidates[0][2] == 1.0:
+                partner_id = partner_model.search(cr, uid, [('name', '=', candidates[0][0])], context=context)
+                if name in item_dict: del item_dict[name]
+                return partner_model.browse(cr, uid, partner_id, context)[0]
+            else:
+                item_dict.setdefault(name, [])
+                for p in candidates:
+                    extra = ""
+                    if p[1] > 1:
+                        extra = " (Ambiguos name)"
+                    item_dict[name].append(p[0]+extra)
+        return partner
+
     def get_option_value(self, cr, uid, name, code, context=None):
         ot = self.pool.get('option.type')
         ov = self.pool.get('option.value')
@@ -144,7 +179,7 @@ class data_utils(object):
         except:
             return 0.0
     
-    def get_hotel_candidates(self, text):
+    def get_candidates(self, text):
         if text:
             return json.loads(text)
         return {}

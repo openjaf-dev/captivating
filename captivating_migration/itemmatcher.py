@@ -4,7 +4,7 @@ from difflib import SequenceMatcher
 import operator
 
 class CorpusDict:
-	def __init__(self, item_list):
+	def __init__(self, item_list, aliases={}):
 		self.item_list = item_list
 		self.termsDict = {} # key:term value:frequency, items 
 		for item in item_list:
@@ -14,6 +14,7 @@ class CorpusDict:
 				self.termsDict[term][0] += 1
 				self.termsDict[term][1].append(item)
 		self.duplicates = [key for key, value in Counter(self.item_list).iteritems() if value>1]
+		self.aliases = aliases
 
 	def get_terms(self, item_string):
 		item_string = item_string.replace(u'-', ' ')
@@ -26,6 +27,11 @@ class CorpusDict:
 		return terms
 
 	def get_closers(self, target_item, min_ratio=0.4, min_rratio=0.7):
+		if target_item in self.aliases.keys():
+			target_item = self.aliases[target_item]
+		return self.get_item_closers(target_item)
+
+	def get_item_closers(self, target_item, min_ratio=0.4, min_rratio=0.7):
 		terms = self.get_terms(target_item)
 		asociated_terms = {}
 		candidate_items = []

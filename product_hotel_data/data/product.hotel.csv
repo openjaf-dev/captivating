@@ -63,7 +63,7 @@ name,destination,chain_id,phone,fax,address,categ_id
 "Colon","Camaguey City","Islazul","032 28 3368/46","032 28 3346","Repblica No. 472, Camague",Hotel
 "Colonial Cayo Coco","Cayo Coco","Cubanacan Hoteles","033 30 1311","033 30 1384","Cayo Coco, Jardines del Rey",Hotel
 "Comendador","Old Havana","Habaguanex S.A.","867 1037","860 5628","Calle Obrapia, No. 55 esq. a Baratillo, Habana Vieja",Hotel
-"Comodoro Hotel & Bungalows","Miramar","Cubanacan Hoteles","204 5551","204 2089","Ave 3ra y 84, Playa. La Habana",Hotel
+"Hotel Comodoro","Miramar","Cubanacan Hoteles","204 5551","204 2089","Ave 3ra y 84, Playa. La Habana",Hotel
 "Conde de Villanueva","Old Havana","Habaguanex S.A.","862 9293/ 94","862 9682","Calle de los Mercaderes, No. 202, esq. a Lamparilla, Habana Vieja",Hotel
 "Copacabana","Miramar","Cubanacan Hoteles","204 1037","204 2846","Ave 1ra. No. 4404 e/ 44 y 46, Playa. La Habana",Hotel
 "Costa Morena","Santiago de Cuba","Islazul","022 35 6126/27","022 35 6155","Carretera a Baconao, Km. 38 1/2, Sigua",Hotel
@@ -71,7 +71,7 @@ name,destination,chain_id,phone,fax,address,categ_id
 "Don Lino","Guardalavaca","Islazul","024 430 308","024 430 309","Playa Blanca, Rafael Freyre",Hotel
 "Dos Mares","Varadero","Islazul","045 61 2702","045 667499","Calle 53 y 1ra Ave, Varadero",Hotel
 "El Bosque","Miramar","Gaviota Hoteles","204 9232","204 5637","Calle 28 A e/ 49 A y 49 B, Reparto Kohly, Playa",Hotel
-"El Bosque Holguin","Holguin City","Islazul","024 48 1012","024 48 1140","Ave Jorge Dimitrov, Holguin",Hotel
+"Villa El Bosque","Holguin City","Islazul","024 48 1012","024 48 1140","Ave Jorge Dimitrov, Holguin",Hotel
 "El Castillo","Baracoa","Gaviota Hoteles","021 45 164-66","021 45 223","Calle Calixto Garcia, Reparto Paraiso, Baracoa",Hotel
 "Elguea","Corralillo","Islazul","042 68 6298","042 68 6442","Balneario Elguea, Corralillo. Villa Clara",Hotel
 "Eurostars Cayo Santa Maria","Cayo Santa Maria","HOTUSA Hotels","","","",Hotel
