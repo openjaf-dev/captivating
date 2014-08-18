@@ -15,6 +15,18 @@ class CorpusDict:
 				self.termsDict[term][1].append(item)
 		self.duplicates = [key for key, value in Counter(self.item_list).iteritems() if value>1]
 		self.aliases = aliases
+					
+	def update_corpus(self, item):
+		terms = self.get_terms(item)
+		for term in terms:
+			self.termsDict.setdefault(term, [0, []])				
+			self.termsDict[term][0] += 1
+			self.termsDict[term][1].append(item)
+	
+	def add_item(self, item):
+		self.item_list.append(item)
+		self.update_corpus(item)
+		
 
 	def get_terms(self, item_string):
 		item_string = item_string.replace(u'-', ' ')
@@ -128,4 +140,5 @@ class CorpusDict:
 				closer = term
 
 		return closer, min_ratio
+
 

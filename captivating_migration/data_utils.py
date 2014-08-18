@@ -46,12 +46,16 @@ class data_utils(object):
                 product_id = model_obj.product_id.id
         return product_id, ratio
         
-    def get_product_new(self, cr, uid, categ_id, name, item_dict, corpus, context):
+    def get_product_new(self, cr, uid, categ_id, name, in_dict, out_dict, corpus, context):
         # this method also modified item_dict
         product_hotel = None
-        candidates = []
-        if name in item_dict:
-            if item_dict[name] in ["Create new", []]:
+        candidates = []    
+            
+        if name in out_dict:
+            return product_hotel
+
+        if name in in_dict:
+            if in_dict[name] in ["Create new", []]:
                 category = self.pool.get('product.category')
                 categ = category.browse(cr, uid, categ_id)
                 cname = categ.name == 'Miscellaneous' and 'misc' or categ.name.lower() 
@@ -59,29 +63,30 @@ class data_utils(object):
                 vals = {'name': name, 'categ_id': categ_id}
                 model_id = model.create(cr, uid, vals, context)
                 model_obj = model.browse(cr, uid, model_id, context)
-                del item_dict[name]
+                corpus.add_item(name)
+                in_dict[name] = [name]
                 return model_obj
             # hacer algo si hay ambiguous
             else:
-                candidates = corpus.get_closers(item_dict[name][0])
+                candidates = corpus.get_closers(in_dict[name][0])
         else:
             candidates = corpus.get_closers(name)
         
         if len(candidates) == 0:
-            item_dict[name] = "Create new"
+            out_dict[name] = "Create new"
         else:
             if candidates[0][1] == 1 and candidates[0][2] == 1.0:
                 product = self.pool.get('product.hotel')
+                print  candidates[0][0]
                 product_id = product.search(cr, uid, [('name', '=', candidates[0][0]), ('categ_id', '=', categ_id)], context=context)
-                if name in item_dict: del item_dict[name]
                 return product.browse(cr, uid, product_id, context)[0]
             else:
-                item_dict.setdefault(name, [])
+                out_dict.setdefault(name, [])
                 for prod in candidates:
                     extra = ""
                     if prod[1] > 1:
                         extra = " (Ambiguos name)"
-                    item_dict[name].append(prod[0]+extra)
+                    out_dict[name].append(prod[0]+extra)
         return product_hotel
                 
     def get_partner(self, cr, uid, name, customer, display_warning, context=None):
@@ -108,41 +113,45 @@ class data_utils(object):
                 partner_id = partner.create(cr, uid, vals, context)
         return partner_id, ratio
 
-    def get_partner_new(self, cr, uid, name, customer, item_dict, corpus, context):
+    def get_partner_new(self, cr, uid, name, customer, in_dict, out_dict, corpus, context):
         # this method also modified item_dict
         partner_model = self.pool.get('res.partner')
         partner = None
         candidates = []
-        if name in item_dict:
-            if item_dict[name] in ["Create new", []]:
+        
+        if name in out_dict:
+            return partner
+        
+        if name in in_dict:
+            if in_dict[name] in ["Create new", []]:
                 vals = {
                     'name': name,
                     'customer': customer,
                     'supplier': not customer
                 }
                 partner_id = partner_model.create(cr, uid, vals, context)
-                del item_dict[name]
+                corpus.add_item(name)
+                in_dict[name] = [name]
                 return partner_model.browse(cr, uid, [partner_id], context)[0]
             # hacer algo si hay ambiguous
             else:
-                candidates = corpus.get_closers(item_dict[name][0])
+                candidates = corpus.get_closers(in_dict[name][0])
         else:
             candidates = corpus.get_closers(name)
         
         if len(candidates) == 0:
-            item_dict[name] = "Create new"
+            out_dict[name] = "Create new"
         else:
             if candidates[0][1] == 1 and candidates[0][2] == 1.0:
                 partner_id = partner_model.search(cr, uid, [('name', '=', candidates[0][0])], context=context)
-                if name in item_dict: del item_dict[name]
                 return partner_model.browse(cr, uid, partner_id, context)[0]
             else:
-                item_dict.setdefault(name, [])
+                out_dict.setdefault(name, [])
                 for p in candidates:
                     extra = ""
                     if p[1] > 1:
                         extra = " (Ambiguos name)"
-                    item_dict[name].append(p[0]+extra)
+                    out_dict[name].append(p[0]+extra)
         return partner
 
     def get_option_value(self, cr, uid, name, code, context=None):
