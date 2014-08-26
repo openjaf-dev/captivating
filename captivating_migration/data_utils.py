@@ -3,13 +3,20 @@ import stringmatcher, datetime, base64, json
 BASE_DATE = 693594
 CATEGORIES = {
     'Car Hire': 'Car',
+    'POC': 'Miscellaneous',
     'Extra': 'Miscellaneous',
     'Rep Fee': 'Miscellaneous',
     'tourist Card': 'Miscellaneous',
+    'Tourist Card': 'Miscellaneous',
+    'Extra': 'Miscellaneous',
     'Excursion': 'Activity',
     'Tour': 'Activity',
+    'tour': 'Activity',
     'Casa': 'Hotel',
-    'Hotel': 'Hotel'
+    'casa': 'Hotel',
+    'Hotel': 'Hotel',
+    'Flight': 'Flights',
+    'Transfer': 'Transfer'
 }
 ROOM = {'simple': 1, 'double': 2, 'triple': 3}
 
