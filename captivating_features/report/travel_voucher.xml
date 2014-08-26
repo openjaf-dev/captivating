@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<report auto="False" id="report_travel_voucher" model="sale.order.line" name="travel.voucher"
+                rml="travel_core/report/travel_voucher.rml" string="Travel Voucher"
+                usage="default"/>
+
+    </data>
+</openerp>
