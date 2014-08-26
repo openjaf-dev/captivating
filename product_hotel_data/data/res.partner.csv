@@ -30,4 +30,30 @@ name,customer,supplier
 "CIMEX",FALSE,TRUE
 "Varadero Golf Course",FALSE,TRUE
 "Destination Cuba",FALSE,TRUE
-"San Cristobal UK",FALSE,TRUE
+"San Cristobal UK",TRUE,TRUE
+"CTN",FALSE,TRUE
+"Cuba Consultancy",FALSE,TRUE
+"Havanatour",FALSE,TRUE
+"Palacio Taxi",FALSE,TRUE
+"Yoel Taxi",FALSE,TRUE
+"Adventure World",TRUE,FALSE
+"All About Tailormade Travel",TRUE,FALSE
+"Asla Travel",TRUE,FALSE
+"Captivating Cuba Agent",TRUE,FALSE
+"Captivating Cuba Direct",TRUE,FALSE
+"Cox & Kings",TRUE,FALSE
+"Cubaism",TRUE,FALSE
+"DaGama Travel",TRUE,FALSE
+"Destinations",TRUE,FALSE
+"Direct Customer",TRUE,FALSE
+"Explore Tailormade",TRUE,FALSE
+"Halcyon Travel Collection",TRUE,FALSE
+"Heffernans",TRUE,FALSE
+"Letsgo2",TRUE,FALSE
+"Quest",TRUE,FALSE
+"Stjernegaard",TRUE,FALSE
+"Topflight",TRUE,FALSE
+"Traveleyes",TRUE,FALSE
+"Tropical Sky",TRUE,FALSE
+"Voyager",TRUE,FALSE
+"Worldwide Holidays Direct",TRUE,FALSE
