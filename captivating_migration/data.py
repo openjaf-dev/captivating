@@ -90,8 +90,8 @@ class import_data(data_utils, TransientModel):
 
             if cell('REQUEST DATE'):
                 partner_id, ratio = self.get_partner(cr, uid, cell('COMPANY NAME'), True, display_warning, context)                   
-                if ratio:
-                    supplier_warning = supplier.browse(cr, uid, supplier_id, context)
+                if display_warning and ratio:
+                    supplier_warning = supplier.browse(cr, uid, partner_id, context)
                     msg += "WARNING: " + cell('COMPANY NAME') + " is " + supplier_warning.name + "? " + str(ratio) + '\n'
                     partner_id = None    
                 else:
@@ -119,7 +119,7 @@ class import_data(data_utils, TransientModel):
                 product_id, product_ratio = self.get_product(cr, uid, category_id, cell("SERVICE NAME"), display_warning)
                 supplier_id, supplier_ratio = self.get_partner(cr, uid, cell('SUPPLIER NAME'), False, display_warning, context)   
                 
-                if (product_ratio and cell("SERVICE TYPE") == 'Hotel') or supplier_ratio:
+                if  display_warning and ((product_ratio and cell("SERVICE TYPE") == 'Hotel') or supplier_ratio):
                     if product_ratio:
                         product_warning = product_product.browse(cr, uid, product_id, context)
                         msg += "WARNING: " + cell("SERVICE NAME") + " is " + product_warning.name + "? " + str(product_ratio) + '\n'

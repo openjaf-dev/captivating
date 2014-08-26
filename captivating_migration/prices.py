@@ -19,9 +19,7 @@
 #
 ##############################################################################
 
-import xlrd
-import datetime
-import base64
+import xlrd, datetime, base64, itemmatcher, json
 from data_utils import data_utils
 
 from openerp.osv import fields, osv
@@ -33,14 +31,11 @@ class import_prices(data_utils, TransientModel):
         'file':
             fields.binary('File'),
         'result':
-            fields.text('Result'),
-        'accept':
-            fields.boolean('Display Warnings')
+            fields.text('Result')
     }
 
     def import_file(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids[0], context)
-        display_warning = obj.accept
         if obj.file:
             data = base64.decodestring(obj.file)
             #try:
@@ -56,26 +51,49 @@ class import_prices(data_utils, TransientModel):
 #            for supplinfo_id in suppl_ids:                
 #                product_supplierinfo.unlink(cr, uid, supplinfo_id, context)
 
+            candidates = self.get_candidates(self.read(cr, uid, obj.id, ['result'], context)['result'])  
+
+            hotel = self.pool.get('product.product')
+            categ_id = self.get_category(cr, uid, 'Hotel', context)
+            hotel_ids = hotel.search(cr, uid, [('categ_id', '=', categ_id)], context=context)
+            hotel_names = [x['name'] for x in hotel.read(cr, uid, hotel_ids, ['name'])]
+            hotel_corpus = itemmatcher.CorpusDict(hotel_names)
+            hotel_candidates = candidates.get('hotels', {})
             
-            accept_suggestion = obj.accept 
+            partner = self.pool.get('res.partner')
+            partner_ids = partner.search(cr, uid, [('supplier', '=', True)], context=context)  
+            partner_names = [x['name'] for x in partner.read(cr, uid, partner_ids, ['name'])]  
+            partner_corpus = itemmatcher.CorpusDict(partner_names, {'DC': 'Destination Cuba', 'SCUK': 'San Cristobal UK'})
+            partner_candidates = candidates.get('suppliers', {})
+            
+            candidates_dicts = {}
+            candidates_dicts['in'] = {}
+            candidates_dicts['in']['hotels'] = hotel_candidates
+            candidates_dicts['in']['suppliers'] = partner_candidates
+            candidates_dicts['out'] = {}
+            candidates_dicts['out']['hotels'] = {}
+            candidates_dicts['out']['suppliers'] = {}
+            
+            corpus_dict = {}
+            corpus_dict['suppliers'] = partner_corpus
+            corpus_dict['hotels'] = hotel_corpus
+            
             for sheet in document.sheets():
                 if sheet.nrows != 0:
-                    destination = self.pool.get('destination')
-                    destination_vals = { 'name': sheet.name.strip() }
-                    destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)
-                    if not destination_id:
-                        destination_id = destination.create(cr, uid, destination_vals, context)
-                    else:
-                        destination_id = destination_id[0]
-                    new_msg = self.import_prices_data(cr, uid, sheet, destination_id, display_warning, context)
+#                    destination = self.pool.get('destination')
+#                    destination_vals = { 'name': sheet.name.strip() }
+#                    destination_id = destination.search(cr, uid, [('name', '=', destination_vals['name'])], context=context)
+#                    if not destination_id:
+#                        destination_id = destination.create(cr, uid, destination_vals, context)
+#                    else:
+#                        destination_id = destination_id[0]
+                    new_msg = self.import_prices_data(cr, uid, sheet, candidates_dicts, corpus_dict, context)
                     if new_msg != '':
                         msg += new_msg + '\n'
                     else:
                         msg += new_msg
-                    
-            #except:
-            #    raise osv.except_osv('Error!', 'The file is not valid.')
-
+                                                
+            msg = json.dumps(candidates_dicts['out'], indent=4, separators=(',', ': '))
             self.write(cr, uid, obj.id, {'result': msg}, context)
             return {
                 'name': 'Import Prices',
@@ -90,7 +108,7 @@ class import_prices(data_utils, TransientModel):
         else:
             raise osv.except_osv('Error!', 'You must select a file.')
 
-    def import_prices_data(self, cr, uid, sheet, destination_id, display_warning, context):
+    def import_prices_data(self, cr, uid, sheet, cndt_dicts, crp_dict, context):
         
         msg = ''
         
@@ -102,7 +120,8 @@ class import_prices(data_utils, TransientModel):
         
         head = {sheet.cell_value(0, x): x for x in range(sheet.ncols)} 
         product_hotel = False
-        supplier_id = False
+        hotel_info = ''
+        supplier = False
         suppinfo_id = False
         meal_plan_id = False
         room_type_id = False
@@ -124,68 +143,49 @@ class import_prices(data_utils, TransientModel):
                 return sheet.cell_value(r, head[attr])
                 
             if cell('HOTEL NAME'):
+                # insert additional information (room and hotel comments) of previous hotel
+                if suppinfo_id:
+                    product_supplierinfo.write(cr, uid, [suppinfo_id], {'info': hotel_info})
+                    hotel_info = ''
+                
                 hotel_name = cell('HOTEL NAME').strip()
+                if hotel_name in ['VALENCIA', 'SEVILLA']:
+                    pass
                 category_id = self.get_category(cr, uid, 'Hotel', context)
-                product_id, ratio = self.get_product(cr, uid, category_id, hotel_name, display_warning)
-                product_hotel = product_product.browse(cr, uid, product_id, context)
-                
-                hotel_id = hotel.search(cr, uid, [('name', '=', product_hotel.name)])[0]
-                hotel.write(cr, uid, hotel_id, {'destination': destination_id})
-                
-                if ratio:
-                    msg += "WARNING: " + hotel_name + " is " + product_hotel.name + "? " + str(ratio) + '\n'   
-                    product_hotel = None
+                product_hotel = self.get_product_new(cr, uid, category_id, hotel_name, cndt_dicts['in']['hotels'], cndt_dicts['out']['hotels'], crp_dict['hotels'], context)
                 
             if cell('SUPPLIER'):
                 if product_hotel:
-                    supplier_name = str(cell('SUPPLIER')).strip()
-                    supplier_id, ratio = self.get_partner(cr, uid, supplier_name, False, display_warning, context)
-                    if display_warning and 0.8 < ratio < 1.0:  
-                        
-                        supplier_warning = supplier.browse(cr, uid, supplier_id, context)
-                        msg += "WARNING: " + supplier_name + " is " + supplier_warning.name + "? " + str(ratio) + '\n'
-                        supplier_id = None   
-                    else:  
-                    
-                        suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
-                                                                             ('name', '=', supplier_id), 
-                                                                             ('product_id', '=', product_hotel.product_tmpl_id.id)], 
-                                                                   context=context)
-                        if len(suppinfo_ids) == 0:
-        
-                            svals = {
-                                'name': supplier_id,
-                                'product_id': product_hotel.product_tmpl_id.id,
-                                'min_qty': 0
-                            }
-                            
-                            suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
-                        else:
-                            suppinfo_id = suppinfo_ids[0] 
-                    
-                #msg += str(supplier_id)
-                #suggestion, ratio = stringmatcher.find_closers(supplier_dict.keys(), supplier_name)
-                #real_name = supplier.browse(cr, uid, supplier_dict[suggestion]).name
-                #msg += "Supplier " + supplier_name + ", sugs:"+ real_name + " - " + str(ratio) +"\n"
-                
-                # insert res_partner
-                
+                   suppinfo_id = None
+                   supplier_name = str(cell('SUPPLIER')).strip()
+                   if supplier_name in ['HAVANATOUR']:
+                       pass
+                   supplier = self.get_partner_new(cr, uid, supplier_name, False, cndt_dicts['in']['suppliers'], cndt_dicts['out']['suppliers'], crp_dict['suppliers'], context)
+                   if supplier:  
+                       suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
+                                                                            ('name', '=', supplier.id), 
+                                                                            ('product_id', '=', product_hotel.product_tmpl_id.id)], 
+                                                                  context=context)
+                       if len(suppinfo_ids) == 0:        
+                           svals = {
+                               'name': supplier.id,
+                               'product_id': product_hotel.product_tmpl_id.id,
+                               'min_qty': 0
+                           }
+                           suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+                       else:
+                           suppinfo_id = suppinfo_ids[0] 
+                                                              
             if cell('MEAL PLAN'):
                 meal_plan_id = cell('MEAL PLAN').strip()
                 mp = self.get_option_value(cr, uid, meal_plan_id, 'mp', context)
-                #msg += str(mp) + "\n"
-                #option_type = self.pool.get('option.type')
-                #option_type.search('Meal Plan')
-                #msg += 'ok'
                 
             if cell('ROOM CATEGORY'):
                 room_type_str = cell('ROOM CATEGORY').strip()
                 room_type_id = self.get_option_value(cr, uid, room_type_str, 'rt', context)
-                #msg += str(rt) + '\n'
                 
             if cell('DATEBAND FROM'):
                 date_from = self.get_date(cell('DATEBAND FROM'))
-                #msg += str(date_from)
                 double_value = False
                 double_option = False
                 simple_value = False
@@ -194,8 +194,7 @@ class import_prices(data_utils, TransientModel):
                 triple_option = False
                 
             if cell('DATEBAND TO'):
-                date_to = self.get_date(cell('DATEBAND TO'))
-                #msg += str(date_to)                
+                date_to = self.get_date(cell('DATEBAND TO'))  
         
             if cell('ROOM TYPE'):
                 if cell('ROOM TYPE') == 'C1':
@@ -210,9 +209,16 @@ class import_prices(data_utils, TransientModel):
                     simple_option = True                    
                 elif cell('ROOM TYPE') == 'T':
                     triple_value = self.get_float(cell('NET RATE'))
-                    triple_option = True                    
+                    triple_option = True    
             
-            if simple_option and double_option and triple_option and product_hotel and supplier_id:
+            if cell('HOTEL COMMENTS') and cell('HOTEL COMMENTS').strip() != '':
+                hotel_info = cell('HOTEL COMMENTS') + '\n\n' + hotel_info 
+                                
+            if cell('ROOM COMMENTS') and cell('ROOM COMMENTS').strip() != '':
+                hotel_info += self.pool.get('option.value').name_get(cr, uid, room_type_id)[0][1] + '\n' 
+                hotel_info +=  cell('ROOM COMMENTS') + '\n\n' 
+            
+            if simple_option and double_option and triple_option and product_hotel and suppinfo_id:
                  pvals = {
                     'suppinfo_id': suppinfo_id,
                     'start_date': date_from,
@@ -243,7 +249,12 @@ class import_prices(data_utils, TransientModel):
                  else:
                      pricelist_partnerinfo.create(cr, uid, pvals, context)
                      
-                 #msg += 'Price list added \n'     
+           
+        # insert additional information (room and hotel comments) of previous hotel
+        # last hotel in sheet case
+        if suppinfo_id:
+            product_supplierinfo.write(cr, uid, [suppinfo_id], {'info': hotel_info})
+            hotel_info = ''      #msg += 'Price list added \n'     
                 
         return msg
         

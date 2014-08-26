@@ -30,6 +30,15 @@ class product_product(Model):
         'mid': fields.char('Migration ID', size=128,
                             select=1, help='Format "concept.table,id". Ex: Hotel.ProductHotel,23'),
     }
+    
+class product_hotel(Model):
+    _name = 'product.hotel'
+    _inherit = 'product.hotel'
+    _columns = {
+        'address': fields.text('Address'),
+        'phone': fields.char('Phone'),
+        'fax': fields.char('Fax')
+    }
 
 
 class option_value(Model):

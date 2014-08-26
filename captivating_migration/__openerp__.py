@@ -30,7 +30,8 @@
     "description": """ Migration module from Captivating.""",
     'init_xml': [],
     'update_xml': [
-        'view/data.xml'
+        'view/data.xml',
+        'view/hotel.xml'
     ],
     'demo_xml': [],
     'test': [],

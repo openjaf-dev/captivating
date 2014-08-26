@@ -49,3 +49,10 @@ Posibles mejoras:
 
 
 En el Sol - Sirenas de Varadero hay un tipo de habitación Q, que cuesta lo mismo que una T, pero no sabemos que significa. La ponemos como un suplemento o qué?
+
+En el fichero de summer, el hotel las terrazas aparece muy picado, se puede unir?
+
+- vista de las ventas, añadir leading pax (Lead name)
+- pricelist ordenado por fecha, no por room type
+- en la vista de la orden de venta, para un Hotel, que cargue solo los tipos de habitación del mismo 
+
