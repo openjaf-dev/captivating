@@ -1,11 +1,11 @@
 Más:
 
-- Poner un menu Reservaciones con tablas de reservaciones por product
-- Incluir vuelo de llegada y de salida de una venta (string)
-- Organizar las ventas por inserción
-- Poder acceder con un boton desde el tree a la venta
-- Revisar si Allotment funciona completamente
-- Registrar los usuarios en el sistema
+[C] - Poner un menu Reservaciones con tablas de reservaciones por product
+[C] - Incluir vuelo de llegada y de salida de una venta (string)
+[Y] - Organizar las ventas por inserción
+[C] - Poder acceder con un boton desde el tree a la venta
+[Y] - Revisar si Allotment funciona completamente
+[C] - Registrar los usuarios en el sistema
 	- Hector González-Cueto
 	- Raiza Pérez
 	- Gema Rodríguez
@@ -15,8 +15,8 @@ Más:
 	- Sonia Roque
 	- Juan Carlos Suárez
 	- María A. Cruz
-- Terminar el palo del voucher
-- Buscar por name y por lead_name en sale order
+[Y] - Terminar el palo del voucher
+[Y] - Buscar por name y por lead_name en sale order
 
 
 - Ver cómo hacer que las ventas se comporten como los correos, que se pongan en negrita los que no se han leído
@@ -27,18 +27,14 @@ Más:
 - Cuando se haga una reserva que se cargue los tipos de habitaciones del hotel escogido.
 - Incluir boton para enviar correo con cliente local
 - Editar reserva in line
-
+- Tener en cuenta la moneda de la venta en la carga de datos
+- Configurar monedas, tarifas, tasas.
 
 
 Dudas:
 
 - room_types y ventas sencillas o de programas ... como registramos esas ventas?
-- incluir numero de vuelo?
-- referencia de la venta, debiera ser nombre pero hay algunos repetidos; en cualquier caso OpenERP genera un nombre
-- los nombres de los clientes yo los ponia en la referencia, pero son muchos ....  los ponemos como paxs?
-- que categorias de productos de las que no tenemos agregamos? [Casa, Rep Fee, Excursion, Car Hire]
-- interesa para el nuevo sistema la fecha de salida del vuelo en que llegan los clientes?
-- todas las ventas son en EUR? cual es la moneda base de la empresa?
+
 
 
 
@@ -49,10 +45,3 @@ Posibles mejoras:
 
 
 En el Sol - Sirenas de Varadero hay un tipo de habitación Q, que cuesta lo mismo que una T, pero no sabemos que significa. La ponemos como un suplemento o qué?
-
-En el fichero de summer, el hotel las terrazas aparece muy picado, se puede unir?
-
-- vista de las ventas, añadir leading pax (Lead name)
-- pricelist ordenado por fecha, no por room type
-- en la vista de la orden de venta, para un Hotel, que cargue solo los tipos de habitación del mismo 
-
