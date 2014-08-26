@@ -31,14 +31,11 @@ class import_prices(data_utils, TransientModel):
         'file':
             fields.binary('File'),
         'result':
-            fields.text('Result'),
-        'accept':
-            fields.boolean('Display Warnings')
+            fields.text('Result')
     }
 
     def import_file(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids[0], context)
-        display_warning = obj.accept
         if obj.file:
             data = base64.decodestring(obj.file)
             #try:
@@ -81,7 +78,6 @@ class import_prices(data_utils, TransientModel):
             corpus_dict['suppliers'] = partner_corpus
             corpus_dict['hotels'] = hotel_corpus
             
-            accept_suggestion = obj.accept 
             for sheet in document.sheets():
                 if sheet.nrows != 0:
 #                    destination = self.pool.get('destination')
