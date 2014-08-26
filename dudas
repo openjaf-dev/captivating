@@ -1,15 +1,10 @@
 Más:
 
 - Poner un menu Reservaciones con tablas de reservaciones por product
-- Incluir vuelo de llegada y de salida de una venta
-- Incluir lead_name como primer pax de la venta (ponerlo en el tree)
+- Incluir vuelo de llegada y de salida de una venta (string)
 - Organizar las ventas por inserción
-- Ver cómo hacer que las ventas se comporten como los correos, que se pongan en negrita los que no se han leído
-- Revisar si Allotmen funciona completamente
-- Incluir boton para enviar correo con cliente local, valorar una miniplantilla para cada correo
-- Verificar el calculo de los paxs por linea
-- Editar reserva in line, poder acceder con un boton desde el tree a la venta
-- Revisar logica de margenes y precios por encima del costo, con la idea de +1 o +2, etc
+- Poder acceder con un boton desde el tree a la venta
+- Revisar si Allotment funciona completamente
 - Registrar los usuarios en el sistema
 	- Hector González-Cueto
 	- Raiza Pérez
@@ -21,8 +16,18 @@ Más:
 	- Juan Carlos Suárez
 	- María A. Cruz
 - Terminar el palo del voucher
-- Buscar por name en sale order
+- Buscar por name y por lead_name en sale order
+
+
+- Ver cómo hacer que las ventas se comporten como los correos, que se pongan en negrita los que no se han leído
+- Verificar el calculo de los paxs por linea
+- Revisar logica de margenes y precios por encima del costo, con la idea de +1 o +2, etc
 - Poner el modulito de banca remota
+- Pasar el calculate_allotment para momento de insercion (Crear venta o modificar producto)
+- Cuando se haga una reserva que se cargue los tipos de habitaciones del hotel escogido.
+- Incluir boton para enviar correo con cliente local
+- Editar reserva in line
+
 
 
 Dudas:
