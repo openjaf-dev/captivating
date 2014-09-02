@@ -158,23 +158,22 @@ class import_prices(data_utils, TransientModel):
                 if product_hotel:
                    suppinfo_id = None
                    supplier_name = str(cell('SUPPLIER')).strip()
-                   if supplier_name in ['HAVANATOUR']:
-                       pass
-                   supplier = self.get_partner_new(cr, uid, supplier_name, False, cndt_dicts['in']['suppliers'], cndt_dicts['out']['suppliers'], crp_dict['suppliers'], context)
-                   if supplier:  
-                       suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
-                                                                            ('name', '=', supplier.id), 
-                                                                            ('product_id', '=', product_hotel.product_tmpl_id.id)], 
-                                                                  context=context)
-                       if len(suppinfo_ids) == 0:        
-                           svals = {
-                               'name': supplier.id,
-                               'product_id': product_hotel.product_tmpl_id.id,
-                               'min_qty': 0
-                           }
-                           suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
-                       else:
-                           suppinfo_id = suppinfo_ids[0] 
+                   if supplier_name != '':
+                       supplier = self.get_partner_new(cr, uid, supplier_name, False, cndt_dicts['in']['suppliers'], cndt_dicts['out']['suppliers'], crp_dict['suppliers'], context)
+                       if supplier:  
+                           suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
+                                                                                ('name', '=', supplier.id), 
+                                                                                ('product_id', '=', product_hotel.product_tmpl_id.id)], 
+                                                                      context=context)
+                           if len(suppinfo_ids) == 0:        
+                               svals = {
+                                   'name': supplier.id,
+                                   'product_id': product_hotel.product_tmpl_id.id,
+                                   'min_qty': 0
+                               }
+                               suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+                           else:
+                               suppinfo_id = suppinfo_ids[0] 
                                                               
             if cell('MEAL PLAN'):
                 meal_plan_id = cell('MEAL PLAN').strip()
