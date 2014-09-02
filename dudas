@@ -1,9 +1,14 @@
 Más:
 
-[C] - Poner un menu Reservaciones con tablas de reservaciones por product
-[C] - Incluir vuelo de llegada y de salida de una venta (string)
+*[C] - Poder crear proveedor desde la linea de venta
+*[C] - Se me ponen en 0 los adultos y ninnos de transfer y car
+[C] - Cuando se accede a un hotel en reservaciones da un partner_id error
+ 
+
+*[C] - Poner un menu Reservaciones con tablas de reservaciones por product
+*[C] - Incluir vuelo de llegada y de salida de una venta (string)
 [Y] - Organizar las ventas por inserción
-[C] - Poder acceder con un boton desde el tree a la venta
+*[C] - Poder acceder con un boton desde el tree a la venta
 [Y] - Revisar si Allotment funciona completamente
 [C] - Registrar los usuarios en el sistema
 	- Hector González-Cueto
