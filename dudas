@@ -1,27 +1,31 @@
 Más:
 
-*[C] - Poder crear proveedor desde la linea de venta
-*[C] - Se me ponen en 0 los adultos y ninnos de transfer y car
-[C] - Cuando se accede a un hotel en reservaciones da un partner_id error
- 
-
-*[C] - Poner un menu Reservaciones con tablas de reservaciones por product
-*[C] - Incluir vuelo de llegada y de salida de una venta (string)
-[Y] - Organizar las ventas por inserción
-*[C] - Poder acceder con un boton desde el tree a la venta
+[C] - Poner un menu Reservaciones con tablas de reservaciones por product
+[C] - Incluir vuelo de llegada y de salida de una venta (string)
+[Y] - Organizar las ventas por inserción (solved)
+[C] - Poder acceder con un boton desde el tree a la venta
 [Y] - Revisar si Allotment funciona completamente
 [C] - Registrar los usuarios en el sistema
-	- Hector González-Cueto
-	- Raiza Pérez
-	- Gema Rodríguez
-	- Mathew O'Sullivan
-	- Vanessa Hirons
+	- Hector González-Cueto - hector@captivatingcuba.com
+	- Raiza Pérez - raiza@
+	- Gema Rodríguez gema@
+	- Mathew O'Sullivan mathew@
+	- Vanessa Hirons 
 	- Adriana Sánchez
 	- Sonia Roque
 	- Juan Carlos Suárez
 	- María A. Cruz
 [Y] - Terminar el palo del voucher
-[Y] - Buscar por name y por lead_name en sale order
+[Y] - Buscar por name y por lead_name, customer reference en sale order (solved)
+
+bugs
+ - Cuando se guarda un booking se pierden los valores de los pasajeros para transfers y otros
+ - Los que se añaden por supplier en haciendo una reserva no se guardan como suppliers
+ - Cuando se accede a través de un hotel, a las reservaciones da un partner id error
+ - no deja entrar a los listados de precios por un error de permisos (product.rate.supplement), para un usuario sin permisos (solved)
+ - supplier "", cuando entro un listado de precios
+ - Añadir a res.partner Cubanacan Viajes, Gaviota Tours (done)
+
 
 
 - Ver cómo hacer que las ventas se comporten como los correos, que se pongan en negrita los que no se han leído
@@ -34,6 +38,7 @@ Más:
 - Editar reserva in line
 - Tener en cuenta la moneda de la venta en la carga de datos
 - Configurar monedas, tarifas, tasas.
+- Cambiar el nombre del modulo de cuba hotels, para captivating data (hotel, suppliers, etc)
 
 
 Dudas:

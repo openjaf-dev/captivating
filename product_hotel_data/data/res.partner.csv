@@ -1,5 +1,6 @@
 name,customer,supplier
 "Cubanacan Hoteles",FALSE,TRUE
+"Viajes Cubanacan",FALSE,TRUE
 "Islazul",FALSE,TRUE
 "Occidental Hotels & Resorts",FALSE,TRUE
 "Habaguanex S.A.",FALSE,TRUE
@@ -11,6 +12,7 @@ name,customer,supplier
 "Superclubs",FALSE,TRUE
 "NH Hotels",FALSE,TRUE
 "Gaviota Hoteles",FALSE,TRUE
+"Gaviota Tours",FALSE,TRUE
 "HOTUSA Hotels",FALSE,TRUE
 "H10 Hotels",FALSE,TRUE
 "HUSA Hoteles",FALSE,TRUE
