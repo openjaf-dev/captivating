@@ -1,349 +1,353 @@
-name,destination,chain_id,stars,categ_id
-Palco,Fuera de Polo Ciudad Habana,Cons. Estado,4,Hotel
-Villa Guajimico,Fuera de Polo Cienfuegos,Cubamar,3,Hotel
-Aguas Claras,Fuera de Polo Pinar del Río,Cubamar,2,Hotel
-Dos Hermanas,Viñales,Cubamar,1,Hotel
-Club Amigo Costasur,Ancón,Cubanacán,3,Hotel
-Brisas Trinidad del Mar,Ancón,Cubanacán,4,Hotel
-Club Amigo Ancón,Ancón,Cubanacán,3,Hotel
-Villa El Colibrí (El Indio),Baconao,Cubanacán,3,Hotel
-Club Amigo Carisol,Baconao,Cubanacán,3,Hotel
-Club Amigo Los Corales,Baconao,Cubanacán,3,Hotel
-Guamá,Bahía de Cochinos,Cubanacán,2,Hotel
-Playa Girón,Bahía de Cochinos,Cubanacán,2,Hotel
-Playa Larga,Bahía de Cochinos,Cubanacán,2,Hotel
-Pío Cuá,Bahía de Cochinos,Cubanacán,,Hotel
-Batey Don Pedro,Bahía de Cochinos,Cubanacán,,Hotel
-Hostal Velasco,Matanzas,Cubanacán,,Hotel
-NH Krystal Villas & Resort,Cayo Coco,Cubanacán,4,Hotel
-Tryp Cayo Coco,Cayo Coco,Cubanacán,4,Hotel
-Colonial Cayo Coco,Cayo Coco,Cubanacán,5,Hotel
-Cayo Levisa,Cayo Levisa,Cubanacán,2,Hotel
-Parque Central,Centro Tradicional,Cubanacán,5,Hotel
-Hotel Palacio Azul,Cienfuegos,Cubanacán,3,Hotel
-Hotel La Unión,Cienfuegos,Cubanacán,4,Hotel
-Brisas Covarrubias,Covarrubias,Cubanacán,4,Hotel
-Bellocaribe,Fuera de Polo Ciudad Habana,Cubanacán,3,Hotel
-Mariposa,Fuera de Polo Ciudad Habana,Cubanacán,2,Hotel
-La Pradera,Fuera de Polo Ciudad Habana,Cubanacán,4,Hotel
-El Yarey,Fuera de Polo Granma,Cubanacán,2,Hotel
-El Saltón,Fuera de Polo Santiago de Cuba,Cubanacán,3,Hotel
-Hotel Mascote,Fuera de Polo Villa Clara,Cubanacán,3,Hotel
-Brisas Sierra Mar,Guamá,Cubanacán,4,Hotel
-Villa Los Galeones,Guamá,Cubanacán,4,Hotel
-Brisas Guardalavaca,Guardalavaca,Cubanacán,4,Hotel
-Club Amigo Atlántico Guardalavaca,Guardalavaca,Cubanacán,3,Hotel
-Secc Tropical Club Amigo Atlántico Guardalavaca,Guardalavaca,Cubanacán,3,Hotel
-Secc Standard Club Amigo Atlántico Guardalavaca,Guardalavaca,Cubanacán,3,Hotel
-Villa El Quinqué,Holguín,Cubanacán,3,Hotel
-Villa El Cocal,Holguín,Cubanacán,3,Hotel
-Breezes Jibacoa,Jibacoa,Cubanacán,4,Hotel
-Club Amigo Marea del Portillo,Marea del Portillo,Cubanacán,3,Hotel
-Club Amigo Farallón del Caribe,Marea del Portillo,Cubanacán,4,Hotel
-Punta Piedra,Marea del Portillo,Cubanacán,2,Hotel
-El Viejo y el Mar,Marina Hemingway,Cubanacán,4,Hotel
-Marina Hemingway,Marina Hemingway,Cubanacán,4,Hotel
-Copacabana,Monte Barreto,Cubanacán,4,Hotel
-Comodoro,Monte Barreto,Cubanacán,4,Hotel
-Meliá Habana,Monte Barreto,Cubanacán,5,Hotel
-Chateau Miramar,Monte Barreto,Cubanacán,4,Hotel
-Tropicoco,Playas del Este,Cubanacán,2,Hotel
-Mégano,Playas del Este,Cubanacán,3,Hotel
-Blau Arenal,Playas del Este,Cubanacán,4,Hotel
-Hotel Faro Luna,Rancho Luna,Cubanacán,3,Hotel
-Club Amigo Rancho Luna,Rancho Luna,Cubanacán,3,Hotel
-Hostal Encanto El Rijo,Sancti Spíritus,Cubanacán,3,Hotel
-Hostal Encanto Plaza,Sancti Spíritus,Cubanacán,1,Hotel
-La Granjita,Santa Clara,Cubanacán,3,Hotel
-Los Caneyes,Santa Clara,Cubanacán,3,Hotel
-América,Villa Clara,Cubanacán,3,Hotel
-Barcelona,Villa Clara,Cubanacán,3,Hotel
-Club Amigo Caracol,Santa Lucía,Cubanacán,3,Hotel
-Gran Club Santa Lucía,Santa Lucía,Cubanacán,3,Hotel
-Club Amigo Mayanabo,Santa Lucía,Cubanacán,3,Hotel
-Brisas Santa Lucía,Santa Lucía,Cubanacán,4,Hotel
-Meliá Santiago de Cuba,Santiago de Cuba,Cubanacán,5,Hotel
-Motel Versalles,Santiago de Cuba,Cubanacán,3,Hotel
-Hotel E San Basilio,Santiago de Cuba,Cubanacán,3,Hotel
-Villa Soroa,Soroa - Las Terrazas,Cubanacán,3,Hotel
-Las Cuevas,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
-La Ronda,Trinidad - Valle de los Ingenios,Cubanacán,1,Hotel
-Horizontes Finca María Dolores,Trinidad - Valle de los Ingenios,Cubanacán,3,Hotel
-Iberostar Gran Hotel Trinidad,Trinidad - Valle de los Ingenios,Cubanacán,5,Hotel
-Brisas del Caribe,Varadero,Cubanacán,4,Hotel
-Aguas Azules,Varadero,Cubanacán,3,Hotel
-Club Amigo Tropical,Varadero,Cubanacán,3,Hotel
-Breezes Varadero,Varadero,Cubanacán,4,Hotel
-Breezes Bella Costa,Varadero,Cubanacán,4,Hotel
-Tuxpan,Varadero,Cubanacán,4,Hotel
-Meliá Las Américas,Varadero,Cubanacán,5,Hotel
-Meliá Varadero,Varadero,Cubanacán,5,Hotel
-Sol Palmeras,Varadero,Cubanacán,4,Hotel
-Blau Varadero,Varadero,Cubanacán,4,Hotel
-Sandals Royal Hicacos,Varadero,Cubanacán,5,Hotel
-Iberostar Varadero,Varadero,Cubanacán,5,Hotel
-Meliá Las Antillas,Varadero,Cubanacán,4,Hotel
-Meliá Cohiba,Vedado,Cubanacán,5,Hotel
-Los Jazmines,Viñales,Cubanacán,3,Hotel
-La Ermita,Viñales,Cubanacán,3,Hotel
-Rancho San Vicente,Viñales,Cubanacán,3,Hotel
-Hotel Telégrafo,Bayamo,Formatur,,Hotel
-Hotel Escuela Regis,Centro Tradicional,Formatur,,Hotel
-Hotel Escuela Gran Vía,Playas del Este,Formatur,2,Hotel
-Hotel Escuela Tararaco,Santa Lucía,Formatur,1,Hotel
-Hotel Escuela Gran hotel,Santiago de Cuba,Formatur,2,Hotel
-Unidad Docente EHT Trinidad,Trinidad - Valle de los Ingenios,Formatur,,Hotel
-Hotel Escuela Turquino,Varadero,Formatur,,Hotel
-Birancito,Bahía de Naranjo-Yuraguanal,Gaviota,3,Hotel
-Occidental Grand Playa Turquesa,Bahía de Naranjo-Yuraguanal,Gaviota,5,Hotel
-El Castillo,Baracoa,Gaviota,3,Hotel
-Porto Santo,Baracoa,Gaviota,2,Hotel
-Hostal 1511,Baracoa,Gaviota,3,Hotel
-Hostal La Rusa,Baracoa,Gaviota,1,Hotel
-Hostal La Habanera,Baracoa,Gaviota,3,Hotel
-Hostal Rio Miel,Baracoa,Gaviota,3,Hotel
-Villa Gaviota Cayo Coco,Cayo Coco,Gaviota,3,Hotel
-Oasis Playa Coco,Cayo Coco,Gaviota,4,Hotel
-Blue Bay Cayo Coco,Cayo Coco,Gaviota,4,Hotel
-Ensenachos,Cayo Ensenachos,Gaviota,5,Hotel
-Villa Las Brujas,Cayo Las Brujas,Gaviota,3,Hotel
-Cayo Saetía,Cayo Saetía,Gaviota,4,Hotel
-Sol Cayo Santa María,Cayo Santa María,Gaviota,4,Hotel
-Royalton Cayo Santa María,Cayo Santa María,Gaviota,5,Hotel
-Meliá Las Dunas,Cayo Santa María,Gaviota,5,Hotel
-Meliá Cayo Santa María,Cayo Santa María,Gaviota,5,Hotel
-La Estrella I,Cayo Santa María,Gaviota,5,Hotel
-Playa Coco,Ciego Camagüey,Gaviota,4,Hotel
-Memories Caribe,Ciego Camagüey,Gaviota,4,Hotel
-Memories Flamenco,Ciego Camagüey,Gaviota,5,Hotel
-Pestana Cayo Coco,Ciego Camagüey,Gaviota,4,Hotel
-Sol Río de Luna y Mares,Estero Ciego,Gaviota,4,Hotel
-Paradisus Río de Oro Resort & SPA,Holguín,Gaviota,5,Hotel
-Hotel Kohly,Fuera de Polo Ciudad Habana,Gaviota,3,Hotel
-El Bosque,Fuera de Polo Ciudad Habana,Gaviota,3,Hotel
-Pinares de Mayarí,Fuera de Polo Holguín,Gaviota,2,Hotel
-María La Gorda,Guanahacabibes,Gaviota,3,Hotel
-Villa Cabo San Antonio,Guanahacabibes,Gaviota,4,Hotel
-Villa Maguana,Maguana,Gaviota,3,Hotel
-Panorama,Monte Barreto,Gaviota,4,Hotel
-MonteHabana,Monte Barreto,Gaviota,3,Hotel
-Occidental Miramar,Monte Barreto,Gaviota,4,Hotel
-Playa Pesquero,Pesquero,Gaviota,5,Hotel
-Playa Costa Verde,Pesquero,Gaviota,4,Hotel
-Blau Costa Verde Beach & Resort,Pesquero,Gaviota,4,Hotel
-Blau Costa Verde Plus,Pesquero,Gaviota,4,Hotel
-Villa Gaviota,Santiago de Cuba,Gaviota,3,Hotel
-Villa Marqueti,Santiago de Cuba,Gaviota,3,Hotel
-Los Helechos,Topes de Collantes,Gaviota,3,Hotel
-Villa Caburní,Topes de Collantes,Gaviota,3,Hotel
-Centro de Rehabilitación Kurhotel Escambray,Topes de Collantes,Gaviota,3,Hotel
-Los Pinos,Topes de Collantes,Gaviota,3,Hotel
-Hotel Serrano,Topes de Collantes,Gaviota,3,Hotel
-Hotelera Los Eucaliptos,Topes de Collantes,Gaviota,3,Hotel
-Barceló Marina Palace,Varadero,Gaviota,5,Hotel
-Princesa del Mar,Varadero,Gaviota,5,Hotel
-Iberostar Playa Alameda,Varadero,Gaviota,4,Hotel
-Hotel Tryp Península,Varadero,Gaviota,5,Hotel
-Paradisus,Varadero,Gaviota,5,Hotel
-Oasis 1920,Varadero,Gaviota,4,Hotel
-Sol Sirenas Coral,Varadero,Gaviota,4,Hotel
-Sirenis Las Salinas,Varadero,Gaviota,4,Hotel
-Quinta Avenida,Varadero,Gaviota,5,Hotel
-Allegro Varadero,Varadero,Gaviota,4,Hotel
-Iberostar Laguna Azul,Varadero,Gaviota,5,Hotel
-Riu Laguna Dora,Varadero,Gaviota,5,Hotel
-Ocean El Patriarca,Varadero,Gaviota,5,Hotel
-Memories La Salina,Varadero,Gaviota,5,Hotel
-Blau Marina Palace,Varadero,Gaviota,5,Hotel
-Melia Marina Varadero,Varadero,Gaviota,5,Hotel
-Blau Marina Varadero Resort,Varadero,Gaviota,5,Hotel
-Blau Privilege Cayo Libertad,Varadero,Gaviota,5,Hotel
-Playa Cayo Santa Maria,Villa Clara,Gaviota,5,Hotel
-Iberostar Ensenachos,Villa Clara,Gaviota,5,Hotel
-Memories Paraíso Azul,Villa Clara,Gaviota,5,Hotel
-Husa Cayo Santa Maria,Villa Clara,Gaviota,4,Hotel
-Eurostar Cayo Santa Maria,Villa Clara,Gaviota,4,Hotel
-Bucanero,Baconao,Gran Caribe,3,Hotel
-Meliá Cayo Coco,Cayo Coco,Gran Caribe,5,Hotel
-Sol  Cayo Coco,Cayo Coco,Gran Caribe,4,Hotel
-Villa Cojímar,Cayo Guillermo,Gran Caribe,3,Hotel
-Iberostar Daiquirí,Cayo Guillermo,Gran Caribe,4,Hotel
-Meliá Cayo Guillermo,Cayo Guillermo,Gran Caribe,5,Hotel
-Sol  Cayo Guillermo,Cayo Guillermo,Gran Caribe,4,Hotel
-Sol Cayo Largo,Cayo Largo,Gran Caribe,4,Hotel
-Sol Pelícano,Cayo Largo,Gran Caribe,4,Hotel
-Complejo Isla del Sur (Villa Lindamar),Cayo Largo,Gran Caribe,4,Hotel
-Complejo Isla del Sur (Villa Soledad),Cayo Largo,Gran Caribe,3,Hotel
-Complejo Isla del Sur (Villa Coral),Cayo Largo,Gran Caribe,3,Hotel
-Hotel Isla del Sur,Cayo Largo,Gran Caribe,3,Hotel
-Hotel Playa Blanca,Cayo Largo,Gran Caribe,4,Hotel
-Marina Cayo Largo,Cayo Largo,Gran Caribe,3,Hotel
-Hotel Plaza,Centro Tradicional,Gran Caribe,4,Hotel
-Hotel Deauville,Centro Tradicional,Gran Caribe,3,Hotel
-Sevilla,Centro Tradicional,Gran Caribe,4,Hotel
-Hotel Inglaterra,Centro Tradicional,Gran Caribe,4,Hotel
-Hotel Jagua,Cienfuegos,Gran Caribe,4,Hotel
-Hotel Colony,Colony,Gran Caribe,3,Hotel
-Hotel Villa Trópico,Jibacoa,Gran Caribe,3,Hotel
-Hotel Neptuno - Tritón,Monte Barreto,Gran Caribe,3,Hotel
-Rancho del Tesoro,Nueva Gerona,Gran Caribe,2,Hotel
-Villa Isla de la Juventud,Nueva Gerona,Gran Caribe,2,Hotel
-Hotel Club Atlántico,Playas del Este,Gran Caribe,3,Hotel
-Hotel Villa Los Pinos,Playas del Este,Gran Caribe,3,Hotel
-Casagranda,Santiago de Cuba,Gran Caribe,4,Hotel
-Arenas Blancas,Varadero,Gran Caribe,4,Hotel
-Arenas Doradas,Varadero,Gran Caribe,4,Hotel
-Barlovento,Varadero,Gran Caribe,4,Hotel
-Cuatro Palmas,Varadero,Gran Caribe,4,Hotel
-Hotel Club Kawama,Varadero,Gran Caribe,4,Hotel
-Hotel Varadero Internacional,Varadero,Gran Caribe,4,Hotel
-Palma Real,Varadero,Gran Caribe,3,Hotel
-Playa Caleta,Varadero,Gran Caribe,4,Hotel
-Coralia Club Playa D'Oro,Varadero,Gran Caribe,4,Hotel
-Club Puntarena,Varadero,Gran Caribe,4,Hotel
-Be Live Las Morlas,Varadero,Gran Caribe,4,Hotel
-Be Live Turquesa,Varadero,Gran Caribe,4,Hotel
-Barceló Solymar,Varadero,Gran Caribe,4,Hotel
-Hotetur SunBeach,Varadero,Gran Caribe,3,Hotel
-Iberostar Tainos,Varadero,Gran Caribe,4,Hotel
-Hotel Villa Tortuga,Varadero,Gran Caribe,3,Hotel
-Hotel Villa Cuba,Varadero,Gran Caribe,4,Hotel
-NH Capri,Vedado,Gran Caribe,4,Hotel
-Hotel Nacional de Cuba,Vedado,Gran Caribe,5,Hotel
-Hotel Habana Riviera,Vedado,Gran Caribe,4,Hotel
-Presidente,Vedado,Gran Caribe,4,Hotel
-Hotel Victoria,Vedado,Gran Caribe,4,Hotel
-Tryp Habana Libre,Vedado,Gran Caribe,5,Hotel
-Saint John's,Vedado,Gran Caribe,3,Hotel
-Hotel Vedado,Vedado,Gran Caribe,3,Hotel
-Hotel Encanto Casa Verde,Cienfuegos,Gran Caribe,4,Hotel
-Hotel Rancho Luna,Cienfuegos,Gran Caribe,3,Hotel
-Beltrán de Santa Cruz,Centro Tradicional,Habaguanex,3,Hotel
-Hostal Los Frailes,Centro Tradicional,Habaguanex,3,Hotel
-O'Farrill,Centro Tradicional,Habaguanex,4,Hotel
-Telégrafo,Centro Tradicional,Habaguanex,4,Hotel
-San Miguel,Centro Tradicional,Habaguanex,3,Hotel
-Parkview,Centro Tradicional,Habaguanex,3,Hotel
-Conde de Villanueva,Centro Tradicional,Habaguanex,4,Hotel
-Hostal Valencia,Centro Tradicional,Habaguanex,3,Hotel
-Comendador,Centro Tradicional,Habaguanex,3,Hotel
-Hotel Florida,Centro Tradicional,Habaguanex,4,Hotel
-Palacio Marqués de Prado Ameno,Centro Tradicional,Habaguanex,4,Hotel
-Armadores de Santander,Centro Tradicional,Habaguanex,4,Hotel
-Hostal Tejadillo,Centro Tradicional,Habaguanex,3,Hotel
-Raquel,Centro Tradicional,Habaguanex,4,Hotel
-Saratoga,Centro Tradicional,Habaguanex,5,Hotel
-Santa Isabel,Centro Tradicional,Habaguanex,5,Hotel
-Mesón de la Flota,Centro Tradicional,Habaguanex,3,Hotel
-Ambos Mundos,Centro Tradicional,Habaguanex,4,Hotel
-Habana 612,Centro Tradicional,Habaguanex,4,Hotel
-Puntaventura,Baconao,Islazul,2,Hotel
-Costa Morena,Baconao,Islazul,3,Hotel
-Sierra Maestra,Bayamo,Islazul,3,Hotel
-Royalton,Bayamo,Islazul,2,Hotel
-Villa Bayamo,Bayamo,Islazul,2,Hotel
-Camagüey,Camagüey,Islazul,2,Hotel
-Gran Hotel Camagüey,Camagüey,Islazul,3,Hotel
-Isla de Cuba,Camagüey,Islazul,1,Hotel
-Colón,Camagüey,Islazul,2,Hotel
-Plaza,Camagüey,Islazul,2,Hotel
-Puerto Príncipe,Camagüey,Islazul,1,Hotel
-Villa Jardín de  Los Cocos,Cayo Coco,Islazul,,Hotel
-Villazul,Cayo Coco,Islazul,,Hotel
-Lido,Centro Tradicional,Islazul,2,Hotel
-Lincoln,Centro Tradicional,Islazul,3,Hotel
-Caribbean,Centro Tradicional,Islazul,2,Hotel
-Ciego de Ávila,Ciego de Ávila,Islazul,3,Hotel
-Santiago-Habana,Ciego de Ávila,Islazul,2,Hotel
-Villa Punta La Cueva,Cienfuegos,Islazul,1,Hotel
-AH Las Brisas,Cojímar,Islazul,2,Hotel
-AH Costazul,Cojímar,Islazul,2,Hotel
-Hotel Panamericano,Cojímar,Islazul,3,Hotel
-Hotel Elguea,Elguea,Islazul,3,Hotel
-Cabañas Elguea,Elguea,Islazul,2,Hotel
-Florida,Fuera de Polo Camagüey,Islazul,2,Hotel
-Caonaba,Fuera de Polo Camagüey,Islazul,1,Hotel
-Bruzón,Fuera de Polo Ciudad Habana,Islazul,1,Hotel
-Niquero,Fuera de Polo Granma,Islazul,2,Hotel
-Guacanayabo,Fuera de Polo Granma,Islazul,3,Hotel
-Balcón de la Sierra,Fuera de Polo Granma,Islazul,2,Hotel
-Villa Santo Domingo,Fuera de Polo Granma,Islazul,2,Hotel
-Caimanera,Fuera de Polo Guantánamo,Islazul,3,Hotel
-Don Lino,Fuera de Polo Holguín,Islazul,3,Hotel
-Miraflores,Fuera de Polo Holguín,Islazul,3,Hotel
-Las Yagrumas,Fuera de Polo La Habana,Islazul,3,Hotel
-Las Tunas,Fuera de Polo Las Tunas,Islazul,2,Hotel
-La Gran Piedra,Fuera de Polo Santiago de Cuba,Islazul,2,Hotel
-Hanabanilla,Fuera de Polo Villa Clara,Islazul,2,Hotel
-Brisas del Mar,Fuera de Polo Villa Clara,Islazul,2,Hotel
-Guantánamo,Guantánamo,Islazul,2,Hotel
-La Lupe,Guantánamo,Islazul,2,Hotel
-Villa Cabañas Guardalavaca,Guardalavaca,Islazul,2,Hotel
-Pernik,Holguín,Islazul,3,Hotel
-El Bosque,Holguín,Islazul,3,Hotel
-Mirador de Mayabe,Holguín,Islazul,3,Hotel
-Villa Camping,Jibacoa,Islazul,1,Hotel
-Villa Loma,Jibacoa,Islazul,2,Hotel
-Zona 22,Jibacoa,Islazul,1,Hotel
-Villa Laguna Grande,Laguna Grande,Islazul,1,Hotel
-Canimao,Matanzas,Islazul,3,Hotel
-Morón,Morón,Islazul,3,Hotel
-Parador San Fernando,Morón,Islazul,2,Hotel
-Vueltabajo,Pinar del Río,Islazul,3,Hotel
-Pinar del Río,Pinar del Río,Islazul,2,Hotel
-Villa Yaguanabo,Playa Inglés - Yaguanabo,Islazul,1,Hotel
-AH Atlántico Las Terrazas,Playas del Este,Islazul,3,Hotel
-Zona 6 Arenas Blancas Boca Ciega,Playas del Este,Islazul,1,Hotel
-Zona 10 Caletas Blancas Boca Ciega,Playas del Este,Islazul,1,Hotel
-Zona 8 Burbuja Azul Boca Ciega,Playas del Este,Islazul,1,Hotel
-Zona 9 Boca Ciega,Playas del Este,Islazul,1,Hotel
-Zona Veneciana Brisas del Mar,Playas del Este,Islazul,1,Hotel
-Mirador del Mar,Playas del Este,Islazul,2,Hotel
-Zona Agua Marina Brisas del Mar,Playas del Este,Islazul,1,Hotel
-Villa Sol y Mar Boca Ciega,Playas del Este,Islazul,2,Hotel
-Villa Los Laureles Boca Ciega,Playas del Este,Islazul,3,Hotel
-Zona 11 Solymar Boca Ciega,Playas del Este,Islazul,1,Hotel
-Mirador Santa María,Playas del Este,Islazul,1,Hotel
-Villa Playa Hermosa,Playas del Este,Islazul,2,Hotel
-Marea Blanca,Playas del Este,Islazul,1,Hotel
-Villa Los Marinos,Playas del Este,Islazul,1,Hotel
-Miramar,Playas del Este,Islazul,1,Hotel
-Motel Las Vistas,Playas del Este,Islazul,1,Hotel
-Pasacaballo,Rancho Luna,Islazul,3,Hotel
-Mirador San Diego,San Diego - La Güira,Islazul,3,Hotel
-Los Lagos,San José del Lago,Islazul,2,Hotel
-Los Laureles,Sancti Spíritus,Islazul,2,Hotel
-Zaza,Sancti Spíritus,Islazul,2,Hotel
-Rancho Hatuey,Sancti Spíritus,Islazul,3,Hotel
-Santa Clara Libre,Santa Clara,Islazul,2,Hotel
-Complejo de Alojamiento Playa Santa Lucía,Santa Lucía,Islazul,1,Hotel
-Las Américas,Santiago de Cuba,Islazul,3,Hotel
-Libertad,Santiago de Cuba,Islazul,2,Hotel
-Rex,Santiago de Cuba,Islazul,2,Hotel
-Hostal San Basilio,Santiago de Cuba,Islazul,3,Hotel
-San Juan,Santiago de Cuba,Islazul,3,Hotel
-Rancho Club,Santiago de Cuba,Islazul,2,Hotel
-Balcón del Caribe,Santiago de Cuba,Islazul,3,Hotel
-La Cecilia,Santiago de Cuba,Islazul,2,Hotel
-Oasis,Varadero,Islazul,3,Hotel
-Acuazul,Varadero,Islazul,3,Hotel
-Mar del Sur,Varadero,Islazul,2,Hotel
-Villa La Mar,Varadero,Islazul,2,Hotel
-Herradura,Varadero,Islazul,2,Hotel
-Los Delfines,Varadero,Islazul,3,Hotel
-Pullman,Varadero,Islazul,2,Hotel
-Dos Mares,Varadero,Islazul,3,Hotel
-Villa Artística,Varadero,Islazul,1,Hotel
-Ledo,Varadero,Islazul,1,Hotel
-Villa Bellosol,Varadero,Islazul,2,Hotel
-Colina,Vedado,Islazul,3,Hotel
-Moka,Soroa - Las Terrazas,Las Terrazas,4,Hotel
-Sitio La Guira,Cayo Coco,Palmares,2,Hotel
-Ranchón de Aguada,Fuera de Polo Cienfuegos,Palmares,,Hotel
-Hostal El Paseo,Fuera de Polo Las Tunas,Palmares,,Hotel
-La Casona,Morón,Palmares,3,Hotel
-Mesón del Regidor,Trinidad - Valle de los Ingenios,Palmares,3,Hotel
-Club de Golf,Varadero,Palmares,5,Hotel
-Finca San Vicente,Viñales,Palmares,1,Hotel
-Las Magnolias,Viñales,Palmares,1,Hotel
-Club Acuario,Monte Barreto,Cubanacán,3,Hotel
+name,destination,chain_id,phone,fax,address,categ_id
+"Acuario","Havana","Cubanacan Hoteles","204 7628-33","204 4379","Calle 248 y 5ta Ave, Marina Hemingway, Santa Fe, Playa. La Habana",Hotel
+"Acuazul","Varadero","Islazul","045 66 7132","045 66 7229","Ave 1ra y Calle 13, Varadero",Hotel
+"Allegro Club Cayo Guillermo","Cayo Guillermo","Occidental Hotels & Resorts","033 30 1712","033 30 1725","Cayo Guillermo, Jardines del Rey",Hotel
+"Allegro Varadero","Varadero","Occidental Hotels & Resorts","045 66 8288","045 66 8414","Autopista Sur Km. 11, Varadero",Hotel
+"Ambos Mundos","Old Havana","Habaguanex S.A.","860 9530-31","860 9532","Calle del Obispo, esq. A Mercaderes, Habana Vieja.",Hotel
+"America","Santa Clara City","Cubanacan Hoteles","042 20 1585-87","","Calle Mojica No 9 e/ Colon y Maceo, Santa Clara. Villa Clara",Hotel
+"Aparthotel Atlantico","Eastern Beaches","Islazul","797 1494","797 1203","Ave de las Terrazas e/ 11 y 12. Santa Maria del Mar",Hotel
+"Aparthotel Costazul","Eastern Beaches","Islazul","795 0763","795 4104","Edificio 53-B, Calle A y Avenida Central, Cojimar",Hotel
+"Aparthotel Las Terrazas","Eastern Beaches","Islazul","797 1344","797 1316","Ave de las Terrazas, e/ 10 y Rotonda. Santa Maria del Mar",Hotel
+"Arenal","Eastern Beaches","","797 1272/ 97","797 1288","Boca Ciega, Playas del Este",Hotel
+"Armadores de Santander","Old Havana","Habaguanex S.A.","862 8000","862 8080","Calle San Pedro, No. 4, esq. a Luz, Habana Vieja.",Hotel
+"Atlantico","Eastern Beaches","Gran Caribe","797 1361/ 1085","796 1532","Avenida de las Terrazas, Santa Maria del Mar",Hotel
+"Balcon de la Sierra","Granma","Islazul","023 59 5180","","Ave. Maso, Providencia, Bartolome Maso. Granma",Hotel
+"Balcon del Caribe","Santiago de Cuba","Islazul","022 69 1506","022 69 2398","Carretera del Morro, Km. 7 1/2, Santiago de Cuba",Hotel
+"Barcelo Arenas Blancas","Varadero","Barcelo Hotels & Resorts","045 61 4450","045 61 4491","Calle 64 e/ 1ra Ave y Autopista, Varadero. Matanzas",Hotel
+"Barcelo SolyMar","Varadero","Barcelo Hotels & Resorts","045 61 4499","045 66 8798","Carret de las Americas, Km. 3, Varadero. Matanzas",Hotel
+"Barcelona","Remedios","Cubanacan Hoteles","042 39 5144/ 5467","","Maximo Gomez No. , Remedios. Villa Clara",Hotel
+"Batey Don Pedro","Cienaga de Zapata","Cubanacan Hoteles","045 91 2825/ 4228","","Carretera a Playa Larga Km 1 . Matanza",Hotel
+"Bella Habana Aeropuerto","Havana","Islazul","","","",Hotel
+"Bello Caribe","Havana","Servimed","273 9906-09","273 6839","Calle 158 esq. a 31, Playa. La Habana",Hotel
+"Beltran de Santa Cruz","Old Havana","Habaguanex S.A.","860 8330","860 8383","Calle San Ingnacio, No.411 e/ Muralla y Sol, Habana Vieja",Hotel
+"Blau Costa Verde","Playa Pesquero","Blau Hotels & Resorts","024 430 510-14","024 430 515","Playa Pesquero, Rafael Freyre",Hotel
+"Blau Costa Verde PLUS","Playa Pesquero","Blau Hotels & Resorts","","","Playa Pesquero, Rafael Freyre",Hotel
+"Blau Marina Varadero","Varadero","Blau Hotels & Resorts","045 66 9966","045 66 7022","Autopista Sur Final, Punta Hicacos, Varadero",Hotel
+"Blau Privilege Cayo Libertad","Varadero","Blau Hotels & Resorts","","","",Hotel
+"Blau Varadero","Varadero","Blau Hotels & Resorts","045 66 7545","045 66 7494","Carret de las Morlas Km 14, Varadero",Hotel
+"BlueBay Cayo Coco","Cayo Coco","Hotetur","033 30 2350","","Cayo Coco, Jardines del Rey",Hotel
+"Breezes Bella Costa","Varadero","Superclubs","045 66 7210","045 66 8549","Carret de las Amricas Km 3 1/2, Varader",Hotel
+"Breezes Jibacoa","Jibacoa","Superclubs","047 29 5122","047 29 5150","",Hotel
+"Breezes Varadero","Varadero","Superclubs","045 66 7030","045 66 7005","Carret de las Amricas Km 3, Varader",Hotel
+"Brisas Covarrubias","Covarrubias","Cubanacan Hoteles","031 51 5530","031 51 5352","Playa Covarrubias. Puerto Padre. Las Tunas",Hotel
+"Brisas del Caribe","Varadero","Cubanacan Hoteles","04566 8030","045 66 8005","Carretera Las Morlas Km 12 , Varadero. Matanz",Hotel
+"Brisas Guardalavaca","Guardalavaca","Cubanacan Hoteles","024 430 218","024 430 418","Playa Guardalavaca, Banes. Holguin",Hotel
+"Brisas Santa Lucia","Santa Lucia","Cubanacan Hoteles","032 33 6317/6140","032 36 5142","Avenida Tararaco, Playa Santa Luca, Nuevitas. Camague",Hotel
+"Brisas Sierra Mar - Los Galeones","Playa Chivirico","Cubanacan Hoteles","022 32 9110/ 6160","022 32 9116","Carretera a Chivirico Km 60, Guama. Santiago de Cuba",Hotel
+"Brisas Trinidad del Mar","Trinidad","Cubanacan Hoteles","041 99 6500-07","041 99 6565","Peninsula Ancon, Trinidad. Sancti Spiritus",Hotel
+"Bruzon","Havana","Islazul","","","",Hotel
+"Cadillac","Las Tunas City","Islazul","","","",Hotel
+"Caimanera","Caimanera","Islazul","","","",Hotel
+"Camaguey","Camaguey City","Islazul","032 28 7267","032 28 7181","Carretera Central Este Km 4 1/2, Jayam, Camaguey",Hotel
+"Camino de Hierro","Camaguey City","Cubanacan Hoteles","032 284 264","","",Hotel
+"Canimao","Matanzas City","Islazul","045 26 1014","045 26 2237","Carretera Via Blanca, Km 4 1/2, Reparto Canimar. Matanzas",Hotel
+"Capri","Vedado","NH Hotels","839 7200","","Calle 21, entre N y O, Vedado,  Plaza, La Habana",Hotel
+"Caribbean","Old Havana","Islazul","860 8210/33/41","860 9479","Prado No 164 e/ Colon y Refugio. Habana Vieja",Hotel
+"Casa Granda","Santiago de Cuba City","Cubanacan Hoteles","022 65 3021-25","022 68 6035","Calle Heredia No. 201 esq. a San Pedro, Santiago de Cuba",Hotel
+"Casa Verde","Cienfuegos","Gran Caribe","0432 55 1245","0432 55 1003","Calle 37 e/ 0 y 2, Punta Gorda, Cienfuegos",Hotel
+"Cayo Levisa","Cayo Levisa","Cubanacan Hoteles","048 75 6501-03","048 75 6506","Cayo Levisa, Palma Rubia, La Palma. Pinar del Rio",Hotel
+"Chateau Miramar","Miramar","Cubanacan Hoteles","204 1952-57","204 0224","Ave 1ra e/ 60 y 70, Playa. La Habana",Hotel
+"CIB El Colony","Isla de la Juventud","Gran Caribe","046 39 8181/ 8282","046 39 8520","Carretera Siguanea, Km. 42, Isla de la Juventud",Hotel
+"Ciego de Avila","Ciego de Avila City","Islazul","033 22 8013","033 22 8340","Carretera a Ceballo, Km 2 1/2. Ciego de Avila",Hotel
+"Club Amigo Aguas Azules","Varadero","Cubanacan Hoteles","045 66 8243","045 66 8202","Carretera de las Morlas, Km 14, Varadero. Matanzas",Hotel
+"Club Amigo Ancon","Trinidad","Cubanacan Hoteles","041 99 6123-28","041 99 6122","Carretera Maria Aguilar, Peninsula Ancon, Trinidad. Sancti Spiritus",Hotel
+"Club Amigo Atlantico-Guardalavaca","Guardalavaca","Cubanacan Hoteles","024 430 180-82","024 430 200","Playa Guardalavaca, Banes. Holguin",Hotel
+"Club Amigo Caracol","Santa Lucia","Cubanacan Hoteles","032 33 6302-03","032 36 5217","Avenida Tararaco, Playa Santa Luca, Nuevitas. Camague",Hotel
+"Club Amigo Carisol-Los Corales","Parque Baconao","Cubanacan Hoteles","022 35 6115/ 22","022 35 6177","Carretera de Baconao, Km 31, Playa Cazonal. Santiago de Cuba",Hotel
+"Club Amigo Costa Sur","Trinidad","Cubanacan Hoteles","041 99 6174-78","041 99 6172","Playa Maria Aguilar, Peninsula Ancon, Trinidad. Sancti Spiritus",Hotel
+"Club Amigo Marea del Portillo","Marea del Portillo","Cubanacan Hoteles","023 59 7102/ 84","023 59 7080","Km 12 , Marea del Portillo, Pilon. Granm",Hotel
+"Club Amigo Mayanabo","Santa Lucia","Cubanacan Hoteles","032 36 5168-70","032 36 5176","Playa Santa Lucia, Nuevitas. Camaguey",Hotel
+"Club Karey","Varadero","Islazul","","","",Hotel
+"Club Tropical","Varadero","Islazul","045 61 3915","045 61 4676","Avenida 1ra. e/ 21 y 23, Varadero. Matanzas",Hotel
+"Colina","Vedado","Islazul","","","Calle L e/ 25 y Universidad, Vedado",Hotel
+"Colon","Camaguey City","Islazul","032 28 3368/46","032 28 3346","Repblica No. 472, Camague",Hotel
+"Colonial Cayo Coco","Cayo Coco","Cubanacan Hoteles","033 30 1311","033 30 1384","Cayo Coco, Jardines del Rey",Hotel
+"Comendador","Old Havana","Habaguanex S.A.","867 1037","860 5628","Calle Obrapia, No. 55 esq. a Baratillo, Habana Vieja",Hotel
+"Hotel Comodoro","Miramar","Cubanacan Hoteles","204 5551","204 2089","Ave 3ra y 84, Playa. La Habana",Hotel
+"Conde de Villanueva","Old Havana","Habaguanex S.A.","862 9293/ 94","862 9682","Calle de los Mercaderes, No. 202, esq. a Lamparilla, Habana Vieja",Hotel
+"Copacabana","Miramar","Cubanacan Hoteles","204 1037","204 2846","Ave 1ra. No. 4404 e/ 44 y 46, Playa. La Habana",Hotel
+"Costa Morena","Santiago de Cuba","Islazul","022 35 6126/27","022 35 6155","Carretera a Baconao, Km. 38 1/2, Sigua",Hotel
+"Deauville","Old Havana","Gran Caribe","866 8812-13","866 8148","Galiano No. 1 e/San Lazaro y Malecon, Centro Habana",Hotel
+"Don Lino","Guardalavaca","Islazul","024 430 308","024 430 309","Playa Blanca, Rafael Freyre",Hotel
+"Dos Mares","Varadero","Islazul","045 61 2702","045 667499","Calle 53 y 1ra Ave, Varadero",Hotel
+"El Bosque","Miramar","Gaviota Hoteles","204 9232","204 5637","Calle 28 A e/ 49 A y 49 B, Reparto Kohly, Playa",Hotel
+"Villa El Bosque","Holguin City","Islazul","024 48 1012","024 48 1140","Ave Jorge Dimitrov, Holguin",Hotel
+"El Castillo","Baracoa","Gaviota Hoteles","021 45 164-66","021 45 223","Calle Calixto Garcia, Reparto Paraiso, Baracoa",Hotel
+"Elguea","Corralillo","Islazul","042 68 6298","042 68 6442","Balneario Elguea, Corralillo. Villa Clara",Hotel
+"Eurostars Cayo Santa Maria","Cayo Santa Maria","HOTUSA Hotels","","","",Hotel
+"Faro Luna","Cienfuegos","Gran Caribe","44 54 8012/ 20","44 54 8131","Carretera Rancho Luna, Km. 18, Cienfuegos",Hotel
+"Finca Ma. Dolores","Trinidad","Cubanacan Hoteles","041 99 6481/ 10","041 99 6579","Carretera a Cienfuegos, Km. 1 , Trinidad. Sancti Spiritu",Hotel
+"Florida","Old Havana","Habaguanex S.A.","862 4127/ 89","862 4117","Calle del Obispo, esq. a Cuba, Habana Vieja",Hotel
+"Florida Camaguey","Florida Town","Islazul","","","Florida",Hotel
+"Gran Club Santa Lucia","Santa Lucia","Cubanacan Hoteles","032 33 6109","032 36 5153","Avenida Tararaco, Playa Santa Luca, Nuevitas. Camague",Hotel
+"Gran Hotel","Camaguey City","Islazul","032 29 2093/94","032 29 3933","Maceo No. 64 e/ General Gomeze Ignacio Agramonte, Camaguey",Hotel
+"Guacanayabo","Manzanillo","Islazul","","","",Hotel
+"Guantanamo","Guantanamo City","Islazul","","","",Hotel
+"H10 Habana Panorama","Miramar","H10 Hotels","204 0100","204 4969","3ra y 70, Miramar, Playa",Hotel
+"Habana 612","","","","","",Hotel
+"Habana Riviera","Vedado","Gran Caribe","836 4051","833 3739","Paseo y Malecon, Vedado",Hotel
+"Hacienda El Caney","Santiago de Cuba","Gaviota Hoteles","022 64 1368/70","022 68 7166","Calle Marquetti No. 2, Reparto Las Flores, Carretera de El Caney",Hotel
+"Hanabanilla","Hanabanilla","Islazul","042 20 2399","43 20 3506","Salto de Hanabanilla, Villa Clara",Hotel
+"Herradura","Varadero","Islazul","045 61 3703","045 66 7496","Calle 53 y 1ra Ave, Varadero",Hotel
+"Hostal 1511","Baracoa","Gaviota Hoteles","","","",Hotel
+"Hostal del Rijo","Sancti Spiritus City","Islazul","041 92 8588/ 81","041 92 8577","Honorato del Castillo, No. 12, Sancti Spiritus",Hotel
+"Hostal Valencia","Old Havana","Habaguanex S.A.","867 1037","860 5628","Calle de los Oficios, No.53, esq. a Obrapia, Habana Vieja",Hotel
+"Hotel Nacional de Cuba","Vedado","Gran Caribe","836 3564-67","836 5171/ 3899","Calle O esq. 21, Vedado",Hotel
+"HUSA Cayo Santa Maria","Cayo Santa Maria","HUSA Hoteles","042 35 0400","042 35 0401","Cayo Santa Maria, Norte Caibarien",Hotel
+"Iberostar Cayo Coco","Cayo Coco","Iberostar Hotels & Resorts","033 30 1070","033 30 1498","Avenida Los Hoteles, Cayo Coco, Jardines del Rey. Ciego de Avila",Hotel
+"Iberostar Daiquiri","Cayo Guillermo","Iberostar Hotels & Resorts","033 30 1650","033 30 1641","Cayo Guillermo, Jardines del Rey. Ciego de Avila",Hotel
+"Iberostar Ensenachos","Cayo Ensenachos","Iberostar Hotels & Resorts","042 35 0300","042 35 0335","Cayo Ensenachos, Norte Caibarien",Hotel
+"Iberostar Trinidad","Trinidad","Iberostar Hotels & Resorts","041 99 6070","041 99 6077","Calle Jose Marti No 262 esq. a Lino Perez, Trinidad. Sancti Spiritus",Hotel
+"Iberostar Laguna Azul","Varadero","Iberostar Hotels & Resorts","045 66 7900","045 66 7393","Carretera de las Morlas, Km 18 1/2, Varadero. Matanzas",Hotel
+"Iberostar Mojito","Cayo Coco","Iberostar Hotels & Resorts","033 30 1470","033 30 1498","Avenida Los Hoteles, Cayo Coco, Jardines del Rey. Ciego de Avila",Hotel
+"Iberostar Parque Central","Old Havana","Iberostar Hotels & Resorts","860 6627-29","860 6630","Neptuno e/ Prado y Zulueta. Habana Vieja. La Habana",Hotel
+"Iberostar Playa Alameda","Varadero","Iberostar Hotels & Resorts","045 66 8822","045 66 8833","Parque Natural Punta Hicacos, Varadero. Matanzas",Hotel
+"Iberostar Tainos","Varadero","Iberostar Hotels & Resorts","045 66 8656","045 66 8687","Carretera de las Morlas, Km 12 1/2, Varadero. Matanzas",Hotel
+"Iberostar Varadero","Varadero","Iberostar Hotels & Resorts","045 66 9999","045 66 8842","Punta Frances, Varadero. Matanzas",Hotel
+"Inglaterra","Old Havana","Gran Caribe","860 8594-97","860 8254","Prado No.416, esq. San Rafael. Habana Vieja",Hotel
+"Internacional Varadero","Varadero","Gran Caribe","045 66 7038/ 39","045 66 7246","Carretera de las Amricas, Km. 1, Varader",Hotel
+"Isla de Cuba","Camaguey City","Islazul","","","",Hotel
+"Isla del Sur","Cayo Largo","Gran Caribe","045 248 111-18","045 248 201","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Jagua","Cienfuegos","Gran Caribe","0432 55 1003/ 1329","0432 55 1245","Calle 37 No. 1, Punta Gorda, Cienfuegos",Hotel
+"Kawama Hotel & Villas","Varadero","Gran Caribe","045 61 4416","045 66 7334","Ave 1ra y Calle 1, Varadero",Hotel
+"Kohly","Miramar","Gaviota Hoteles","204 0240/ 42","204 1733","Ave 49 A y 36, Reparto Kohly, Playa",Hotel
+"Kurthotel Escambray","Topes de Collantes","Gaviota Hoteles","042 54 0180/89","042 54 0288","Topes de Collantes, Sancti Spiritus",Hotel
+"La Belen","","","","","",Hotel
+"La Ermita","Vinales","Cubanacan Hoteles","048 79 6071/ 92","048 79 6091","Carretera a La Ermita, Km 1 , Vinales. Pinar del Ri",Hotel
+"La Gran Piedra","Santiago de Cuba","Islazul","022 68 6147","","Carretera de la Gran Piedra, Km. 14, Santiago de Cuba",Hotel
+"La Guabina","","","","","",Hotel
+"La Habanera","Baracoa","Gaviota Hoteles","021 45273","","Calle Maceo, No. 126, Baracoa",Hotel
+"La Lupe","Guantanamo","Islazul","021 38 2668/02","021 38 1170","Carretera El Salvador, Km. 3 1/2, Guantanamo",Hotel
+"La Pradera (International Health Centre)","Havana","Servimed","273 7467-84","273 7198-99","Calle 230 e/ 15 A y 17, Reparto Siboney, Playa. La Habana",Hotel
+"La Ronda","Trinidad","Cubanacan Hoteles","041 99 8538-42","041 99 8543","Calle Marti No. 45 e/ Lino Perez y Colon, Trinidad. Sancti Spiritus",Hotel
+"La Rusa","Baracoa","Gaviota Hoteles","021 4 3011","021 4 2337","Maximo Gomez, No. 161, Baracoa",Hotel
+"La Tortuga","Jardines de la Reina","Avalon","","","Floating hotel. Jardines de la Reina",Hotel
+"La Union","Cienfuegos","Gran Caribe","0432 55 1020","0432 55 1685","Calle 31 esq. a 54, Cienfuegos",Hotel
+"Las Americas","Santiago de Cuba City","Islazul","022 64 2011","022 68 7075","Avenida de las Americas y General Cebreco, Santiago de Cuba",Hotel
+"Las Cuevas","Trinidad","Cubanacan Hoteles","42 99 6133-35","041 99 6161","Finca Santa Ana, Trinidad. Sancti Spiritus",Hotel
+"Las Morlas","Varadero","Be Live","045 66 7230","045 66 7215","Carretera de las Americas, Reparto La Torre, Varadero",Hotel
+"Las Tunas","Las Tunas City","Islazul","","","Las Tunas",Hotel
+"Las Yagrumas","Havana","Islazul","838 4460-64","838 5239","Calle 40 y Final Autopista, San Antonio de los Baos, La Haban",Hotel
+"Libertad","Santiago de Cuba City","Islazul","022 62 3080","022 62 8394","Calle Aguilera y Plaza de Marte, Santiago de Cuba",Hotel
+"Lido","Old Havana","Islazul","867 1102","867 1106","Consulado No. 210, e/ Animas y Trocadero, Habana Vieja",Hotel
+"Lincoln","Old Havana","Islazul","862 8061","","Calle Virtudes, No. 164 esq. a Galiano. Centro Habana",Hotel
+"Los Caneyes","Santa Clara City","Cubanacan Hoteles","042 21 8140-43","042 21 8140","Ave de los Eucaliptos y Circunvalacion, Santa Clara. Villa Clara",Hotel
+"Los Delfines","Varadero","Islazul","045 66 7227","46 66 7228","Ave de la Playa y Calle 39, Varadero",Hotel
+"Los Frailes","Old Havana","Habaguanex S.A.","862 9383/ 9510","862 9718","Calle Teniente Rey e/ Oficios y Mercaderes, Habana Vieja",Hotel
+"Los Helechos","Topes de Collantes","Gaviota Hoteles","042 54 0330-35","042 54 0117","Topes de Collantes, Sancti Spiritus",Hotel
+"Los Jazmines","Vinales","Cubanacan Hoteles","048 79 6205/ 10","048 79 6215","Carretera a Vinales, Km 23, Vinales. Pinar del Rio",Hotel
+"Los Laureles","Sancti Spiritus City","Islazul","041 2 7345","041 2 3913","Carretera Central, Km 383, Sancti Spiritus",Hotel
+"Mar del Sur","Varadero","Islazul","045 61 2246","045 66 7481","Ave 3ra y Calle 30, Varadero",Hotel
+"Maria La Gorda (CIB)","Guanahacabibes","Gaviota Hoteles","048 778131/3067","048 77 8077","Playa Maria La Gorda, Sandino.",Hotel
+"Marina Cayo Largo","Cayo Largo","","045 248 212-13","045 248 212","Marina Cayo Largo, Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Mariposa","Havana","Cubanacan Hoteles","204 9137-39","204 6131","Autopista Novia del Mediodia, Km 6 , Arroyo Arenas, La Lis",Hotel
+"Marques de Prado Ameno","Old Havana","Habaguanex S.A.","","","",Hotel
+"Marti","Guantanamo","Islazul","","","",Hotel
+"Mascotte","Remedios","Cubanacan Hoteles","042 39 5144/ 5467","042 39 5327","Maximo Gomez No. 114, Remedios. Villa Clara",Hotel
+"Melia Buenavista","Cayo Santa Maria","Melia Hotels Int.","","","",Hotel
+"Melia Cayo Coco","Cayo Coco","Melia Hotels Int.","033 30 1180","033 30 1195","Cayo Coco, Jardines del Rey",Hotel
+"Melia Cayo Guillermo","Cayo Guillermo","Melia Hotels Int.","033 30 1680","033 30 1685","Cayo Guillermo, Jardines del Rey",Hotel
+"Melia Cayo Santa Maria","Cayo Santa Maria","Melia Hotels Int.","042 35 0500","042 35 0505","Cayo Santa Maria, Norte Caibarien",Hotel
+"Melia Cohiba","Vedado","Melia Hotels Int.","833 3636","833 3946","Paseo e/ 1ra y 3ra. Vedado, Plaza de la Revolucion",Hotel
+"Melia Habana","Miramar","Melia Hotels Int.","204 8500","204 3903","3ra e/ 76 y 80. Miramar, Playa",Hotel
+"Melia Las Americas","Varadero","Melia Hotels Int.","045 66 7600","045 66 7025","Autopista Sur Km 7, Varadero",Hotel
+"Melia Las Antillas","Varadero","Melia Hotels Int.","045 66 8470","045 66 8335","Carret de las Morlas Km 14, Varadero",Hotel
+"Melia Las Dunas","Cayo Santa Maria","Melia Hotels Int.","042 35 0100","042 35 0105","Cayo Santa Maria, Norte Caibarien",Hotel
+"Melia Marina Varadero","Varadero","Melia Hotels Int.","","","",Hotel
+"Melia Peninsula Varadero","Varadero","Melia Hotels Int.","045 66 8800","045 66 8808","Parque Natural Punta Hicacos, Varadero",Hotel
+"Melia Santiago de Cuba","Santiago de Cuba City","Melia Hotels Int.","022 68 7070","022 68 7170","Avenida Las Amricas y M, Santiago de Cub",Hotel
+"Melia Varadero","Varadero","Melia Hotels Int.","045 66 7013","045 66 7012","Autopista Sur Km 7, Varadero",Hotel
+"Memories Azul","Cayo Santa Maria","Blue Diamond Hotels & Resorts","042 35 0600","","",Hotel
+"Memories Caribe","Cayo Coco","Blue Diamond Hotels & Resorts","033 30 2350","","Cayo Coco No. 66. Ciego de Avila",Hotel
+"Memories Flamenco","Cayo Coco","Blue Diamond Hotels & Resorts","033 30 4100","","Cayo Coco No. 66. Ciego de Avila",Hotel
+"Memories Paraiso","Cayo Santa Maria","Blue Diamond Hotels & Resorts","042 35 0600","","",Hotel
+"Memories Varadero","Varadero","Blue Diamond Hotels & Resorts","045 66 7599","","Carretera Las Morlas, Punta Hicacos, Varadero. Matanzas",Hotel
+"Mercure Cuatro Palmas","Varadero","Accor","045 66 7040","045 66 6208","Ave 1ra e/ 60 y 64, Varadero",Hotel
+"Mercure Playa de Oro","Varadero","Accor","045 66 8566","045 66 8555","Carretera de las Morlas, Km. 12 1/2, Varadero",Hotel
+"Mercure Sevilla","Old Havana","Accor","860 8560","860 8875","Calle Trocadero No. 55, La Habana Vieja",Hotel
+"Meson de la Flota","Old Havana","Habaguanex S.A.","863 3838","862 9281","Calle Mercaderes, No. 257 e/ Amargura y Teniente Rey, Habana Vieja",Hotel
+"Meson del Regidor","Trinidad","Cubanacan Hoteles","","","Trinidad",Hotel
+"Mirador de Mayabe","Holguin City","Islazul","024 42 5498","024 42 5498","Alturas de Mayabe Km. 8, Holguin",Hotel
+"Mirador de San Diego","San Diego","Islazul","048 778338","048 777866","Calle 23 Final, San Diego de los Baos. Los Palacios. Pinar del Ri",Hotel
+"Moka","Las Terrazas","Las Terrazas","048 77 8600/01","49 77 8605","Comunidad Las Terrazas. Km. 51 Autopista Habana - Pinar del Rio",Hotel
+"Moron","City of Moron","Islazul","033 50 2230","033 50 2133","Avenida del Tarafa, Moron",Hotel
+"Neptuno-Triton","Miramar","Gran Caribe","204 1606","204 0042","Avenida 3ra y 74, Miramar, Playa",Hotel
+"Niquero","Granma","Islazul","023 59 2367","023 59 2368","Marti No. 100, esq. A cespedes, Niquero",Hotel
+"Oasis","Varadero","Islazul","045 66 7380","045 66 7489","Via Blanca, Km 130. Varadero",Hotel
+"Occidental Miramar","Miramar","Occidental Hotels & Resorts","204 3584","204 8158","5ta Ave e/ 72 y 76, Miramar, Playa",Hotel
+"Occidental Montehabana","Miramar","Occidental Hotels & Resorts","206 9595","206 9912","Calle 70 e/ 5ta y 7ma, Miramar, Playa",Hotel
+"Ocean Varadero El Patriarca","Varadero","H10 Hotels","045 66 8166","045 66 8148","Autopista Sur, Km 18, Punta Hicacos. Varadero. Matanzas",Hotel
+"Ordo","Gibara","Cubanacan Hoteles","","","",Hotel
+"Palacio Azul","Cienfuegos","Gran Caribe","0432 55 5828/ 29","","Calle 37 e/ 12 y 14, Cienfuegos",Hotel
+"Palacio Marques de San Felipe","Old Havana","Habaguanex S.A.","","","",Hotel
+"Palacio OFarril","Old Havana","Habaguanex S.A.","860 5080","860 5083","Calle Cuba, No. 102-108, esq. a Chacon, Habana Vieja",Hotel
+"Palacio San Miguel","Old Havana","Habaguanex S.A.","862 7656","863 4088","Calle Cuba, No. 52, esq. a Pena Pobre, Habana Vieja",Hotel
+"Palco","","","","","",Hotel
+"Palma Real","Varadero","BelleVue","045 61 4555","045 61 4550","Ave 2da y 64, Varadero",Hotel
+"Panamericano","Havana","Islazul","795 1001","795 1021","Calle A y Ave. Central, Cojimar, Ciudad de la Habana",Hotel
+"Paradisus Princesa del Mar","Varadero","Melia Hotels Int.","045 66 7200","045 66 7354","Rincon Frances , Varadero",Hotel
+"Paradisus Rio de Oro","Guardalavaca","Melia Hotels Int.","024 430 090","024 430 095","Playa Esmeralda (Estero Ciego), Carret Guardalavaca, Rafael Freyre",Hotel
+"Paradisus Varadero","Varadero","Melia Hotels Int.","045 66 8700","045 66 8705","Punta Frances, Varadero",Hotel
+"Park View","Old Havana","Habaguanex S.A.","861 3293","863 6036","Calle Colon, esq. a Morro, Habana Vieja",Hotel
+"Pasacaballo","Cienfuegos","Islazul","043 54 8013","043 54 8002","Carretera de Rancho Luna, Km 22, Cienfuegos",Hotel
+"Paseo Habana","Vedado","Islazul","","","",Hotel
+"Perla del Mar","Cienfuegos","Gran Caribe","","","",Hotel
+"Pernik","Holguin City","Islazul","024 48 1011","024 48 1667","Ave Jorge Dimitrov, Holguin",Hotel
+"Pestana Cayo Coco","Cayo Coco","Pestana Hotels & Resorts","033 304 200","033 308 351","Carretera a Cayo Guillermo, Km 9 1/2, Cayo Coco, Moron. Ciego de Avila",Hotel
+"Pinar del Rio","Pinar del Rio City","Islazul","048 755070","048 771699","Marti y Final Autopista. Pinar del Rio",Hotel
+"Playa Blanca","Cayo Largo","Gran Caribe","045 248 080","045 24 8088","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Playa Caleta","Varadero","BelleVue","045 66 7120","045 66 7779","Avenida Kawama y Final, Varadero",Hotel
+"Playa Cayo Santa Maria","Cayo Santa Maria","Gaviota Hoteles","042 35 0400","042 35 0401","Cayo Santa Maria, Norte Caibarien",Hotel
+"Playa Coco","Cayo Coco","Gaviota Hoteles","033 30 2250","033 30 2255","Cayo Coco, Jardines del Rey",Hotel
+"Playa Costa Verde","Playa Pesquero","Gaviota Hoteles","024 430 520","024 430 525","Playa Pesquero, Rafael Freyre",Hotel
+"Playa Giron","Cienaga de Zapata","Cubanacan Hoteles","045 98 4110 / 48","045 98 4117","Playa Giron, Cienaga de Zapata. Matanzas",Hotel
+"Playa Larga","Cienaga de Zapata","Cubanacan Hoteles","045 98 7294/ 06","045 98 7276","Playa Larga Km 32, Peninsula de Zapata. Matanzas",Hotel
+"Playa Pesquero","Playa Pesquero","Gaviota Hoteles","024 430 530","024 430 535","Playa Pesquero, Rafael Freyre",Hotel
+"Plaza","Old Havana","Gran Caribe","860 8583-89","860 8869","Ignacio Agramonte No.267, Habana Vieja",Hotel
+"Hostal Plaza","Sancti Spiritus City","Islazul","041 92 7102/ 24","041 92 6940","Independencia, No. 2, Norte, esq. Avenida de los Martires, Sancti Spiritus",Hotel
+"Plaza Camaguey","Camaguey City","Islazul","032 28 2457/35","032 28 2413","Calle Van Horne, No. 1 e/ Republica y Avellaneda, Camaguey",Hotel
+"Plaza Baracoa","Baracoa","Gaviota Hoteles","","","",Hotel
+"Porto Santo","Baracoa","Gaviota Hoteles","021 45 372/103/4","021 45 135","Carretera del Aeropuerto, Reparto Jaitesico, Baracoa",Hotel
+"Puerto Principe","Camaguey City","Islazul","032 28 2457/35","032 28 2413","Calle Van Horne, No. 1 e/ Republica y Avellaneda, Camaguey",Hotel
+"Pullman","Varadero","Islazul","045 61 2702","045 66 7499","Ave 1ra e/ 49 y 50, Varadero",Hotel
+"Punta Blanca","Varadero","Islazul","","","",Hotel
+"Punta La Cueva","Cienfuegos","Islazul","","","",Hotel
+"Puntarena","Varadero","BelleVue","045 66 7125-29","045 66 7074","Avenida Kawama y Final, Varadero",Hotel
+"Quinta Avenida Habana","Miramar","Gaviota Hoteles","","","5ta Ave e/ 76 y 80, Miramar, Playa. La Habana",Hotel
+"Rancho Club","Santiago de Cuba","Islazul","","","",Hotel
+"Rancho El Tesoro","Isla de la Juventud","","046 32 3035","046 32 3657","Carretera Autopista, Km. 2 1/2, Nueva Gerona",Hotel
+"Rancho Hatuey","Sancti Spiritus City","Islazul","041 2 8315","041 2 8830","Carretera Central, Km 383, Sancti Spiritus",Hotel
+"Rancho Luna","Cienfuegos","Gran Caribe","043 54 8012/ 20","043 54 8131","Carretera Rancho Luna, Km. 18, Cienfuegos",Hotel
+"Rancho San Vicente","Vinales","Cubanacan Hoteles","048 79 6201/ 21","048 79 6265","Carretera Puerto Esperanza, Km 33, Vinales. Pinar del Rio",Hotel
+"Raquel","Old Havana","Habaguanex S.A.","860 8280","860 8275","Calle Amargura esq. a San Ignacio, Habana Vieja",Hotel
+"Rio Miel","Baracoa","Gaviota Hoteles","","","",Hotel
+"RIU Playa Turquesa","Guardalavaca","RIU Hotels & Resorts","024 430 540","024 435 545","Carretera Guardalavaca, Playa Yuraguanal, Rafael Freyre",Hotel
+"RIU Varadero","Varadero","RIU Hotels & Resorts","","","",Hotel
+"ROC Arenas Doradas","Varadero","ROC Hotels","045 66 8150-56","045 66 8158","Autopista Varadero Km. 12, Varadero",Hotel
+"ROC Barlovento","Varadero","ROC Hotels","045 66 7140","045 66 7218","Ave 1ra e/ 9 y 12, Varadero",Hotel
+"ROC Presidente","Vedado","ROC Hotels","838 1801/ 04","833 3753","Calle Calzada esq. Avenida de los Presidentes, Vedado",Hotel
+"Royal Hicacos","Varadero","Blue Diamond Hotels & Resorts","045 66 8844","045 66 8851","Carretera Las Morlas, Km 15, Varadero. Matanzas",Hotel
+"Royalton","Bayamo City","Islazul","023 42 2290/24","023 42 4792","Antonio Maceo No. 53 e/ General Garcia y Jose Palma, Bayamo",Hotel
+"Royalton Cayo Santa Maria","Cayo Santa Maria","Blue Diamond Hotels & Resorts","042 35 0900","","",Hotel
+"Saint John's","Vedado","Gran Caribe","833 3740","833 3561","Calle O e/ 23 y 25, Vedado",Hotel
+"San Alejandro","Havana","Islazul","","","Avenida 31 e/ 76 y 78, Marianao. La Habana",Hotel
+"San Basilio","Santiago de Cuba City","Cubanacan Hoteles","022 65 1702/ 1687","022 65 6039","Calle San Basilio No. 403 e/ Calvario y Carniceria, Santiago de Cuba",Hotel
+"San Juan","Santiago de Cuba City","Islazul","022 68 7200/01","022 68 7017","Carretera de Siboney, Km. 1 1/2, Santiago de Cuba",Hotel
+"Santa Clara Libre","Santa Clara City","Islazul","042 20 7548-50","042 20 2771","Parque Leoncio Vidal No. 6 e/ Trista y Padre Chao, Santa Clara",Hotel
+"Santa Isabel","Old Havana","Habaguanex S.A.","860 8201","860 8391","Calle Baratillo, No.9, e/ Obispo y Narciso Lopez, Habana Vieja.",Hotel
+"Santiago Habana","Ciego de Avila City","Islazul","033 22 5703 / 47","","Honorato del Castillo esq. a Carretera Central, Ciego de Avila",Hotel
+"Saratoga","Old Havana","Habaguanex S.A.","868 1000","","Prado No. 603, Habana Vieja. La Habana",Hotel
+"Sierra Maestra","Bayamo City","Islazul","023 42 7270","023 48 1798","Carret Central Km 1 1/2, Bayamo",Hotel
+"Sol Cayo Coco","Cayo Coco","Melia Hotels Int.","033 30 1280","033 30 1285","Cayo Coco, Jardines del Rey",Hotel
+"Sol Cayo Guillermo","Cayo Guillermo","Melia Hotels Int.","033 30 1760","033 30 1748","Cayo Guillermo, Jardines del Rey",Hotel
+"Sol Cayo Largo","Cayo Largo","Melia Hotels Int.","045 248 260","045 248 265","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Sol Cayo Santa Maria","Cayo Santa Maria","Melia Hotels Int.","042 35 1500","042 35 1505/20","Cayo Santa Maria, Norte Caibarien",Hotel
+"Sol Palmeras","Varadero","Melia Hotels Int.","045 66 7009","045 66 7008","Autopista Sur Km 8, Varadero",Hotel
+"Sol Pelicano","Cayo Largo","Melia Hotels Int.","045 248 333-36","045 248 167","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Sol Rio de Luna y Mares","Guardalavaca","Melia Hotels Int.","024 430 030/060","24 430 065","Playa Esmeralda (Estero Ciego), Carret Guardalavaca, Rafael Freyre",Hotel
+"Sol Sirenas - Coral","Varadero","Melia Hotels Int.","045 66 8070/7240","045 66 8075/7194","Avenide de las Americas y Calle K, Reparto La Torre, Varadero",Hotel
+"Sotavento","Varadero","Islazul","045 66 7133","46 66 7229","Calle 13 e/ Ave 1ra y Camino del Mar, Varadero",Hotel
+"Sunbeach","Varadero","Gran Caribe","045 66 7490","045 66 4998","Calle 17 e/ Ave 1ra y 3ra, Varadero",Hotel
+"Tararaco","Camaguey","Islazul","","","",Hotel
+"Tejadillo","Old Havana","Habaguanex S.A.","863 7283","863 8830","Calle Tejadillo, No.12, esq. a San Ignacio, Habana Vieja",Hotel
+"Telegrafo","Old Havana","Habaguanex S.A.","861 1010/ 2242","861 4741","Prado, No.408 esq a Neptuno, Habana Vieja",Hotel
+"Terral","Old Havana","Habaguanex S.A.","","","Malecon, Centro Habana. La Habana",Hotel
+"Tropicoco","Eastern Beaches","Cubanacan Hoteles","797 1371/ 76","797 1389","Avenida Banderas y Las Terrazas, Santa Maria del Mar",Hotel
+"Tryp Cayo Coco","Cayo Coco","Melia Hotels Int.","033 30 1300","033 30 1386","Cayo Coco, Jardines del Rey",Hotel
+"Tryp Habana Libre","Vedado","Melia Hotels Int.","838 4011","834 6365","Calle L e/ 23 y 25, Vedado",Hotel
+"Tulipan","Havana","Islazul","","","",Hotel
+"Turquesa","Varadero","Be Live","045 66 8471","045 66 8496","Carretera Las Morlas Km. 12 1/2, Varadero",Hotel
+"Tuxpan","Varadero","Cubanacan Hoteles","045 66 7560","045 66 7561","Carretera de las Amricas Km 2, Varadero. Matanza",Hotel
+"Varazul","Varadero","Islazul","045 66 7132","045 66 7229","Ave 1ra y Calle 13, Varadero",Hotel
+"Vedado","Vedado","Gran Caribe","836 4072","833 4186","Calle O No. 244, Vedado",Hotel
+"Velasco","Matanzas City","Cubanacan Hoteles","045 25 3880-84","","Calle Contreras e/ Santa Teresa y Ayuntamiento, Matanzas",Hotel
+"Versalles","Santiago de Cuba City","Cubanacan Hoteles","022 69 1016/ 70","022 68 6039","Alturas de Versalles, Km 1 , Santiago de Cub",Hotel
+"Victoria","Vedado","Gran Caribe","833 3510/ 3625","833 3109","Calle 19 esq. a M, Vedado",Hotel
+"Villa Aguas Claras","Pinar del Rio City","Cubamar","048 77 8426-27","","Carretera a Vinales, Km. 7, Pinar del Rio",Hotel
+"Villa Bacuranao","Eastern Beaches","Islazul","793 9241","765 6322","Via Blanca, Km. 15.5, Bacuranao. Ciudad de la Habana",Hotel
+"Villa Bayamo","Bayamo City","Islazul","023 42 3102","023 42 4485","Carretera Manzanillo Km 5 1/2, Va Manzanillo Bayam",Hotel
+"Villa Caburni","Topes de Collantes","Gaviota Hoteles","042 54 0180/0335","042 54 0117","Topes de Collantes, Sancti Spiritus",Hotel
+"Villa Cayo Saetia","Cayo Saetia","Gaviota Hoteles","024 496 900/01","024 496 903","Cayo Saetia, Mayari",Hotel
+"Villa Cojimar","","","","","",Hotel
+"Villa Coral","Cayo Largo","Gran Caribe","045 248 111-18","045 248 201","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Villa Cuba","Varadero","Gran Caribe","045 66 8280","045 66 8282","Ave de las Americas, Reparto La Torre, Varadero",Hotel
+"Villa El Salton","Sierra Maestra","Cubanacan Hoteles","022 56 6326","022 56 6492","Carretera File, Tercer Frente. Santiago de Cuba",Hotel
+"Villa El Yarey","Granma","Servimed","023 42 7684","023 42 7973","Carretera Loma, El Yarey, Jiguani",Hotel
+"Villa Gaviota Cabo San Antonio","Guanahacabibes","Gaviota Hoteles","048 75 0118","49 75 0119","Cabo San Antonio, Sandino",Hotel
+"Villa Gaviota Cayo Coco","Cayo Coco","Gaviota Hoteles","033 30 2180-85","033 30 2190","Cayo Coco, Jardines del Rey",Hotel
+"Villa Gaviota Santiago de Cuba","Santiago de Cuba City","Gaviota Hoteles","022 64 1368/ 70","022 68 7166","Avenida Manduley, No. 502, Reparto Vista Alegre, Santiago de Cuba",Hotel
+"Villa Guajimico","Cienfuegos","Cubamar","043 25 1204/05","44 25 1326","Carretera a Trinidad Km 42, Cumanayagua",Hotel
+"Villa Guama","Cienaga de Zapata","Cubanacan Hoteles","045 91 9500 / 5662","","Carretera a Playa Larga Km 19, La Boca, Laguna del Tesoro, Peninsula de Zapata. Matanzas",Hotel
+"Villa Isla de la Juventud","Isla de la Juventud","","046 32 3290","47 32 3657","Carretera Autopista, Km. 1 1/2, Nueva Gerona",Hotel
+"Villa La Granjita","Santa Clara City","Cubanacan Hoteles","042 21 8190-91","042 21 8149","Carretera a Malezas, Km 2 , Santa Clara. Villa Clar",Hotel
+"Villa La Mar","Varadero","Islazul","045 61 3910","045 61 2508","Ave 3ra e/ 28 y 30, Varadero",Hotel
+"Villa Laguna Grande","Guanahacabibes","","","","Granja Simon Bolivar, Sandino. Pinar del Rio",Hotel
+"Villa Las Brujas","Cayo Las Brujas","Gaviota Hoteles","042 35 0199","042 35 0599","Cayo Las Brujas, Norte Caibarien. Villa Clara",Hotel
+"Villa Lindamar","Cayo Largo","Gran Caribe","045 248 111-18","045 248 201","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Villa Los Pinos","Eastern Beaches","Gran Caribe","797 1269/ 1361","797 1524/ 1005","Avenida de las Terrazas, No 21. Santa Maria del Mar. La Habana",Hotel
+"Villa Maguana","Baracoa","Gaviota Hoteles","021 45 164-66","021 45 223","Carretera a Moa, Baracoa. Guantanamo",Hotel
+"Villa Marinera","Cayo Largo","Gran Caribe","","","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Villa Megano","Eastern Beaches","MINFAR","797 1610","797 1624","Km 22 , Santa Maria del Mar, Playas del Este. La Haban",Hotel
+"Villa Pinares de Mayari","Pinares de Mayari","Gaviota Hoteles","024 530 308","024 530 926","La Mensura, Pinares de Mayari",Hotel
+"Villa San Jose del Lago","Yaguajay","Islazul","041 5 6108","041 5 6290","Carretera a Mayajigua, Yaguajay, Sancti Spiritus",Hotel
+"Villa Santo Domingo","Granma","Islazul","023 59 5302","","Carretera La Plata, Km 16, Santo Domingo",Hotel
+"Villa Soledad","Cayo Largo","Gran Caribe","045 248 111-18","045 248 201","Cayo Largo del Sur, Archipielago de los Canarreos",Hotel
+"Villa Soroa","Soroa","Cubanacan Hoteles","048 52 3534/ 56","048 52 3861","Carretera a Soroa Km 8, Candelaria. Artemisa",Hotel
+"Villa Tropico","Jibacoa","Gran Caribe","047 29 5205-07","047 29 5208","Via Blanca, Km 60, Playa Jibacoa. Santa Cruz del Norte. Mayabeque",Hotel
+"Villa Yaguanabo","Cienfuegos","Islazul","042 54 1905","042 54 1921","Carretera a Trinidad Km 55, Cienfuegos",Hotel
+"Villas Mirador del Mar","Eastern Beaches","Islazul","797 1354-55","797 1262","Calle 11 e/ 1ra y 3ra, Santa Maria del Mar. La Habana",Hotel
+"Villas Tarara","Eastern Beaches","CIMEX","796 1526-29","796 1735","Calle 8 y 1ra, Villa Armonia, Ciudad Tarara, La Habana del Este. La Habana",Hotel
+"Villa Tortuga","Varadero","Gran Caribe","045 61 4747","045 66 7485","Calle 7 e/ Ave Kawama y Playa, Varadero. Matanzas",Hotel
+"Vueltabajo","Pinar del Rio City","Islazul","048 755363","","Calle Marti, No 103. Pinar del Rio",Hotel
+"Xanadu Mansion","Varadero","Varadero Golf Course","","","",Hotel
+"Zaza","Sancti Spiritus City","Islazul","041 2 5490","041 2 8359","Finca San Jose, Km 5 , Lago Zaza, Sancti Spiritu",Hotel
+"Casa Particular Carmen Ignacio","Camaguey",,,,,Hotel
+"Casa Particular Villa Lagarto","Cienfuegos",,,,,Hotel
+"Casa Particular Ani y Carlos","Cienfuegos",,,,,Hotel
+"Casa Particular Los Delfines","Cienfuegos",,,,,Hotel
+"Casa Particular Padron","Cienfuegos",,,,,Hotel
+"Casa Particular La Casita de Oshun","Cienfuegos",,,,,Hotel
+"Casa Particular La Pergola","Cienfuegos",,,,,Hotel
+"Casa Particular Cienfuegos Marta Pena","Cienfuegos",,,,,Hotel
+"Casa Particular Habana","Havana",,,,,Hotel
+"Casa Particular Lisbeth","Havana",,,,,Hotel
+"Casa Particular Aurora","Havana",,,,,Hotel
+"Casa Particular Aleido","Havana",,,,,Hotel
+"Casa Particular Vana","Havana",,,,,Hotel
+"Casa Particular Kelly","Havana",,,,,Hotel
+"Casa Particular Maura","Havana",,,,,Hotel
+"Casa Particular Ronel e Ivette","Playa Giron",,,,,Hotel
+"Casa Particular Playa Larga - Guama","Playa Larga",,,,,Hotel
+"Casa Particular Hostal Mayito","Playa Larga",,,,,Hotel
+"Casa Particular La Buganvilia","Remedios",,,,,Hotel
+"Casa Particular Rosa Elvira","Baracoa",,,,,Hotel
+"Casa Particular Hostal Authentica Pergola","Santa Clara City",,,,,Hotel
+"Casa Particular Georgina","Santiago de Cuba",,,,,Hotel
+"Casa Particular Los Sauces","Soroa",,,,,Hotel
+"Casa Particular Hospedaje Vivo","Soroa",,,,,Hotel
+"Casa Particular El Teide","Trinidad",,,,,Hotel
+"Casa Particular Osmary y Alberto","Trinidad",,,,,Hotel
+"Casa Particular El Tulipan","Trinidad",,,,,Hotel
+"Casa Particular Font","Trinidad",,,,,Hotel
+"Casa Particular Balbina","Trinidad",,,,,Hotel
+"Casa Particular Colonial 1830","Trinidad",,,,,Hotel
+"Casa Particular Colonial El Patio","Trinidad",,,,,Hotel
+"Casa Particular Miriam","Trinidad",,,,,Hotel
+"Casa Particular Hostal Nilda Ponce","Trinidad",,,,,Hotel
+"Casa Particular La Casona 254","Trinidad",,,,,Hotel
+"Casa Particular Las Palmas","Trinidad",,,,,Hotel
+"Casa Particular Sara San Juan","Trinidad",,,,,Hotel
+"Casa Particular Haydee Chirole","Vinales",,,,,Hotel
+"Casa Particular Jorge y Ana Luisa","Vinales",,,,,Hotel
+"Casa Particular Miriam y Luisa","Vinales",,,,,Hotel
+"Casa Particular Villa La Cubana","Vinales",,,,,Hotel
+"Casa Particular Cafetal","Vinales",,,,,Hotel
+"Casa Particular Campo","Vinales",,,,,Hotel
+"Casa Particular Cubana","Vinales",,,,,Hotel
+"Casa Particular Papo y Niulvys","Vinales",,,,,Hotel
+"Casa Particular La Esquinita","Vinales",,,,,Hotel
+"Casa Particular La Gran Familia","Vinales",,,,,Hotel
+"Casa Particular Sunny Balcony","Vinales",,,,,Hotel
+"Casa Particular Villa Cristal","Vinales",,,,,Hotel
+"Casa Particular Villa Niurky","Vinales",,,,,Hotel
+"Casa Particular Villa Fuentes","Holguin",,,,,Hotel
