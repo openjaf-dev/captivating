@@ -1,10 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <openerp>
-    <data>
+<data>
+	
+    <record id="travel_voucher_report_id" model="ir.actions.report.xml">
+        <field name="name">Travel Voucher Report</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sale.order.line</field>
+        <field name="report_name">travel_voucher_report</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="report_rml">captivating_features/report/travel_voucher.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
 
-		<report auto="False" id="report_travel_voucher" model="sale.order.line" name="travel.voucher"
-                rml="travel_core/report/travel_voucher.rml" string="Travel Voucher"
-                usage="default"/>
+    <ir_set>
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field eval="['sale.order.line']" name="models"/>
+        <field name="name">Travel Voucher</field>
+        <field eval="'ir.actions.report.xml,'+str(travel_voucher_report_id)" name="value"/>
+        <field eval="True" name="isobject"/>
+        <field eval="True" name="replace"/>
+    </ir_set>
 
-    </data>
+</data>
 </openerp>
