@@ -8,10 +8,11 @@
             <field name="arch" type="xml">
                 <form string="Import" version="7.0"> 
 				     <group>
-				        <field name="product" />	
-				        <field name="extended" invisible="1"/>			        
+				        <field name="supplier_id" />
 						<field name="file" />
 						<field name="sheet" />
+						<field name="start_date" />
+						<field name="end_date" />
 				     </group>
 					 <group>
 					 	<field name="result" colspan="4"/>

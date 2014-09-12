@@ -25,48 +25,24 @@ import base64
 import datetime
 import xlrd
 
-DATETIME_FORMAT = "%Y-%m-%d"
-HOTEL_TYPES = {
-    'Ciudad': 'city', 'Playa': 'beach', 'Cayos': 'beach', 'Rural': 'nature'
-}
-CAR_DAYS = {
-    7: '3-6 Days', 8: '7-13 Days', 9: '14-29 Days'
-}
-TRANSMISSION = {
-    'Mecánica': 'Mechanic', 'Automática': 'Automatic'
-}
-INCLUDE = 'Incluido'
-CP = 'CP (Continental Plan)'
-MAP = 'MAP (Modified American Plan)'
-AP = 'AP (American Plan)'
-AI = 'All Inclusive'
-HOTEL_FIEDLS = ['suppinfo_id', 'room_type_id', 'meal_plan_id']
-PROGRAM_FIEDLS = ['suppinfo_id', 'room_type_id', 'meal_plan_id', 'min_pax', 'max_pax']
-TRANSFER_FIELDS = ['suppinfo_id', 'vehicle_type_id', 'guide_id']
-CAR_FIELDS = ['suppinfo_id', 'transmission_id', 'days_id']
 BASE_DATE = 693594
-STD_SUPPLIER = 'Cubanacan'
 
 
 class transfer_data(TransientModel):
     _name = 'transfer.data'
     _columns = {
-        'product':
-            fields.selection([('transfer', 'Transfer')], 'Product'),
-        'extended':
-            fields.boolean('Extended'),
         'file':
             fields.binary('File'),
         'sheet':
             fields.integer('Sheet'),
-        'difference':
-            fields.float('Difference'),
         'result':
-            fields.text('Result')
-    }
-
-    _defaults = {
-        'difference': 0.0
+            fields.text('Result'),
+        'supplier_id':
+            fields.many2one('res.partner', 'Supplier'),
+        'start_date':
+            fields.date('Start date'),
+        'end_date':
+            fields.date('End date')
     }
 
     def import_file(self, cr, uid, ids, context=None):
@@ -77,15 +53,8 @@ class transfer_data(TransientModel):
                 data = self.read_from_calc(origin, obj.sheet)
             except:
                 raise osv.except_osv('Error!', 'The file is not valid.')
-            method = 'load_' + obj.product
-            if obj.extended:
-                method += '_extended'
-            res = getattr(self, method)(cr, uid, data, context)
-            if res:
-                msg = 'Products not found: \n'
-                msg += str(res).replace(',', '\n')
-            else:
-                msg = 'The operation was successful.'
+            self.load_transfer(cr, uid, obj, data, context)
+            msg = 'The operation was successful.'
             self.write(cr, uid, obj.id, {'result': msg}, context)
             return {
                 'name': 'Import Products',
@@ -139,70 +108,66 @@ class transfer_data(TransientModel):
 
     ''' Transfers '''
 
-    def load_transfer(self, cr, uid, data, context=None):
+    def load_transfer(self, cr, uid, obj, data, context=None):
         product_transfer = self.pool.get('product.transfer')
         product_supplierinfo = self.pool.get('product.supplierinfo')
         pricelist_partnerinfo = self.pool.get('pricelist.partnerinfo')
-        not_found = []
 
         dict_options = self.prepare_load(cr, uid, context)
         for d in range(6, data.nrows):
             name = (data.cell_value(d, 0) + ' - ' + data.cell_value(d, 1)).encode('UTF-8')
-            transfer_ids = product_transfer.search(cr, uid, [('name', 'in', [name, name + ''])], context=context)
+            transfer_ids = product_transfer.search(cr, uid, [('name', '=', name)], context=context)
             if transfer_ids:
                 transfer = product_transfer.browse(cr, uid, transfer_ids[0], context)
-                seller_ids = [s.id for s in transfer.seller_ids]
-                if seller_ids:
-                    product_supplierinfo.unlink(cr, uid, seller_ids, context)
-                svals = {
-                    'name': self.get_id_by_name(cr, uid, 'res.partner', STD_SUPPLIER, context),
-                    'product_id': transfer.product_id.product_tmpl_id.id,
-                    'min_qty': 0
-                }
-                suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
-                for k, v in dict_options.iteritems():
-                    price = float(data.cell_value(d, k))
-                    pvals = {
-                        'start_date': datetime.datetime(2013, 11, 1),
-                        'end_date': datetime.datetime(2014, 10, 31),
-                        'price': price,
-                        'min_quantity': 0,
-                        'suppinfo_id': suppinfo_id
-                    }
-                    pvals.update(v)
-                    pricelist_partnerinfo.create(cr, uid, pvals, context)
             else:
-                not_found.append(name)
-        return not_found
+                context.update({'category': 'transfer'})
+                transfer_id = product_transfer.create(cr, uid, {'name': name}, context)
+                transfer = product_transfer.browse(cr, uid, transfer_id)
+            seller_ids = [s.id for s in transfer.seller_ids]
+            if seller_ids:
+                product_supplierinfo.unlink(cr, uid, seller_ids, context)
+            svals = {
+                'name': obj.supplier_id.id,
+                'product_id': transfer.product_id.product_tmpl_id.id,
+                'min_qty': 0
+            }
+            suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
+            for k, v in dict_options.iteritems():
+                price = data.cell_value(d, k)
+                pvals = {
+                    'start_date': obj.start_date,
+                    'end_date': obj.end_date,
+                    'price': price,
+                    'min_quantity': 0,
+                    'suppinfo_id': suppinfo_id
+                }
+                pvals.update(v)
+                pricelist_partnerinfo.create(cr, uid, pvals, context)
+        return True
 
     def prepare_load(self, cr, uid, context):
         model = 'option.value'
-        taxi = self.find_by_code(cr, uid, 'tx', model, context)
-        microbus = self.find_by_code(cr, uid, 'mc', model, context)
-        minibus = self.find_by_code(cr, uid, 'mn', model, context)
-        omnibus = self.find_by_code(cr, uid, 'om', model, context)
-        one = self.find_by_code(cr, uid, '1-2', model, context)
-        three = self.find_by_code(cr, uid, '3-5', model, context)
-        six = self.find_by_code(cr, uid, '6-8', model, context)
-        nine = self.find_by_code(cr, uid, '9-12', model, context)
-        one_three = self.find_by_code(cr, uid, '13-20', model, context)
-        two_one = self.find_by_code(cr, uid, '21-30', model, context)
-        three_one = self.find_by_code(cr, uid, '31-43', model, context)
-        with_guide = self.find_by_code(cr, uid, 'wig', model, context)
-        without_guide = self.find_by_code(cr, uid, 'wog', model, context)
+        taxi = self.find_by_code(cr, uid, 'taxi', model, context)
+        microbus = self.find_by_code(cr, uid, 'micro', model, context)
+        minibus = self.find_by_code(cr, uid, 'mini', model, context)
+        omnibus = self.find_by_code(cr, uid, 'omni', model, context)
+        guide = self.find_by_code(cr, uid, 'guide', model, context)
+        no_guide = self.find_by_code(cr, uid, 'no_guide', model, context)
+        confort_s = self.find_by_code(cr, uid, 'vcs', model, context)
+        confort_l = self.find_by_code(cr, uid, 'vcl', model, context)
 
         dict_options = {
-            3: {'vehicle_type_id': taxi, 'vehicle_capacity_id': one, 'guide_id': without_guide},
-            #4:
-            5: {'vehicle_type_id': taxi, 'vehicle_capacity_id': one, 'guide_id': with_guide},
-            #6:
-            7: {'vehicle_type_id': microbus, 'vehicle_capacity_id': three, 'guide_id': without_guide},
-            8: {'vehicle_type_id': microbus, 'vehicle_capacity_id': six, 'guide_id': without_guide},
-            9: {'vehicle_type_id': microbus, 'vehicle_capacity_id': three, 'guide_id': with_guide},
-            10: {'vehicle_type_id': microbus, 'vehicle_capacity_id': six, 'guide_id': with_guide},
-            11: {'vehicle_type_id': minibus, 'vehicle_capacity_id': nine, 'guide_id': with_guide},
-            12: {'vehicle_type_id': minibus, 'vehicle_capacity_id': one_three, 'guide_id': with_guide},
-            13: {'vehicle_type_id': omnibus, 'vehicle_capacity_id': two_one, 'guide_id': with_guide},
-            14: {'vehicle_type_id': omnibus, 'vehicle_capacity_id': three_one, 'guide_id': with_guide}
+            3:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_s},
+            4:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_s},
+            5:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_l},
+            6:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_l},
+            7:  {'vehicle_type_id': microbus, 'guide_id': no_guide, 'min_paxs': 3,  'max_paxs': 5 },
+            8:  {'vehicle_type_id': microbus, 'guide_id': no_guide, 'min_paxs': 6,  'max_paxs': 8 },
+            9:  {'vehicle_type_id': microbus, 'guide_id': guide,    'min_paxs': 3,  'max_paxs': 5 },
+            10: {'vehicle_type_id': microbus, 'guide_id': guide,    'min_paxs': 6,  'max_paxs': 8 },
+            11: {'vehicle_type_id': minibus,  'guide_id': guide,    'min_paxs': 9,  'max_paxs': 12},
+            12: {'vehicle_type_id': minibus,  'guide_id': guide,    'min_paxs': 13, 'max_paxs': 20},
+            13: {'vehicle_type_id': omnibus,  'guide_id': guide,    'min_paxs': 21, 'max_paxs': 30},
+            14: {'vehicle_type_id': omnibus,  'guide_id': guide,    'min_paxs': 31, 'max_paxs': 43}
         }
         return dict_options
