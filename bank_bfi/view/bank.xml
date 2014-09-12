@@ -22,10 +22,7 @@
             <field name="target">new</field>
         </record>
         
-		<!-- Mover este menu para Contabilidad -->
-        <menuitem id="sales_bank" name="Banco" sequence="10" parent="base.menu_base_partner"/>
-        <menuitem id="import_transactions_menu" sequence="1" parent="sales_bank" action="import_transactions_action"/>
-        <menuitem id="bank_transactions_menu" sequence="2" parent="sales_bank" action="account.action_bank_statement_tree"/>
+        <menuitem id="import_transactions_menu" sequence="1" parent="account.menu_finance_bank_and_cash" action="import_transactions_action"/>
         
     </data>
 </openerp>
