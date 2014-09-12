@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    	<record id="transfer_data_form" model="ir.ui.view">
+            <field name="name">transfer.data.form</field>
+            <field name="model">transfer.data</field>
+            <field name="arch" type="xml">
+                <form string="Import" version="7.0"> 
+				     <group>
+				        <field name="product" />	
+				        <field name="extended" invisible="1"/>			        
+						<field name="file" />
+						<field name="sheet" />
+				     </group>
+					 <group>
+					 	<field name="result" colspan="4"/>
+					 </group>
+					 <footer>
+                        <button name="import_file" string="Import" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                     </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="transfer_data_action" model="ir.actions.act_window">
+            <field name="name">Import Transfers</field>
+            <field name="res_model">transfer.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>            
+            <field name="view_id" ref="transfer_data_form"/>
+            <field name="target">new</field> 
+        </record>
+		
+        <menuitem id="transfer_data_menu" sequence="100" parent="base.menu_product" action="transfer_data_action" />
+
+    </data>
+</openerp>
