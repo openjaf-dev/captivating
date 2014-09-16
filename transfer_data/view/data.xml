@@ -10,7 +10,7 @@
 				     <group>
 				        <field name="supplier_id" />
 						<field name="file" />
-						<field name="sheet" />
+						<field name="sheet" invisible="1"/>
 						<field name="start_date" />
 						<field name="end_date" />
 				     </group>

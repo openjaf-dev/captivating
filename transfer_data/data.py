@@ -44,6 +44,8 @@ class transfer_data(TransientModel):
         'end_date':
             fields.date('End date')
     }
+    
+    _defaults = {'sheet': 0}
 
     def import_file(self, cr, uid, ids, context=None):
         obj = self.browse(cr, uid, ids[0], context)
@@ -157,17 +159,17 @@ class transfer_data(TransientModel):
         confort_l = self.find_by_code(cr, uid, 'vcl', model, context)
 
         dict_options = {
+            2:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_s},
             3:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_s},
-            4:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_s},
+            4:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_l},
             5:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_l},
-            6:  {'vehicle_type_id': taxi,     'guide_id': no_guide, 'min_paxs': 1,  'max_paxs': 2, 'confort_id': confort_l},
-            7:  {'vehicle_type_id': microbus, 'guide_id': no_guide, 'min_paxs': 3,  'max_paxs': 5 },
-            8:  {'vehicle_type_id': microbus, 'guide_id': no_guide, 'min_paxs': 6,  'max_paxs': 8 },
-            9:  {'vehicle_type_id': microbus, 'guide_id': guide,    'min_paxs': 3,  'max_paxs': 5 },
-            10: {'vehicle_type_id': microbus, 'guide_id': guide,    'min_paxs': 6,  'max_paxs': 8 },
-            11: {'vehicle_type_id': minibus,  'guide_id': guide,    'min_paxs': 9,  'max_paxs': 12},
-            12: {'vehicle_type_id': minibus,  'guide_id': guide,    'min_paxs': 13, 'max_paxs': 20},
-            13: {'vehicle_type_id': omnibus,  'guide_id': guide,    'min_paxs': 21, 'max_paxs': 30},
-            14: {'vehicle_type_id': omnibus,  'guide_id': guide,    'min_paxs': 31, 'max_paxs': 43}
+            6:  {'vehicle_type_id': microbus, 'guide_id': no_guide, 'min_paxs': 3,  'max_paxs': 5 },
+            7:  {'vehicle_type_id': microbus, 'guide_id': no_guide, 'min_paxs': 6,  'max_paxs': 8 },
+            8:  {'vehicle_type_id': microbus, 'guide_id': guide,    'min_paxs': 3,  'max_paxs': 5 },
+            9:  {'vehicle_type_id': microbus, 'guide_id': guide,    'min_paxs': 6,  'max_paxs': 8 },
+            10: {'vehicle_type_id': minibus,  'guide_id': guide,    'min_paxs': 9,  'max_paxs': 12},
+            11: {'vehicle_type_id': minibus,  'guide_id': guide,    'min_paxs': 13, 'max_paxs': 20},
+            12: {'vehicle_type_id': omnibus,  'guide_id': guide,    'min_paxs': 21, 'max_paxs': 30},
+            13: {'vehicle_type_id': omnibus,  'guide_id': guide,    'min_paxs': 31, 'max_paxs': 43}
         }
         return dict_options

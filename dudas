@@ -25,8 +25,14 @@ bugs
  - no deja entrar a los listados de precios por un error de permisos (product.rate.supplement), para un usuario sin permisos (solved)
  - supplier "", cuando entro un listado de precios
  - Añadir a res.partner Cubanacan Viajes, Gaviota Tours (done)
-
-
+ - lead name por orden alfabetico (cambiar a por inserción)
+ 
+ Cesar:
+ - me da error al importar arriba (imagino que un bateo con xlrd 0.6.1 0.9.3)
+ - me da error al subir una bd ya guardada (imagino que problema con la versión de psql 9.3.4 - 9.1.13)
+ - me preocupa lo de los vouchers, que podemos hacer?
+ 
+ - Me da error cuando una reserva abarca más de un periodo en el pricelist
 
 - Ver cómo hacer que las ventas se comporten como los correos, que se pongan en negrita los que no se han leído
 - Verificar el calculo de los paxs por linea
@@ -39,6 +45,7 @@ bugs
 - Tener en cuenta la moneda de la venta en la carga de datos
 - Configurar monedas, tarifas, tasas.
 - Cambiar el nombre del modulo de cuba hotels, para captivating data (hotel, suppliers, etc)
+- A los hoteles, añadirle group by destination
 
 
 Dudas:
