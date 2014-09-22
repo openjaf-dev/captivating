@@ -30,7 +30,8 @@
     "description": """ Feature module from Captivating.""",
     'init_xml': [],
     'update_xml': [
-        'report/travel_voucher.xml'
+        'report/travel_voucher.xml',
+        'view/sale.xml'
     ],
     'demo_xml': [],
     'test': [],

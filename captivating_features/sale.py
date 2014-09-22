@@ -20,7 +20,21 @@
 ##############################################################################
 
 from openerp.osv.orm import Model
+from openerp.osv import fields
 
+class sale_order(Model):
+    _name = 'sale.order'
+    _inherit = 'sale.order'
+    
+    _columns = {
+        'voucher_logo': fields.selection([('dc', 'Destination Cuba'), 
+                                          ('cc', 'Captivating Cuba')],
+                            'Voucher Logo'),
+    }
+    
+    _defaults = {
+                 'voucher_logo': 'dc'
+                 }
 
 class sale_order_line(Model):
     _name = 'sale.order.line'
