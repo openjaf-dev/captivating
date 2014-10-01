@@ -31,7 +31,8 @@
     'init_xml': [],
     'update_xml': [
         'report/travel_voucher.xml',
-        'view/sale.xml'
+        'view/sale.xml',
+        'view/pricelist.xml'
     ],
     'demo_xml': [],
     'test': [],

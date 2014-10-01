@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<openerp>
+
+	<data>
+	
+		<!-- CC Basic Margin -->	
+		
+		<record id="basic_margin_pricelist" model="product.pricelist" >
+			<field name="name">CC Basic Margin</field>
+			<field name="type">sale</field>
+		</record>
+		
+		<record id="basic_margin_pricelist_version" model="product.pricelist.version">
+			<field name="name">Default Version</field>
+			<field name="pricelist_id" ref="basic_margin_pricelist"/>
+		</record>
+		
+		<record id="basic_margin_pricelist_item" model="product.pricelist.item">
+            <field name="price_version_id" ref="basic_margin_pricelist_version"/>
+            <field name="base" eval="-2" />
+            <field name="sequence">4</field>
+            <field name="margin_per_pax" eval="0.0" />
+            <field name="categ_id">6</field>
+            <field name="name">Default Basic Margin Line</field>
+        </record>
+  
+		<!-- CC Product-Customer  -->	  
+		
+		<record id="pc_pricelist" model="product.pricelist" >
+			<field name="name">CC Product-Customer</field>
+			<field name="type">sale</field>
+		</record>    
+		
+		<record id="pc_pricelist_version" model="product.pricelist.version">
+			<field name="name">Default Version</field>
+			<field name="pricelist_id" ref="pc_pricelist"/>
+		</record>     
+				
+		<record id="pc_pricelist_item" model="product.pricelist.item">
+            <field name="price_version_id" ref="pc_pricelist_version"/>
+            <field name="base" eval="-1" />       
+            <field name="base_pricelist_id" ref="basic_margin_pricelist" />
+            <field name="sequence">1000000</field>
+            <field name="margin_per_pax" eval="0.0" />
+            <field name="categ_id">6</field>
+            <field name="name">Default Margin Line</field>
+        </record>   
+				
+	</data>
+
+</openerp>

@@ -51,7 +51,6 @@ name,customer,supplier
 "Explore Tailormade",TRUE,FALSE
 "Halcyon Travel Collection",TRUE,FALSE
 "Heffernans",TRUE,FALSE
-"Letsgo2",TRUE,FALSE
 "Quest",TRUE,FALSE
 "Stjernegaard",TRUE,FALSE
 "Topflight",TRUE,FALSE
@@ -59,3 +58,6 @@ name,customer,supplier
 "Tropical Sky",TRUE,FALSE
 "Voyager",TRUE,FALSE
 "Worldwide Holidays Direct",TRUE,FALSE
+"Letsgo2",TRUE,FALSE
+"Best At Travel",TRUE,FALSE
+"Cuba 4 Agents",TRUE,FALSE
