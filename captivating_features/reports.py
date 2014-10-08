@@ -90,7 +90,7 @@ class sale_order(Model):
             for order_line_obj in obj.order_line:
                 product = order_line_obj.product_id
                 if product.categ_id.name == product_name and getattr(order_line_obj, target_date) == obj.date_order:
-                    result[obj.id] = product.name      
+                    result[obj.id] = product.name + " (" + str(order_line_obj.reservation_number) + ")"      
                   
         return result       
     
