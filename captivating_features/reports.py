@@ -71,25 +71,25 @@ class sale_order(Model):
     _inherit = 'sale.order'
     
     def _get_start_transfer(self, cr, uid, ids, fields, args, context=None):        
-        return self.get_product_match(cr, uid, ids, 'start_date', 'Transfer', context)
+        return self.get_product_match(cr, uid, ids, 'start_date', 'date_order', 'Transfer', context)
         
     def _get_end_transfer(self, cr, uid, ids, fields, args, context=None):          
-        return self.get_product_match(cr, uid, ids, 'end_date', 'Transfer', context)
+        return self.get_product_match(cr, uid, ids, 'start_date', 'end_date', 'Transfer', context)
     
     def _get_start_hotel(self, cr, uid, ids, fields, args, context=None):        
-        return self.get_product_match(cr, uid, ids, 'start_date', 'Hotel', context)
+        return self.get_product_match(cr, uid, ids, 'start_date', 'date_order', 'Hotel', context)
         
     def _get_end_hotel(self, cr, uid, ids, fields, args, context=None):          
-        return self.get_product_match(cr, uid, ids, 'end_date', 'Hotel', context)
+        return self.get_product_match(cr, uid, ids, 'end_date', 'end_date', 'Hotel', context)
          
-    def get_product_match(self, cr, uid, ids, target_date, product_name, context):        
+    def get_product_match(self, cr, uid, ids, order_line_date, order_date, product_name, context):        
         result = {} 
                 
         for obj in self.browse(cr, uid, ids, context):
             result[obj.id] = ''
             for order_line_obj in obj.order_line:
                 product = order_line_obj.product_id
-                if product.categ_id.name == product_name and getattr(order_line_obj, target_date) == obj.date_order:
+                if product.categ_id.name == product_name and getattr(order_line_obj, order_line_date) == getattr(obj, order_date):
                     result[obj.id] = product.name + " (" + str(order_line_obj.reservation_number) + ")"      
                   
         return result       

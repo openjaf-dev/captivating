@@ -67,5 +67,28 @@
         <field eval="True" name="isobject"/>
         <field eval="True" name="replace"/>
     </ir_set>
+  
+    <record id="travel_departures_report_id" model="ir.actions.report.xml">
+        <field name="name">Travel Departures Report</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sale.order</field>
+        <field name="report_name">travel_departures_report</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="report_rml">captivating_features/report/travel_departures.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+    
+    <ir_set>
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field eval="['sale.order']" name="models"/>
+        <field name="name">Travel Departures</field>
+        <field eval="'ir.actions.report.xml,'+str(travel_departures_report_id)" name="value"/>
+        <field eval="True" name="isobject"/>
+        <field eval="True" name="replace"/>
+    </ir_set>  
+    
 </data>
 </openerp>
