@@ -19,4 +19,4 @@
 #
 ##############################################################################
 
-import sale, pricelist, allotment
+import sale, pricelist, allotment, transfer
