@@ -72,12 +72,22 @@ class sale_order_line(Model):
         'hotel_from':
             fields.function(_compute_start_end, method=True, type='char',
                             string='Hotel from', size=128,
-                            store = {'sale.order.line': (_get_related_order_lines, ['start_date', 'end_date'], 10)},
+                            store = {'sale.order.line': (_get_related_order_lines, 
+                                                         ['start_date', 
+                                                          'end_date',
+                                                          'reservation_number',
+                                                          'name'], 
+                                                         10)},
                             multi = 'from_to'),             
         'hotel_to':
             fields.function(_compute_start_end, method=True, type='char',
                             string='Hotel to', size=128,
-                            store = {'sale.order.line': (_get_related_order_lines, ['start_date', 'end_date'], 10)},
+                            store = {'sale.order.line': (_get_related_order_lines, 
+                                                         ['start_date', 
+                                                          'end_date',
+                                                          'reservation_number',
+                                                          'name'], 
+                                                         10)},
                             multi = 'from_to')
                    
         
@@ -153,40 +163,47 @@ class sale_order(Model):
                             result[order_obj.id]['end_hotel'] = hotel_str
                             
         return result   
-#            for order_line_obj in obj.order_line:
-#                product = order_line_obj.product_id
-#                #if product.categ_id.name == product_name and getattr(order_line_obj, order_line_date) == getattr(obj, order_date):
-#                #    result[obj.id] = product.name + " (" + str(order_line_obj.reservation_number) + ")"
-#                if product.categ_id.name == 'Hotel':
-#                    if order_line_obj.end_date == obj.start_date:
-#                        result.setdefault(obj.id, {'hotel_from': product.name, 'hotel_to': ''})
-#                        result[obj.id]['hotel_from'] = product.name   
-#                    elif order_line_obj.start_date == obj.start_date:
-#                        result.setdefault(obj.id, {'hotel_from': '', 'hotel_to': product.name})
-#                        result[obj.id]['hotel_to'] = product.name     
-#                    
-#                elif product.categ_id.name == 'Transfer':   
                        
     _columns = {             
         'start_transfer':
             fields.function(_compute_start_end, method=True, type='char',
                             string='Start Transfer', size=128,
-                            store = {'sale.order.line': (_get_related_orders, ['start_date', 'end_date'], 10)},
+                            store = {'sale.order.line': (_get_related_orders, 
+                                                         ['start_date', 
+                                                          'end_date',
+                                                          'reservation_number',
+                                                          'name'], 
+                                                         10)},
                             multi = 'from_to'),             
         'end_transfer':
             fields.function(_compute_start_end, method=True, type='char',
                             string='End Transfer', size=128,
-                            store = {'sale.order.line': (_get_related_orders, ['start_date', 'end_date'], 10)},
+                            store = {'sale.order.line': (_get_related_orders, 
+                                                         ['start_date', 
+                                                          'end_date',
+                                                          'reservation_number',
+                                                          'name'], 
+                                                         10)},
                             multi = 'from_to'),
         'start_hotel':      
             fields.function(_compute_start_end, method=True, type='char',
                             string='Start Hotel', size=128,
-                            store = {'sale.order.line': (_get_related_orders, ['start_date', 'end_date'], 10)},
+                            store = {'sale.order.line': (_get_related_orders, 
+                                                         ['start_date', 
+                                                          'end_date',
+                                                          'reservation_number',
+                                                          'name'], 
+                                                         10)},
                             multi = 'from_to'),     
         'end_hotel':      
             fields.function(_compute_start_end, method=True, type='char',
                             string='End Hotel', size=128,
-                            store = {'sale.order.line': (_get_related_orders, ['start_date', 'end_date'], 10)},
+                            store = {'sale.order.line': (_get_related_orders, 
+                                                         ['start_date', 
+                                                          'end_date',
+                                                          'reservation_number',
+                                                          'name'], 
+                                                         10)},
                             multi = 'from_to'),     
         
     }
