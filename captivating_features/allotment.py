@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-import xlrd, base64, datetime
+import xlrd, base64, datetime, timeit
 
 from openerp.osv import fields, osv
 from openerp.osv.orm import TransientModel
@@ -105,9 +105,9 @@ class import_prices(TransientModel):
                     release = False
                     
                 if hotel_id and room_type_id and date_from and date_to and allotment != False and release != False:
-                    hotel_obj = hotel.browse(cr, uid, hotel_id, context)
+                    product_id = hotel.read(cr, uid, hotel_id, ['product_tmpl_id'], context)
                     suppinfo_ids = supplierinfo.search(cr, uid, 
-                                                       [('product_id', '=', hotel_obj.product_tmpl_id.id)], 
+                                                       [('product_id', '=', product_id['product_tmpl_id'][0])], 
                                                        context=context)
                     if len(suppinfo_ids) > 1:
                         msg += 'More than one supplier for hotel: ' +hotel_name+ '\n'
