@@ -40,7 +40,7 @@ class import_prices(TransientModel):
         if obj.file:
             data = base64.decodestring(obj.file)
 
-            msg = ' '
+            msg = ''
             document = xlrd.open_workbook(file_contents=data)
             sheet = document.sheets()[0]
             
@@ -159,7 +159,7 @@ class import_prices(TransientModel):
                         partnerinfo.create(cr, uid, pvals, context)  
                         
             if msg == '':
-                msg += '\n ================== \Rental information successfully uploaded. \n'
+                msg += '\n ================== \nRental information successfully uploaded. \n'
             else:
                 msg += '\n ================== \nCheck that names are properly typed or present in the system. \n'
             
