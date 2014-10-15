@@ -1,6 +1,8 @@
 name,customer,supplier
 "Cubanacan Hoteles",FALSE,TRUE
 "Viajes Cubanacan",FALSE,TRUE
+"Cubacar",FALSE,TRUE
+"Rex",FALSE,TRUE
 "Islazul",FALSE,TRUE
 "Occidental Hotels & Resorts",FALSE,TRUE
 "Habaguanex S.A.",FALSE,TRUE

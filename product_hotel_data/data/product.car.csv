@@ -1,0 +1,11 @@
+name, model_id, transmission_id
+"Geely", "CK", "Manual"
+"Geely", "MK", "Manual"
+"Kia", "Rio", "Manual"
+"Geely", "Emgrand", "Manual"
+"Hyundai", "Sonata", "Automatic"
+"Hyundai", "TQ", "Manual"
+"Seat", "Ibiza", "Manual"
+"Renault", "Fluence", "Manual"
+"Audi", "A4", "Manual"
+"VW", "Van", "Manual"
