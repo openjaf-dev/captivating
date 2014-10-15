@@ -40,7 +40,7 @@ class import_prices(TransientModel):
         if obj.file:
             data = base64.decodestring(obj.file)
             #try:
-            msg = ' '
+            msg = ''
             document = xlrd.open_workbook(file_contents=data)
             sheet = document.sheets()[-1]
             
