@@ -64,7 +64,7 @@ class import_prices(TransientModel):
                     return sheet.cell_value(r, head[attr])
                 
                 if cell('Hotel'):
-                    hotel_name = cell('Hotel')
+                    hotel_name = cell('Hotel').upper()
                     hotel_ids = hotel.search(cr, uid, [('name', '=', hotel_name)])
                     if len(hotel_ids) > 1:
                         msg += 'Ambiguous Hotel name: ' + hotel_name + '\n'                        

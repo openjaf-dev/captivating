@@ -64,7 +64,7 @@ class import_prices(TransientModel):
 
             for col in range(first_col, sheet.ncols): 
                 
-                customer_name = sheet.cell_value(1, col)
+                customer_name = sheet.cell_value(1, col).upper()
                 customer_ids = customer.search(cr, uid, [('name', '=', customer_name)])
                 if customer_ids:
                     customer_obj = customer.browse(cr, uid, customer_ids, context)[0]
@@ -105,7 +105,7 @@ class import_prices(TransientModel):
                                                           'pricelist_id': pricelist_id})
       
                 for row in range(4, sheet.nrows):
-                    hotel_name = sheet.cell_value(row, 1).lower().title()
+                    hotel_name = sheet.cell_value(row, 1).upper()
                     product_ids = product.search(cr, uid, [('name', '=', hotel_name)])
                     if not product_ids:
                         if first_col == col:

@@ -67,7 +67,7 @@ class import_prices(TransientModel):
                     return sheet.cell_value(r, head[attr])
                 
                 if cell('Supplier'):
-                    supplier_name = cell('Supplier')
+                    supplier_name = cell('Supplier').upper()
                     supplier_ids = supplier.search(cr, uid, [('name', '=', supplier_name)])
                     if len(supplier_ids) > 1:
                         msg += 'Ambiguous Supplier name: ' + supplier_name + '\n'                        
@@ -79,7 +79,7 @@ class import_prices(TransientModel):
                         supplier_id = supplier_ids[0]
                     
                 if cell('Car'):
-                    car_name = cell('Car')
+                    car_name = cell('Car').upper()
                     car_ids = car.search(cr, uid, [('name', '=', car_name)])
                     if len(car_ids) > 1:
                         msg += 'Ambiguous car name: ' + car_name + '\n'                        
@@ -91,11 +91,11 @@ class import_prices(TransientModel):
                         car_id = car_ids[0]
                     
                 if cell('Class'):
-                    car_class = cell('Class')
+                    car_class = cell('Class').upper()
                     car_class_id = self.get_option_value(cr, uid, car_class, 'cl', {})
                     
                 if cell('Transmission'):
-                    transmission = cell('Transmission')
+                    transmission = cell('Transmission').upper()
                     transmission_id = self.get_option_value(cr, uid, transmission, 'tm', {})
                     
                 if cell('Passengers'):
