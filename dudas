@@ -52,9 +52,6 @@ Dudas:
 
 - room_types y ventas sencillas o de programas ... como registramos esas ventas?
 
-
-
-
 Posibles mejoras:
 
 - Virgin Atlantic Flights LGW-HAV (economy) ... Esto realmente es el producto vuelo que se vende en clase economica
@@ -62,3 +59,19 @@ Posibles mejoras:
 
 
 En el Sol - Sirenas de Varadero hay un tipo de habitación Q, que cuesta lo mismo que una T, pero no sabemos que significa. La ponemos como un suplemento o qué?
+
+Con Adriana:
+- Initial negotiation state (No need for requesting products to suppliers)
+- Fixing real suppliers (for Gema)
+- Margins for all products (besides hotels)
+- Groups (Update core)
+- Voucher format (pending) and others documents
+
+- Paying format (core):
+ - by unit (like taxis, private rented rooms)
+ - by pax (hotels)
+ - by pax, depending on quantities (like groups)
+ 
+- Cargar los tipos de habitaciones configurados para un hotel
+ 
+ 
