@@ -122,18 +122,16 @@ class import_prices(TransientModel):
  
                 if supplier_id and car_id:
                     
-                    print 'Dates', date_from, date_to
-                    
                     suppinfo_id = None
-                    product_id = car.read(cr, uid, car_id, ['product_tmpl_id'])['product_tmpl_id'][0]
+                    product_tmpl_id = car.read(cr, uid, car_id, ['product_tmpl_id'])['product_tmpl_id'][0]
                     suppinfo_ids = supplierinfo.search(cr, uid, ['&', 
                                                                  ('name', '=', supplier_id), 
-                                                                 ('product_id', '=', product_id)], 
+                                                                 ('product_tmpl_id', '=', product_tmpl_id)], 
                                                                context=context)
                     if len(suppinfo_ids) == 0:        
                         svals = {
                             'name': supplier_id,
-                            'product_id': product_id,
+                            'product_tmpl_id': product_tmpl_id,
                             'min_qty': 0
                         }
                         suppinfo_id = supplierinfo.create(cr, uid, svals, context)
