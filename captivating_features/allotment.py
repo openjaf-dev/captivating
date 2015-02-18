@@ -46,6 +46,7 @@ class import_prices(TransientModel):
             
             hotel = self.pool.get('product.hotel')
             allotment_model = self.pool.get('product.rate.allotment')
+            daily_allotment_model = self.pool.get('allotment.state')
             supplierinfo = self.pool.get('product.supplierinfo')
             
             head = {sheet.cell_value(0, x): x for x in range(sheet.ncols)} 
@@ -112,7 +113,7 @@ class import_prices(TransientModel):
                     if len(suppinfo_ids) > 1:
                         msg += 'More than one supplier for hotel: ' +hotel_name+ '\n'
                     elif len(suppinfo_ids) == 0:
-                        msg += 'No supplier_info found \n'
+                        msg += 'No supplier_info found ' +hotel_name+ ' \n'
                     else:
                         allotment_ids = allotment_model.search(cr, uid, [('suppinfo_id', '=', suppinfo_ids[0]),
                                                                          ('room_type_id', '=', room_type_id),
