@@ -130,12 +130,12 @@ class transfer_data(TransientModel):
                 product_supplierinfo.unlink(cr, uid, seller_ids, context)
             svals = {
                 'name': obj.supplier_id.id,
-                'product_id': transfer.product_id.product_tmpl_id.id,
+                'product_tmpl_id': transfer.product_id.product_tmpl_id.id,
                 'min_qty': 0
             }
             old_suppinfo_id = product_supplierinfo.search(cr, uid, 
                                                           [('name', '=', obj.supplier_id.id),
-                                                           ('product_id', '=', transfer.product_id.product_tmpl_id.id)])
+                                                           ('product_tmpl_id', '=', transfer.product_id.product_tmpl_id.id)])
             product_supplierinfo.unlink(cr, uid, old_suppinfo_id)
             suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
             for k, v in dict_options.iteritems():
