@@ -163,12 +163,12 @@ class import_prices(data_utils, TransientModel):
                        if supplier:  
                            suppinfo_ids = product_supplierinfo.search(cr, uid, ['&', 
                                                                                 ('name', '=', supplier.id), 
-                                                                                ('product_id', '=', product_hotel.product_tmpl_id.id)], 
+                                                                                ('product_tmpl_id', '=', product_hotel.product_tmpl_id.id)], 
                                                                       context=context)
                            if len(suppinfo_ids) == 0:        
                                svals = {
                                    'name': supplier.id,
-                                   'product_id': product_hotel.product_tmpl_id.id,
+                                   'product_tmpl_id': product_hotel.product_tmpl_id.id,
                                    'min_qty': 0
                                }
                                suppinfo_id = product_supplierinfo.create(cr, uid, svals, context)
