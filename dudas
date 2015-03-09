@@ -61,7 +61,7 @@ Posibles mejoras:
 En el Sol - Sirenas de Varadero hay un tipo de habitación Q, que cuesta lo mismo que una T, pero no sabemos que significa. La ponemos como un suplemento o qué?
 
 Con Adriana:
-- Initial negotiation state (No need for requesting products to suppliers)
+- Initial negotiation state (No need for requesting products to suppliers)(core)
 - Fixing real suppliers (for Gema)
 - Margins for all products (besides hotels)
 - Groups (Update core)
@@ -70,8 +70,32 @@ Con Adriana:
 - Paying format (core):
  - by unit (like taxis, private rented rooms)
  - by pax (hotels)
- - by pax, depending on quantities (like groups)
+ - by pax, depending on quantities (like groups, certain transfers)
  
-- Cargar los tipos de habitaciones configurados para un hotel
+- Cargar los tipos de habitaciones configurados para un hotel (done)
+- Cargar los tipos de meal plan para un hotel (donee)
+- Cargar los tipos de un transfer
+
+- Casas particulares
+
+- Unificar Captivating Features con Captivating Migration (reformar nombres)
+
+- Imports
+	- Relocalizarlos (Hacer una seccion)
+	- Crear plantillas rellenables (xls)
+	- Mensajes iguales
+	- Eliminar name detection
+	- Unificar el formato (fechas en el xls)
+	
+- Exportar precios por clientes
+
+- Problema con la instalación de los reportes en v8
+
+- Testing allotments
+
+- Meal plan en rooming (para el escenario donde en una misma venta, dos habitaciones usen meal plan diferentes)
+	
+
+
  
  

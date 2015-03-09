@@ -30,6 +30,7 @@
     "description": """ Feature module from Captivating.""",
     'init_xml': [],
     'update_xml': [
+        'report/reports.xml',
         'view/sale.xml',
         'view/pricelist.xml'
     ],
