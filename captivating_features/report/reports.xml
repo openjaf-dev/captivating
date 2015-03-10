@@ -9,20 +9,19 @@
         <field name="report_name">travel_voucher_report</field>
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
         <field name="report_rml">captivating_features/report/travel_voucher.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
 
-    <ir_set>
+    <record id="action_binding1" model="ir.values">
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
-        <field eval="['sale.order.line']" name="models"/>
+        <field name="model">sale.order.line</field>
         <field name="name">Travel Voucher</field>
         <field eval="'ir.actions.report.xml,'+str(travel_voucher_report_id)" name="value"/>
-        <field eval="True" name="isobject"/>
-        <field eval="True" name="replace"/>
-    </ir_set>
+    </record>
 
     <record id="travel_transfer_report_id" model="ir.actions.report.xml">
         <field name="name">Travel Transfer Report</field>
@@ -31,20 +30,19 @@
         <field name="report_name">travel_transfer_report</field>
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
         <field name="report_rml">captivating_features/report/travel_transfer.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
-    
-    <ir_set>
+  
+    <record id="action_binding2" model="ir.values">  
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
-        <field eval="['sale.order.line']" name="models"/>
+        <field name="model">sale.order.line</field>
         <field name="name">Travel Transfer</field>
         <field eval="'ir.actions.report.xml,'+str(travel_transfer_report_id)" name="value"/>
-        <field eval="True" name="isobject"/>
-        <field eval="True" name="replace"/>
-    </ir_set>
+    </record>
 
     <record id="travel_hotel_report_id" model="ir.actions.report.xml">
         <field name="name">Travel Hotel Report</field>
@@ -53,20 +51,19 @@
         <field name="report_name">travel_hotel_report</field>
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
         <field name="report_rml">captivating_features/report/travel_hotels.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
-    
-    <ir_set>
+ 
+    <record id="action_binding3" model="ir.values">  
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
-        <field eval="['sale.order.line']" name="models"/>
+        <field name="model">sale.order.line</field>
         <field name="name">Travel Hotel</field>
         <field eval="'ir.actions.report.xml,'+str(travel_hotel_report_id)" name="value"/>
-        <field eval="True" name="isobject"/>
-        <field eval="True" name="replace"/>
-    </ir_set>
+    </record>
 
     <record id="travel_arrivals_report_id" model="ir.actions.report.xml">
         <field name="name">Travel Arrivals Report</field>
@@ -75,20 +72,19 @@
         <field name="report_name">travel_arrivals_report</field>
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
         <field name="report_rml">captivating_features/report/travel_arrivals.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
-    
-    <ir_set>
+  
+    <record id="action_binding4" model="ir.values">    
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
-        <field eval="['sale.order']" name="models"/>
+        <field name="model">sale.order</field>
         <field name="name">Travel Arrivals</field>
         <field eval="'ir.actions.report.xml,'+str(travel_arrivals_report_id)" name="value"/>
-        <field eval="True" name="isobject"/>
-        <field eval="True" name="replace"/>
-    </ir_set>
+    </record>
   
     <record id="travel_departures_report_id" model="ir.actions.report.xml">
         <field name="name">Travel Departures Report</field>
@@ -97,20 +93,19 @@
         <field name="report_name">travel_departures_report</field>
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
         <field name="report_rml">captivating_features/report/travel_departures.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
-    
-    <ir_set>
+ 
+    <record id="action_binding5" model="ir.values">   
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
-        <field eval="['sale.order']" name="models"/>
+        <field name="model">sale.order</field>
         <field name="name">Travel Departures</field>
         <field eval="'ir.actions.report.xml,'+str(travel_departures_report_id)" name="value"/>
-        <field eval="True" name="isobject"/>
-        <field eval="True" name="replace"/>
-    </ir_set>  
+    </record>
 
     <record id="travel_operations_report_id" model="ir.actions.report.xml">
         <field name="name">Travel Operations Report</field>
@@ -119,20 +114,19 @@
         <field name="report_name">travel_operations_report</field>
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
         <field name="report_rml">captivating_features/report/travel_operations.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
-    
-    <ir_set>
+   
+    <record id="action_binding6" model="ir.values">   
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
-        <field eval="['sale.order']" name="models"/>
+        <field name="model">sale.order</field>
         <field name="name">Travel Operations</field>
         <field eval="'ir.actions.report.xml,'+str(travel_operations_report_id)" name="value"/>
-        <field eval="True" name="isobject"/>
-        <field eval="True" name="replace"/>
-    </ir_set>  
+    </record>
         
 </data>
 </openerp>
