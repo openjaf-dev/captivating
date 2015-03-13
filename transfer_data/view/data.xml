@@ -27,7 +27,7 @@
         </record>
         
         <record id="transfer_data_action" model="ir.actions.act_window">
-            <field name="name">Import Transfers</field>
+            <field name="name">Import Transfers Prices</field>
             <field name="res_model">transfer.data</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>            
@@ -35,7 +35,7 @@
             <field name="target">new</field> 
         </record>
 		
-        <menuitem id="transfer_data_menu" sequence="100" parent="base.menu_product" action="transfer_data_action" />
+        <menuitem id="transfer_data_menu" sequence="100" parent="travel_core.travel_imports_menu" action="transfer_data_action" />
 
     </data>
 </openerp>
