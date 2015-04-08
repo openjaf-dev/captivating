@@ -108,7 +108,7 @@ class import_prices(TransientModel):
                 if hotel_id and room_type_id and date_from and date_to and allotment != False and release != False:
                     product_id = hotel.read(cr, uid, hotel_id, ['product_tmpl_id'], context)
                     suppinfo_ids = supplierinfo.search(cr, uid, 
-                                                       [('product_id', '=', product_id['product_tmpl_id'][0])], 
+                                                       [('product_tmpl_id', '=', product_id['product_tmpl_id'][0])], 
                                                        context=context)
                     if len(suppinfo_ids) > 1:
                         msg += 'More than one supplier for hotel: ' +hotel_name+ '\n'

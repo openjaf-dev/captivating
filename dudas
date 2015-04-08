@@ -81,7 +81,7 @@ Con Adriana:
 - Unificar Captivating Features con Captivating Migration (reformar nombres)
 
 - Imports
-	- Relocalizarlos (Hacer una seccion)
+	- Relocalizarlos (Hacer una seccion) (done)
 	- Crear plantillas rellenables (xls)
 	- Mensajes iguales
 	- Eliminar name detection
@@ -94,8 +94,13 @@ Con Adriana:
 - Testing allotments
 
 - Meal plan en rooming (para el escenario donde en una misma venta, dos habitaciones usen meal plan diferentes)
-	
 
+- Poner Package en dependencia de travel
 
+- Quitar el menuitem Products
+
+- Plantillas de excel
+
+- voucher por defecto
  
  
