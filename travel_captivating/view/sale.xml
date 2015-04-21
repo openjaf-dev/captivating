@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+       <record id="travel_sale_order_form_view1" model="ir.ui.view">
+            <field name="name">travel.sale.order.form.view1</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="travel_core.travel_sale_order_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group/field[@name='client_order_ref']" position="before">
+                	<field name='voucher_logo' string="Voucher Logo"/>
+                </xpath>
+            </field>    
+        </record>  	
+    </data>
+</openerp>

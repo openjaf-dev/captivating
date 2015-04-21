@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<openerp>
+
+	<data>
+		<record id="travel_hotel.hotel" model="product.category">
+			<field name="name">Hotel</field>
+			<field name="voucher_name">captivating_hotel_voucher</field>
+		</record>
+		
+		<record id="travel_car.car" model="product.category">
+			<field name="name">Car</field>
+			<field name="voucher_name">captivating_car_voucher</field>
+		</record>
+		
+		<record id="travel_transfer.transfer" model="product.category">
+			<field name="name">Transfer</field>
+			<field name="voucher_name">captivating_transfer_voucher</field>
+		</record>		
+		
+		<record id="travel_activity.activity" model="product.category">
+			<field name="name">Activity</field>
+			<field name="voucher_name">captivating_default_voucher</field>
+		</record>
+				
+		<record id="travel_flight.flight" model="product.category">
+			<field name="name">Flight</field>
+			<field name="voucher_name">captivating_default_voucher</field>
+		</record>
+				
+		<record id="travel_misc.misc" model="product.category">
+			<field name="name">Miscellaneous</field>
+			<field name="voucher_name">captivating_default_voucher</field>
+		</record>	
+		
+		<record id="travel_package.package" model="product.category">
+			<field name="name">Package</field>
+			<field name="voucher_name">captivating_default_voucher</field>
+		</record>
+					
+	</data>
+
+</openerp>
