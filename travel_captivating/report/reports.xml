@@ -10,7 +10,7 @@
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
         <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
-        <field name="report_rml">captivating_features/report/travel_transfer.odt</field>
+        <field name="report_rml">travel_captivating/report/travel_transfer.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
@@ -31,7 +31,7 @@
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
         <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
-        <field name="report_rml">captivating_features/report/travel_hotels.odt</field>
+        <field name="report_rml">travel_captivating/report/travel_hotels.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
@@ -52,7 +52,7 @@
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
         <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
-        <field name="report_rml">captivating_features/report/travel_arrivals.odt</field>
+        <field name="report_rml">travel_captivating/report/travel_arrivals.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
@@ -73,7 +73,7 @@
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
         <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
-        <field name="report_rml">captivating_features/report/travel_departures.odt</field>
+        <field name="report_rml">travel_captivating/report/travel_departures.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
@@ -94,7 +94,7 @@
         <field name="report_type">aeroo</field>
         <field name="in_format">oo-odt</field>
         <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
-        <field name="report_rml">captivating_features/report/travel_operations.odt</field>
+        <field name="report_rml">travel_captivating/report/travel_operations.odt</field>
         <field name="parser_state">default</field>
         <field name="tml_source">file</field>
     </record>
