@@ -191,6 +191,67 @@
         <field eval="'ir.actions.report.xml,'+str(captivating_transfer_voucher_id)" name="value"/>
     </record>
    
-        
+    <record id="captivating_quotation_report_id" model="ir.actions.report.xml">
+        <field name="name">Captivating Quotation</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sale.order</field>
+        <field name="report_name">captivation_quotation</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
+        <field name="report_rml">travel_captivating/report/captivating_quotation.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+   
+    <record id="action_binding11" model="ir.values">   
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field name="model">sale.order</field>
+        <field name="name">Captivating Quotation</field>
+        <field eval="'ir.actions.report.xml,'+str(captivating_quotation_report_id)" name="value"/>
+    </record>  
+    
+    <record id="pre_invoice_summary_report_id" model="ir.actions.report.xml">
+        <field name="name">Pre-Invoice Summary</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sale.order</field>
+        <field name="report_name">pre_invoice_summary</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
+        <field name="report_rml">travel_captivating/report/pre_invoice_summary.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+   
+    <record id="action_binding12" model="ir.values">   
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field name="model">sale.order</field>
+        <field name="name">Pre-Invoice Summary</field>
+        <field eval="'ir.actions.report.xml,'+str(pre_invoice_summary_report_id)" name="value"/>
+    </record>      
+    
+    <record id="pre_invoice_details_report_id" model="ir.actions.report.xml">
+        <field name="name">Pre-Invoice Detailed</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sale.order</field>
+        <field name="report_name">pre_invoice_details</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
+        <field name="report_rml">travel_captivating/report/pre_invoice_details.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+   
+    <record id="action_binding13" model="ir.values">   
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field name="model">sale.order</field>
+        <field name="name">Pre-Invoice details</field>
+        <field eval="'ir.actions.report.xml,'+str(pre_invoice_details_report_id)" name="value"/>
+    </record>  
 </data>
 </openerp>
