@@ -253,5 +253,21 @@
         <field name="name">Pre-Invoice details</field>
         <field eval="'ir.actions.report.xml,'+str(pre_invoice_details_report_id)" name="value"/>
     </record>  
+    
+    <delete model="ir.actions.report.xml" id="travel_transfer.transfer_travel_voucher_report_id"/>
+    <delete model="ir.values" id="travel_transfer.action_binding2"/>
+    
+    <delete model="ir.actions.report.xml" id="travel_car.car_travel_voucher_report_id"/>
+    <delete model="ir.values" id="travel_car.action_binding2"/>
+    
+    <delete model="ir.actions.report.xml" id="travel_core.default_travel_voucher_report_id"/>
+    <delete model="ir.values" id="travel_core.action_binding1"/>
+    
+    <delete model="ir.actions.report.xml" id="travel_flight.flight_travel_voucher_report_id"/>
+    <delete model="ir.values" id="travel_flight.action_binding3"/>
+    
+    <delete model="ir.actions.report.xml" id="travel_hotel.hotel_travel_voucher_report_id"/>
+    <delete model="ir.values" id="travel_hotel.action_binding2"/>
+    
 </data>
 </openerp>
