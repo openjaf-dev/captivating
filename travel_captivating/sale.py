@@ -29,7 +29,8 @@ class sale_order(Model):
     _columns = {
         'voucher_logo': fields.selection([('dc', 'Destination Cuba'), 
                                           ('cc', 'Captivating Cuba'),
-                                          ('cd', 'Destino Cuba')],
+                                          ('cd', 'Destino Cuba'),
+                                          ('htg', 'Hovis Travel Group')],
                             'Voucher Logo'),
     }
     
