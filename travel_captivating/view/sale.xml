@@ -10,6 +10,16 @@
                 	<field name='voucher_logo' string="Voucher Logo"/>
                 </xpath>
             </field>    
-        </record>  	
+        </record>  
+       <record id="travel_sale_order_line_form_view1" model="ir.ui.view">
+            <field name="name">travel.sale.order.line.form.view1</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="travel_core.travel_sale_order_line_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_cost_id']" position="attributes">
+                	<attribute name="domain">[('name', 'in', ['GBP', 'EUR', 'USD', 'CUC'])]</attribute>
+                </xpath>
+            </field>    
+        </record> 
     </data>
 </openerp>
