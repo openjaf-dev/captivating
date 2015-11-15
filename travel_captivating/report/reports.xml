@@ -23,6 +23,27 @@
         <field eval="'ir.actions.report.xml,'+str(travel_transfer_report_id)" name="value"/>
     </record>
 
+    <record id="travel_flight_report_id" model="ir.actions.report.xml">
+        <field name="name">Travel Flight Report</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sale.order.line</field>
+        <field name="report_name">travel_flight_report</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
+        <field name="report_rml">travel_captivating/report/travel_flights.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+  
+    <record id="action_binding21" model="ir.values">  
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field name="model">sale.order.line</field>
+        <field name="name">Travel Flight</field>
+        <field eval="'ir.actions.report.xml,'+str(travel_flight_report_id)" name="value"/>
+    </record>
+
     <record id="travel_hotel_report_id" model="ir.actions.report.xml">
         <field name="name">Travel Hotel Report</field>
         <field name="type">ir.actions.report.xml</field>
