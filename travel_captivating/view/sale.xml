@@ -21,5 +21,15 @@
                 </xpath>
             </field>    
         </record> 
+        <record id="travel_sale_order_search_view1" model="ir.ui.view">
+            <field name="name">travel.sale.order.search.view1</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="travel_core.travel_sale_order_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lead_name']" position="after">
+                	<field name="pax_ids" string="Pax name" filter_domain="[('pax_ids.name', 'ilike', self)]"/>
+                </xpath>
+            </field> 
+        </record>
     </data>
 </openerp>
