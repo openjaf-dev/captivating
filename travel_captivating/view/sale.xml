@@ -31,5 +31,15 @@
                 </xpath>
             </field> 
         </record>
+        <record id="travel_sale_order_line_form_view1" model="ir.ui.view">
+            <field name="name">travel.sale.order.line.form.view</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="travel_core.travel_sale_order_line_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="attributes">
+                	<attribute name="options">{'no_create': '1', 'no_create_edit': '1'}</attribute>
+                </xpath>
+            </field> 
+        </record>
     </data>
 </openerp>
