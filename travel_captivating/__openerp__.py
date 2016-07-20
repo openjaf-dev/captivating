@@ -33,7 +33,8 @@
         'data/pricelist.xml',
         'data/reports.xml',
         'report/reports.xml',
-        'view/sale.xml'
+        'view/sale.xml',
+        'view/invoice.xml'
     ],
     'demo_xml': [],
     'test': [],

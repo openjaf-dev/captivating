@@ -207,3 +207,104 @@ class sale_order(Model):
                             multi = 'from_to'),     
         
     }
+
+                   
+class account_invoice(Model):
+    _name = 'account.invoice'
+    _inherit = 'account.invoice'   
+    
+    def generate_supplier_invoices(self, cr, uid, inv_id, context=None):
+        invoice = self.browse(cr, uid, inv_id, context)
+        company_id = invoice.company_id
+        journal_id = self.get_purchase_journal(cr, uid, company_id.id, context)
+        vals = {
+            'type': 'in_invoice',
+            'state': 'draft',
+            'journal_id': journal_id,
+            'date_invoice': invoice.date_invoice,
+            'period_id': invoice.period_id.id,
+            'user_id': invoice.user_id.id,
+            'company_id': company_id.id,
+            'origin': invoice.origin,
+            'comment': 'Generated from customer invoice ' + invoice.origin
+        }
+        sol_model = self.pool.get('sale.order.line')
+        sc_model = self.pool.get('sale.context')
+        for line in invoice.invoice_line:
+            to_search = [('order_id.name', '=', line.origin),
+                         ('product_id', '=', line.product_id.id)]
+            sol_ids = sol_model.search(cr, uid, to_search, context=context)
+            if sol_ids:
+                if len(sol_ids) > 1:
+                    cr.execute('select order_line_id from \
+                                sale_order_line_invoice_rel where \
+                                invoice_id = %s', (line.id,))
+                    sol_ids = cr.fetchall()[0]
+                order_line = sol_model.browse(cr, uid, sol_ids[0], context)
+                supplier = sc_model.get_supplier(order_line)
+#                data = {'invoice_line': line, 'sale_line': order_line}
+#                self.update_lines_by_supplier(lines_by_supplier, supplier, data)
+            currency_id = order_line.currency_cost_id.id
+            data = vals.copy()
+            data.update({
+                'partner_id': supplier.id,
+                'account_id': supplier.property_account_payable.id,
+                'currency_id': currency_id,
+                'so_client_order_ref': order_line.order_id.client_order_ref,
+                'so_lead_name': order_line.order_id.lead_name,
+                'invoice_line': []
+            })
+            line_vals = {
+                'name': line.product_id.name,
+                'origin': line.invoice_id.number,
+                'product_id': line.product_id.id,
+                'account_id': line.product_id.categ_id.property_account_expense_categ.id,
+                'quantity': line.quantity,
+                'discount': line.discount,
+                'price_unit': order_line.price_unit_cost,
+                'sol_start_date': order_line.start_date,
+                'sol_end_date': order_line.end_date,
+                'sol_confirmation': order_line.reservation_number
+            }
+            data['invoice_line'].append((0, 0, line_vals))
+            inv_id = self.create(cr, uid, data, context)
+      
+    _columns = {
+        'so_client_order_ref': fields.char(string="Reference", size=128),
+        'so_lead_name': fields.char(string="Client", size=128)
+                }
+    
+    
+class account_invoice_line(Model):
+    _name = 'account.invoice.line'
+    _inherit = 'account.invoice.line'
+    
+    _columns = {
+        'sol_start_date': fields.date('Start Date'),
+        'sol_end_date': fields.date('End Date'),
+        'sol_confirmation': fields.char(string="Confirmation", size=128)
+        }      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

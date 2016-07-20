@@ -274,7 +274,7 @@
         <field name="name">Pre-Invoice Summary</field>
         <field eval="'ir.actions.report.xml,'+str(pre_invoice_summary_report_id)" name="value"/>
     </record>      
-    
+        
     <record id="pre_invoice_details_report_id" model="ir.actions.report.xml">
         <field name="name">Pre-Invoice Detailed</field>
         <field name="type">ir.actions.report.xml</field>
@@ -294,6 +294,27 @@
         <field name="model">sale.order</field>
         <field name="name">Pre-Invoice details</field>
         <field eval="'ir.actions.report.xml,'+str(pre_invoice_details_report_id)" name="value"/>
+    </record>  
+    
+    <record id="payment_report_id" model="ir.actions.report.xml">
+        <field name="name">Payment Report</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">account.invoice</field>
+        <field name="report_name">captivating_payment_report</field>
+        <field name="report_type">aeroo</field>
+        <field name="in_format">oo-odt</field>
+        <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
+        <field name="report_rml">travel_captivating/report/captivating_payment_report.odt</field>
+        <field name="parser_state">default</field>
+        <field name="tml_source">file</field>
+    </record>
+   
+    <record id="action_binding14" model="ir.values">   
+        <field eval="'action'" name="key"/>
+        <field eval="'client_print_multi'" name="key2"/>
+        <field name="model">account.invoice</field>
+        <field name="name">Payment Report</field>
+        <field eval="'ir.actions.report.xml,'+str(payment_report_id)" name="value"/>
     </record>  
     
     <delete model="ir.actions.report.xml" id="travel_transfer.transfer_travel_voucher_report_id"/>
