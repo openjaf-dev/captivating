@@ -36,7 +36,7 @@
         <field name="tml_source">file</field>
     </record>
   
-    <record id="action_binding14" model="ir.values">  
+    <record id="action_binding22" model="ir.values">  
         <field eval="'action'" name="key"/>
         <field eval="'client_print_multi'" name="key2"/>
         <field name="model">sale.order.line</field>
