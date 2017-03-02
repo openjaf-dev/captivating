@@ -41,9 +41,9 @@ class sale_order(Model):
                  'voucher_logo': 'dc'
                  }
 
-    def action_button_confirm(self, cr, uid, ids, context=None):
-        for order in self.browse(cr, uid, ids, context):
-            for line in order.order_line:
-                if line.price_unit == 0:
-                    raise except_orm(_('Operation Canceled'), _('Please verify that price unit lines must be distinct of zero.'))
-        return super(sale_order, self).action_button_confirm(cr, uid, ids, context)
+    # def action_button_confirm(self, cr, uid, ids, context=None):
+    #     for order in self.browse(cr, uid, ids, context):
+    #         for line in order.order_line:
+    #             if line.price_unit == 0:
+    #                 raise except_orm(_('Operation Canceled'), _('Please verify that price unit lines must be distinct of zero.'))
+    #     return super(sale_order, self).action_button_confirm(cr, uid, ids, context)
