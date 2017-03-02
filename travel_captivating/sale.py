@@ -21,6 +21,9 @@
 
 from openerp.osv.orm import Model
 from openerp.osv import fields
+from openerp.exceptions import except_orm, Warning, RedirectWarning
+from openerp import _
+
 
 class sale_order(Model):
     _name = 'sale.order'
@@ -31,10 +34,16 @@ class sale_order(Model):
                                           ('cc', 'Captivating Cuba'),
                                           ('cd', 'Destino Cuba'),
                                           ('htg', 'Hovis Travel Group')],
-                            'Voucher Logo'),
+                                         'Voucher Logo'),
     }
     
     _defaults = {
                  'voucher_logo': 'dc'
                  }
 
+    def action_button_confirm(self, cr, uid, ids, context=None):
+        for order in self.browse(cr, uid, ids, context):
+            for line in order.order_line:
+                if line.price_unit == 0:
+                    raise except_orm(_('Operation Canceled'), _('Please verify that price unit lines must be distinct of zero.'))
+        return super(sale_order, self).action_button_confirm(cr, uid, ids, context)

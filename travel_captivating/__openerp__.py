@@ -34,7 +34,10 @@
         'data/reports.xml',
         'report/reports.xml',
         'view/sale.xml',
-        'view/invoice.xml'
+        'view/invoice.xml',
+        'view/voucher.xml',
+        'view/company.xml',
+        'static/src/xml/base_static.xml'
     ],
     'demo_xml': [],
     'test': [],

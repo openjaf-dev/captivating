@@ -209,10 +209,68 @@ class sale_order(Model):
     }
 
                    
+class res_company(Model):
+    _name = 'res.company'
+    _inherit = 'res.company'
+
+    _columns = {
+        'group_supplier_invoice': fields.boolean('Group Supplier by Invoice')
+                }
+
+    _defaults = {
+        'group_supplier_invoice': True,
+    }
+
+
 class account_invoice(Model):
     _name = 'account.invoice'
-    _inherit = 'account.invoice'   
-    
+    _inherit = 'account.invoice'
+
+    def not_group_by_supplier(self, cr, uid, invoice, vals, context):
+        sol_obj = self.pool.get('sale.order.line')
+        sc_obj = self.pool.get('sale.context')
+        lines_by_supplier = {}
+        for line in invoice.invoice_line:
+            to_search = [('order_id.name', '=', line.origin),
+                         ('product_id', '=', line.product_id.id)]
+            sol_ids = sol_obj.search(cr, uid, to_search, context=context)
+            if sol_ids:
+                order_line = sol_obj.browse(cr, uid, sol_ids[0], context)
+                supplier = sc_obj.get_supplier(order_line)
+                data = {'invoice_line': line, 'sale_line': order_line}
+                lines_by_supplier[supplier] = [data]
+
+                currency_id = order_line.currency_cost_id.id
+                data = vals.copy()
+                data.update({
+                    'partner_id': supplier.id,
+                    'account_id': supplier.property_account_payable.id,
+                    'currency_id': currency_id,
+                    'invoice_line': []
+                })
+
+                cost_price = order_line.price_unit_cost
+                line_vals = {
+                    'name': line.product_id.name,
+                    'origin': line.invoice_id.number,
+                    'product_id': line.product_id.id,
+                    'account_id': line.product_id.categ_id.property_account_expense_categ.id,
+                    'quantity': line.quantity,
+                    'discount': line.discount,
+                    'price_unit': cost_price,
+                    'sol_start_date': order_line.start_date,
+                    'sol_end_date': order_line.end_date,
+                    'sol_confirmation': order_line.reservation_number
+                }
+                so_client_order_ref = order_line.order_id.client_order_ref
+                so_lead_name = order_line.order_id.lead_name
+
+                data['invoice_line'].append((0, 0, line_vals))
+
+                data['so_client_order_ref'] = so_client_order_ref
+                data['so_lead_name'] = so_lead_name
+                inv_id = self.create(cr, uid, data, context)
+
     def generate_supplier_invoices(self, cr, uid, inv_id, context=None):
         invoice = self.browse(cr, uid, inv_id, context)
         company_id = invoice.company_id
@@ -228,46 +286,45 @@ class account_invoice(Model):
             'origin': invoice.origin,
             'comment': 'Generated from customer invoice ' + invoice.origin
         }
-        sol_model = self.pool.get('sale.order.line')
-        sc_model = self.pool.get('sale.context')
-        for line in invoice.invoice_line:
-            to_search = [('order_id.name', '=', line.origin),
-                         ('product_id', '=', line.product_id.id)]
-            sol_ids = sol_model.search(cr, uid, to_search, context=context)
-            if sol_ids:
-                if len(sol_ids) > 1:
-                    cr.execute('select order_line_id from \
-                                sale_order_line_invoice_rel where \
-                                invoice_id = %s', (line.id,))
-                    sol_ids = cr.fetchall()[0]
-                order_line = sol_model.browse(cr, uid, sol_ids[0], context)
-                supplier = sc_model.get_supplier(order_line)
-#                data = {'invoice_line': line, 'sale_line': order_line}
-#                self.update_lines_by_supplier(lines_by_supplier, supplier, data)
-            currency_id = order_line.currency_cost_id.id
-            data = vals.copy()
-            data.update({
-                'partner_id': supplier.id,
-                'account_id': supplier.property_account_payable.id,
-                'currency_id': currency_id,
-                'so_client_order_ref': order_line.order_id.client_order_ref,
-                'so_lead_name': order_line.order_id.lead_name,
-                'invoice_line': []
-            })
-            line_vals = {
-                'name': line.product_id.name,
-                'origin': line.invoice_id.number,
-                'product_id': line.product_id.id,
-                'account_id': line.product_id.categ_id.property_account_expense_categ.id,
-                'quantity': line.quantity,
-                'discount': line.discount,
-                'price_unit': order_line.price_unit_cost,
-                'sol_start_date': order_line.start_date,
-                'sol_end_date': order_line.end_date,
-                'sol_confirmation': order_line.reservation_number
-            }
-            data['invoice_line'].append((0, 0, line_vals))
-            inv_id = self.create(cr, uid, data, context)
+
+        if company_id.group_supplier_invoice:
+            lines_by_supplier = self.group_by_supplier(cr, uid, invoice, context)
+
+            for s, lines in lines_by_supplier.items():
+                currency_id = lines[0]['sale_line'].currency_cost_id.id
+                data = vals.copy()
+                data.update({
+                    'partner_id': s.id,
+                    'account_id': s.property_account_payable.id,
+                    'currency_id': currency_id,
+                    'invoice_line': []
+                })
+                for l in lines:
+                    sl = l['sale_line']
+                    il = l['invoice_line']
+                    cost_price = sl.price_unit_cost
+                    line_vals = {
+                        'name': il.product_id.name,
+                        'origin': il.invoice_id.number,
+                        'product_id': il.product_id.id,
+                        'account_id': il.product_id.categ_id.property_account_expense_categ.id,
+                        'quantity': il.quantity,
+                        'discount': il.discount,
+                        'price_unit': cost_price,
+                        'sol_start_date': sl.start_date,
+                        'sol_end_date': sl.end_date,
+                        'sol_confirmation': sl.reservation_number
+                    }
+                    so_client_order_ref = sl.order_id.client_order_ref
+                    so_lead_name = sl.order_id.lead_name
+
+                    data['invoice_line'].append((0, 0, line_vals))
+
+                data['so_client_order_ref'] = so_client_order_ref
+                data['so_lead_name'] = so_lead_name
+                inv_id = self.create(cr, uid, data, context)
+        else:
+            self.not_group_by_supplier(cr, uid, invoice, vals, context)
       
     _columns = {
         'so_client_order_ref': fields.char(string="Reference", size=128),
@@ -284,9 +341,63 @@ class account_invoice_line(Model):
         'sol_end_date': fields.date('End Date'),
         'sol_confirmation': fields.char(string="Confirmation", size=128)
         }      
-    
-    
-    
+
+
+class account_voucher_line(Model):
+    _name = 'account.voucher.line'
+    _inherit = 'account.voucher.line'
+
+    _columns = {
+        'so_client_order_ref': fields.char(string="Reference", size=128),
+        'so_lead_name': fields.char(string="Client", size=128),
+        'so_service_name': fields.char(string="Service Name", size=128),
+        'sol_confirmation': fields.char(string="Confirmation", size=128)
+        }
+
+
+class account_voucher(Model):
+    _name = 'account.voucher'
+    _inherit = 'account.voucher'
+
+    def recompute_voucher_lines(self, cr, uid, ids, partner_id, journal_id, price, currency_id, ttype, date, context=None):
+        default = super(account_voucher, self).recompute_voucher_lines(cr, uid, ids, partner_id, journal_id, price,
+                                                                       currency_id, ttype, date, context=None)
+        if default:
+            if default['value']['line_dr_ids']:
+                line_dr_ids = []
+                invoice_pool = self.pool.get('account.invoice')
+                invoice_line_pool = self.pool.get('account.invoice.line')
+                move_line_pool = self.pool.get('account.move.line')
+                line_dr_ids_copy = default['value']['line_dr_ids']
+                for line in default['value']['line_dr_ids']:
+                    if line['move_line_id']:
+                        cr.execute('SELECT i.id ' \
+                                   'FROM account_move_line l, account_invoice i ' \
+                                   'WHERE l.move_id = i.move_id ' \
+                                   'AND l.id = %s',
+                                   (line['move_line_id'],))
+                        invoice_id = cr.fetchall()[0]
+                        invoice_obj = invoice_pool.browse(cr, uid, invoice_id, context=context)
+                        move_line_obj = move_line_pool.browse(cr, uid, line['move_line_id'], context=context)
+                        invoice_line_ids = invoice_line_pool.search(cr, uid, [('invoice_id', '=', invoice_id)])
+                        so_service_name = ''
+                        sol_confirmation = ''
+                        if invoice_line_ids:
+                            for li in invoice_line_pool.browse(cr, uid, invoice_line_ids, context=context):
+                                so_service_name += '(' + li.name + ') '
+                                sol_confirmation += '(' + li.sol_confirmation + ') '
+
+                        line['so_client_order_ref'] = invoice_obj.so_client_order_ref
+                        line['so_lead_name'] = invoice_obj.so_lead_name
+                        line['so_service_name'] = so_service_name
+                        line['sol_confirmation'] = sol_confirmation
+                        line_dr_ids.append(line)
+
+                default['value']['line_dr_ids'] = line_dr_ids or line_dr_ids_copy
+
+        return default
+
+
     
     
     

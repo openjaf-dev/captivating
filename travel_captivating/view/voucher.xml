@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+       <record id="travel_view_vendor_payment_form_inherit" model="ir.ui.view">
+            <field name="name">travel.account.voucher.payment.form.inherit</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page/field[@name='line_dr_ids']/tree/field[@name='move_line_id']" position="after">
+                	<field name='so_client_order_ref'/>
+                	<field name='so_lead_name'/>
+                	<field name='so_service_name'/>
+                	<field name='sol_confirmation'/>
+                </xpath>
+                <xpath expr="//form/sheet" position="attributes">
+                	<attribute name="class">oe_form_sheet_width_voucher</attribute>
+                </xpath>
+            </field>    
+        </record>  
+    </data>
+</openerp>
