@@ -33,7 +33,7 @@ Base module for managing sales, prices and accounting in a Travel Agency
     """,
     "depends": ['account_voucher', 'travel_core'],
     "init_xml": [],
-    "update_xml": [],
+    "update_xml": ['view/company.xml'],
     "demo_xml": [],
     "application": False,
     "installable": True,

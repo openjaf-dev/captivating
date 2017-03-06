@@ -22,7 +22,24 @@
                 <xpath expr="//field[@name='origin']" position="after">
                 	<field name="so_lead_name"/>
                 </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                	<field name="line_zero" invisible="1"/>
+                </xpath>
+                <xpath expr="/tree" position="attributes">
+                	<attribute name="colors">red:line_zero == True;blue:state == 'draft';black:state in ('proforma','proforma2','open');gray:state == 'cancel'</attribute>
+                </xpath>
             </field> 
+        </record>
+
+        <record id="travel_invoice_supplier_form_inherit" model="ir.ui.view">
+            <field name="name">travel.account.invoice.supplier.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button[@name='invoice_open']" position="after">
+                	<button name="button_rectify_price" states="draft,proforma2" string="Rectify Price" type="object" class="oe_highlight" groups="account.group_account_invoice"/>
+                </xpath>
+            </field>
         </record>
     </data>
 </openerp>

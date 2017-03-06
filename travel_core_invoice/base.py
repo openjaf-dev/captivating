@@ -19,5 +19,28 @@
 #
 ##############################################################################
 
-import base, invoice
+import datetime as dt
 
+from openerp.osv import fields
+from openerp.osv.orm import Model
+
+
+class res_company(Model):
+    _name = 'res.company'
+    _inherit = 'res.company'
+
+    def _journal_customer_payment_invoice(self, cr, uid, context=None):
+        ctx = dict(context or {})
+        journal_ids = self.pool.get('account.journal').search(cr, uid, [('type', '=', 'bank')], context=ctx)
+        if journal_ids:
+            return journal_ids[0]
+
+    _columns = {
+        'journal_customer_payment_invoice_id': fields.many2one('account.journal', 'Customer Payment Journal',
+                                                               domain=[('type', '=', 'bank')],
+                                                               help="Accounting journal used to pay customer invoice.")
+                }
+
+    _defaults = {
+        'journal_customer_payment_invoice_id': _journal_customer_payment_invoice
+    }

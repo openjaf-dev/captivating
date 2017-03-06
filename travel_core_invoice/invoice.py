@@ -54,7 +54,11 @@ class account_voucher(Model):
             values_voucher['amount'] = amount
 
             values_voucher['date'] = inv.date_invoice
-            values_voucher['journal_id'] = journal_pool.search(cr, uid, [('type', '=', 'bank')])[0]
+
+            if inv.company_id.journal_customer_payment_invoice_id:
+                values_voucher['journal_id'] = inv.company_id.journal_customer_payment_invoice_id.id
+            else:
+                values_voucher['journal_id'] = journal_pool.search(cr, uid, [('type', '=', 'bank')])[0]
 
             if not values_voucher['journal_id']:
                 raise except_orm(_('Operation Canceled'), _('Please verify that journal bank exist.'))
