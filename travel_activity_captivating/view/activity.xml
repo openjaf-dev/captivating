@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="travel_product_activity_search_view_inherit" model="ir.ui.view">
+            <field name="name">travel.product.activity.search.view.inherit</field>
+            <field name="model">product.activity</field>
+            <field name="inherit_id" ref="travel_activity.travel_product_activity_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='name']" position="replace">
+                    <field name="name" string="Product" filter_domain="[('activity_name','ilike',self)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
