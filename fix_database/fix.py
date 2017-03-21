@@ -26,11 +26,16 @@ from openerp.exceptions import except_orm, Warning, RedirectWarning
 class fix_database(models.TransientModel):
     _name = 'fix.database'
 
-    action = fields.Selection([('unique_partner', 'Unique Partner'), ('unique_product_hotel', 'Unique Product Hotel'), ], 'Action')
+    action = fields.Selection([('unique_partner', 'Unique Partner'),
+                               ('unique_product_hotel', 'Unique Product Hotel'),
+                               ('set_prices_for_sale', 'Set price and cost to sale order line'),
+                               ], 'Action')
     product_hotel_id = fields.Many2one('product.hotel', 'Good Hotel',  ondelete="cascade")
     product_hotel_ids = fields.Many2many('product.hotel', 'fix_database_product_hotel_rel', 'fix_database_id', 'product_hotel_id', 'Bad Hotels',  ondelete="cascade")
     partner_id = fields.Many2one('res.partner', 'Good Partner',  ondelete="cascade")
     partner_ids = fields.Many2many('res.partner', 'fix_database_res_partner_rel', 'fix_database_id', 'partner_id', 'Bad Partner',  ondelete="cascade")
+    order_start_date = fields.Date(string='Order Start Date')
+    order_end_date = fields.Date(string='Order End Date')
 
     @api.one
     @api.model
@@ -169,4 +174,38 @@ class fix_database(models.TransientModel):
                 prod_hotel.unlink()
             for prod in product_list:
                 prod.unlink()
+        return True
+
+# TODO
+    @api.multi
+    def set_prices_for_sale(self):
+        currency = self.env['res.currency']
+
+        order_line = self.env['sale.order.line']
+        order_line_ids = order_line.search([('order_start_date', '>=', self.order_start_date),
+                                             ('order_end_date', '<=', self.order_end_date)])
+        res = {}
+        for obj in order_line_ids:
+            pricelist = obj.order_id.pricelist_id.id or False
+            product = obj.product_id.id or False
+            qty = obj.product_uom_qty or 0
+            uom = obj.product_uom.id or False
+            qty_uos = obj.product_uos_qty or 0
+            uos = obj.product_uos.id or False
+            name = obj.name or ''
+            partner_id = obj.customer_id.id or False
+            date_order = obj.order_start_date or False
+            fiscal_position = obj.order_id.fiscal_position.id or False
+            lang = False
+            update_tax = True
+            packaging = False
+            flag = False
+
+            res = order_line.product_id_change(pricelist, product, qty, uom, qty_uos, uos, name, partner_id, lang,
+                                               update_tax, date_order, packaging, fiscal_position, flag)
+            if res.get('value', False):
+                price_unit = res['value'].get('price_unit', False) or 1.0
+                price_unit_cost = res['value'].get('price_unit_cost', False) or 1.0
+                obj.write({'price_unit': price_unit, 'price_unit_cost': price_unit_cost})
+
         return True

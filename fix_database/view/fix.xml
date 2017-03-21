@@ -13,6 +13,8 @@
             <field name="partner_ids" attrs="{'invisible': [('action', '!=', 'unique_partner')]}"/>
             <field name="product_hotel_id" attrs="{'invisible': [('action', '!=', 'unique_product_hotel')], 'required': [('action', '==', 'unique_product_hotel')]}"/>
             <field name="product_hotel_ids" attrs="{'invisible': [('action', '!=', 'unique_product_hotel')]}"/>
+            <field name="order_start_date" attrs="{'invisible': [('action', '!=', 'set_prices_for_sale')], 'required': [('action', '==', 'set_prices_for_sale')]}"/>
+            <field name="order_end_date" attrs="{'invisible': [('action', '!=', 'set_prices_for_sale')], 'required': [('action', '==', 'set_prices_for_sale')]}"/>
           </group>
           <button name="execute_action" string="Execute" type="object"/>
         </form>
