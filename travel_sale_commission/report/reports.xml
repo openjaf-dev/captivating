@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="pre_invoice_details_commission_report_id" model="ir.actions.report.xml">
+            <field name="name">Pre-Invoice Detailed Commission</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">sale.order</field>
+            <field name="report_name">pre_invoice_details_commission</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-odt</field>
+            <field name="out_format" model="report.mimetypes" search="[('code', '=', 'oo-pdf')]"/>
+            <field name="report_rml">travel_sale_commission/report/pre_invoice_details_commission.odt</field>
+            <field name="parser_state">default</field>
+            <field name="tml_source">file</field>
+        </record>
+
+        <record id="action_pre_invoice_details_commission" model="ir.values">
+            <field eval="'action'" name="key"/>
+            <field eval="'client_print_multi'" name="key2"/>
+            <field name="model">sale.order</field>
+            <field name="name">Pre-Invoice details Commission</field>
+            <field eval="'ir.actions.report.xml,'+str(pre_invoice_details_commission_report_id)" name="value"/>
+        </record>
+    </data>
+</openerp>

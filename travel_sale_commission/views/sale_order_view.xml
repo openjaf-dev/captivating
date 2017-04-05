@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="travel_sale_order_form_view_inherit" model="ir.ui.view">
+            <field name="name">travel.sale.order.form.view.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="travel_core.travel_sale_order_form_view"/>
+            <field name="arch" type="xml">
+                <!--<field name="order_line" position="attributes">-->
+                    <!--<attribute name="context">{'partner_id': partner_id}</attribute>-->
+                <!--</field>-->
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+                    <field name="flag_commission" invisible="True"/>
+                    <field name="commission_free" attrs="{'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="agent_id" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="commission" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="amount_commission" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="vat_commission" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="amount_vat_commission" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                </xpath>
+                <field name="amount_total" position="after">
+                    <field name="commission_total"
+                           widget="monetary"
+                           options="{'currency_field': 'currency_id'}"/>
+                    <field name="vat_commission_total"
+                           widget="monetary"
+                           options="{'currency_field': 'currency_id'}"/>
+                    <field name="total_without_vat_commission"
+                           widget="monetary"
+                           options="{'currency_field': 'currency_id'}"/>
+                </field>
+                <xpath expr="//form/sheet" position="attributes">
+                    <attribute name="class">oe_form_sheet_width_order</attribute>
+                </xpath>
+                <xpath expr="//form/header/button[@name='invoice_cancel']" position="after">
+                    <button name="action_button_update_commission" states="draft,sent,progress,manual,waiting_date,shipping_except,invoice_except,done" string="Set Commission" type="object" groups="base.group_user"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="travel_sale_order_line_form_view_inherit" model="ir.ui.view">
+            <field name="name">travel.sale.order.line.form.view.inherit</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="travel_core.travel_sale_order_line_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group/group/field[@name='reservation_number']" position="after">
+                    <field name="flag_commission" invisible="True"/>
+                    <field name="commission_free" attrs="{'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="agent_id" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="commission" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                    <field name="vat_commission" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

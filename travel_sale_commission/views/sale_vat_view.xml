@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="sale_vat_tree">
+            <field name="name">Sales vat tree</field>
+            <field name="model">sale.vat</field>
+            <field name="arch" type="xml">
+                <tree string="VAT">
+                    <field name="name" />
+                    <field name="vat_type" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_vat_form">
+            <field name="name">Sales vat form</field>
+            <field name="model">sale.vat</field>
+            <field name="arch" type="xml">
+                <form string="VAT">
+                    <group string="General information">
+                        <group>
+                            <field name="name" />
+                            <field name="active" />
+                            <field name="company_id" />
+                        </group>
+                        <group>
+                            <field name="vat_type" />
+                        </group>
+                    </group>
+                    <group string="definition" colspan="4">
+                        <field name="fix_qty"
+                               attrs="{'invisible': [('vat_type', '!=', 'fixed')], 'required': [('vat_type', '=', 'fixed')]}" />
+                        <field name="fix_amount"
+                               attrs="{'invisible': [('vat_type', '!=', 'amount')], 'required': [('vat_type', '=', 'amount')]}" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_vat">
+            <field name="name">VAT types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.vat</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="VAT types"
+                  id="menu_sale_vat_types"
+                  parent="travel_sale_commission.menu_sale_commissions_conf"
+                  action="action_vat" />
+
+    </data>
+</openerp>
