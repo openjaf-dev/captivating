@@ -26,7 +26,7 @@
     "author": "JAF S.A.",
     "website": "http://www.jaf.com",
     'category': '?',
-    'depends': ['travel'],
+    'depends': ['travel', 'travel_core'],
     "description": """ Features module for Captivating.""",
     'init_xml': [],
     'update_xml': [

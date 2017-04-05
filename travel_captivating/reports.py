@@ -386,8 +386,8 @@ class account_voucher(Model):
                         sol_confirmation = ''
                         if invoice_line_ids:
                             for li in invoice_line_pool.browse(cr, uid, invoice_line_ids, context=context):
-                                so_service_name += '(' + li.name + ') '
-                                sol_confirmation += '(' + li.sol_confirmation + ') '
+                                so_service_name += '(' + str(li.name) + ') '
+                                sol_confirmation += '(' + str(li.sol_confirmation) + ') '
 
                         line['so_client_order_ref'] = invoice_obj.so_client_order_ref
                         line['so_lead_name'] = invoice_obj.so_lead_name

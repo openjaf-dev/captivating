@@ -1,5 +1,5 @@
 .openerp .oe_form_sheet_width_voucher {
   min-width: 650px;
-  max-width: none;
+  max-width: 98%;
   margin: 0 auto;
 }
