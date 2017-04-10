@@ -10,7 +10,7 @@
                 <!--<field name="order_line" position="attributes">-->
                     <!--<attribute name="context">{'partner_id': partner_id}</attribute>-->
                 <!--</field>-->
-                <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="after">
+                <xpath expr="//field[@name='order_line']/tree//field[@name='supplier_id']" position="after">
                     <field name="flag_commission" invisible="True"/>
                     <field name="commission_free" attrs="{'invisible': [('flag_commission', '!=', True)]}"/>
                     <field name="agent_id" attrs="{'readonly': [('commission_free', '=', True)], 'required': [('flag_commission', '!=', False)], 'invisible': [('flag_commission', '!=', True)]}"/>
