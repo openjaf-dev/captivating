@@ -81,7 +81,7 @@ class fix_database(models.TransientModel):
             for p in black_list:
                 self.env.cr.execute('update sale_order set partner_id=%s, partner_invoice_id=%s, partner_shipping_id=%s where partner_id=%s', (good_partner_id, good_partner_id, good_partner_id, p))
                 self.env.cr.execute('update sale_order_line set customer_id=%s, order_partner_id=%s where customer_id=%s', (good_partner_id, good_partner_id, p))
-                self.env.cr.execute('update sale_order_line set supplier_id=%s where supplier_id=%s', (good_partner_id, p))
+                self.env.cr.execute('update sale_context set supplier_id=%s where supplier_id=%s', (good_partner_id, p))
                 self.env.cr.execute('update account_voucher set partner_id=%s where partner_id=%s', (good_partner_id, p))
                 self.env.cr.execute('update account_invoice set partner_id=%s, commercial_partner_id=%s where partner_id=%s', (good_partner_id, good_partner_id, p))
                 self.env.cr.execute('update account_invoice_line set partner_id=%s where partner_id=%s', (good_partner_id, p))
