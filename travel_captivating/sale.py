@@ -63,35 +63,14 @@ class sale_order_line(Model):
         return super(sale_order_line, self).get_margin_days(cr, uid, params, context)
 
     def onchange_category(self, cr, uid, ids, category_id, context=None):
-        if context.get('params', False):
-            if not context['params'].get('start_date', False) or not context['params'].get('end_date', False):
-                raise Warning(_('Please introduce the range of date.'))
-        return super(sale_order_line, self).onchange_category(cr, uid, ids, category_id, context)
-
-
-class sale_context(Model):
-    _name = 'sale.context'
-    _inherit = 'sale.context'
-
-    def _get_default_start_date(self, cr, uid, ids, context=None):
-        sale_context = self.browse(cr, uid, ids)
-        date = ''
-        if sale_context.order_id:
-            date = sale_context.order_id.date_order
-        elif context != {}:
-            if context.get('date_order', False):
-                date = context.get('date_order', False)
-        return date
-
-    _columns = {
-        # 'order_line': fields.one2many('sale.order.line', 'sale_context_id', 'Order Lines', readonly=True, copy=True),
-        'start_date': fields.date('Start Date'),
-        'end_date': fields.date('End Date'),
-    }
-
-    _defaults = {
-                 'start_date': _get_default_start_date,
-                 # 'start_date': lambda self, cr, uid, context: context.get('date_order', False),
-                 'end_date': lambda self, cr, uid, context: context.get('end_date', False)
-                 # 'end_date': lambda self, cr, uid, context: context.get('end_date', False)
-                 }
+        if not category_id:
+            res = {}
+            order_line = self.browse(cr, uid, ids)
+            if order_line:
+                if not order_line.start_date and not order_line.end_date:
+                    res['value'] = {'start_date': context.get('date_order', False), 'end_date': context.get('end_date', False)}
+            else:
+                res['value'] = {'start_date': context.get('date_order', False), 'end_date': context.get('end_date', False)}
+            return res
+        else:
+            return super(sale_order_line, self).onchange_category(cr, uid, ids, category_id, context)
