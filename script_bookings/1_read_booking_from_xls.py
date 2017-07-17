@@ -4,7 +4,8 @@ import xlrd, datetime, json
 
 BASE_DATE = 693594
 
-file_name = 'files/2017_jul_UK.xls'
+file_name = 'files/2017_ago_UK.xls'
+#file_name = 'files/2017_ago_CC.xls'
 
 book = xlrd.open_workbook(file_name, formatting_info=True)
 
