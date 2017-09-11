@@ -137,8 +137,8 @@ class sale_order(Model):
                     hotel = get_product('Hotel')
                     transfer = get_product('Transfer')
                     if hotel and transfer:
-                        transfer_str = transfer.name + " (" + str(transfer.reservation_number) + ")"
-                        hotel_str = hotel.name + " (" + str(hotel.reservation_number) + ")"
+                        transfer_str = transfer.name + " (" + unicode(transfer.reservation_number) + ")"
+                        hotel_str = hotel.name + " (" + unicode(hotel.reservation_number) + ")"
                         if order_obj.date_order == transfer.start_date:
                             result.setdefault(order_obj.id, {'start_transfer': transfer_str, 
                                                        'end_transfer': '',
