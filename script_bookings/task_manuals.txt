@@ -70,3 +70,36 @@ Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
 Correcting  PARQUE CENTRAL to  IBEROSTAR PARQUE CENTRAL
 Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
 Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+-----------------------------------------------------------------------------------------------
+--------------------------------enero2018------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Correcting  PARQUE CENTRAL to  IBEROSTAR PARQUE CENTRAL
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Correcting  PRINCESA DEL MAR to  PARADISUS PRINCESA DEL MAR
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Correcting  SEVILLA to  MERCURE SEVILLA
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Product Created   -  Flight  -  JET BLUE 503 MCO-HAV (ECONOMY)
+Product Created   -  Flight  -  JET BLUE 1004 HAV-MCO (ECONOMY)
+Product Created   -  Activity  -  HAVANA QUEENS
+Product Created   -  Hotel  -  CASA PARTICULAR HAVANA - CASA ALDO Y JENNY
+Product Created   -  Hotel  -  CASA PARTICULAR VINALES - CASA VILLA CAMPANA
+Product Created   -  Hotel  -  CASA PARTICULAR HAVANA - CASA PLAZA VIEJA 1910
+Product Created   -  Transfer  -  EXC TRF C.LEVISA HTL - SOROA HTL
+Product Created   -  Hotel  -  CASA PARTICULAR SANTA CLARA - PERGOLA
+Product Created   -  Package  -  PRIVATE BEST OF CUBA TOUR GROUND SERVICES AND TRANSPORT
+Product Created   -  Hotel  -  GRAN
+Product Created   -  Flight  -  VIRGIN ATLANTIC VS0093 LGW-CUN (ECONOMY)
+Product Created   -  Flight  -  INTERJET 4902 CUN-HAV
+Product Created   -  Transfer  -  EXC TRF CUN APT - PDC HTL
+Product Created   -  Transfer  -  PRIVATE TOUR OF VINALES VALLEY
+Product Created   -  Hotel  -  CASA PARTICULAR VINALES - LEYANIS Y JESUS
+Product Created   -  Flight  -  IBERIA IB3169/IB6621 LHR-MAD-HAV  (ECONOMY)
+Product Created   -  Flight  -  CAYMAN AIRWAYS KX833 HAV-GCM (ECONOMY)
+Product Created   -  Flight  -  BRITISH AIRWAYS BA252 BCA-LHR (ECONOMY)
+Product Created   -  Hotel  -  CASA PARTICULAR HAVANA - CASA VLADIMIR COLONIAL
+Product Created   -  Hotel  -  MARIA LA GORDA
+Product Created   -  Activity  -  SHARED HEMINGWAY TOUR WITH LUNCH
+Product Created   -  Activity  -  SHARED HEMINGWAY TOUR WITH LUNCH
+
