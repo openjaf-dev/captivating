@@ -64,14 +64,16 @@ category_model = conn.model('product.category')
 supplier_model = conn.model('res.partner')
 
 for order in orders:
+    partner_id = partner_model.search([('name', '=ilike', order['client'].upper())])
 
-    partner_id = partner_model.search([('name', '=ilike', order['client'].upper())])[0]
     if not partner_id:
         vals = {
         'name': order['client'].upper(),
         'customer': True,
         'supplier': False}
         partner_id = partner_model.create(vals).id
+    else:
+        partner_id = partner_id[0]
 
     # Check if the order already exists
     order_ids = order_model.search([('client_order_ref', '=ilike', order['reference'])])
