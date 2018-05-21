@@ -1,5 +1,19 @@
 
 -----------------------------------------------------------------------------------------------
+--------------------------------junio2018------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Correcting  PARQUE CENTRAL to  IBEROSTAR PARQUE CENTRAL
+Correcting  SEVILLA to  MERCURE SEVILLA
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Correcting  CASA PARTICULAR TRINIDAD - OSMARY ALBERTO to  CASA PARTICULAR TRINIDAD - CASA OSMARY ALBERTO
+Correcting  SEVILLA to  MERCURE SEVILLA
+Correcting  PRINCESA DEL MAR to  PARADISUS PRINCESA DEL MAR
+Correcting  NACIONAL to  HOTEL NACIONAL DE CUBA
+Correcting  CUBA REPRESENTATIVE SERVICE FEE to  CUBA REPRESENTATION SERVICE FEE
+Correcting  PARQUE CENTRAL to  IBEROSTAR PARQUE CENTRAL
+Correcting  PARQUE CENTRAL to  IBEROSTAR PARQUE CENTRAL
+-----------------------------------------------------------------------------------------------
 --------------------------------mayo2018------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
 Correcting  CASA PARTICULAR HAVANA - BUENOS AIRES to  CASA PARTICULAR HAVANA - CASA BUENOS AIRES
