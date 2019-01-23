@@ -31,7 +31,7 @@ def model_search(model, field, value):
         return None
     elif len(ids) > 1:
         print 'Warning: ambiguous value', field, value
-        return None
+        return ids[0]
     return ids[0]
 
 def get_order_end_date(o):
