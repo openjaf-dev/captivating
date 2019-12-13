@@ -4,8 +4,8 @@ import xlrd, datetime, json
 
 BASE_DATE = 693594
 
-#file_name = 'files/2019_jul_CC.xls'
-file_name = 'files/2019_jul_UK.xls'
+#file_name = 'files/2020_01_CC.xls'
+file_name = 'files/2020_01_UK.xls'
 
 book = xlrd.open_workbook(file_name, formatting_info=True)
 
@@ -23,6 +23,8 @@ def get_date(d):
 
 orders = []
 order = None
+cant_order = 0
+total_order = 0
 
 for r in range(1, sheet.nrows):
 
@@ -36,6 +38,10 @@ for r in range(1, sheet.nrows):
             orders.append(order)
         order = {'reference': '', 'start_date': '', 'arrival_flight': '', 'client': '', 'paxs': [], 'order_lines': [], 'comments': ''}
         order['reference'] = cell(0)
+        cant_order += 1
+        total_order += 1
+        print 'Order: ', cant_order
+
 
     if cell(1):
         order['start_date'] = get_date(cell(1))
@@ -82,6 +88,8 @@ for r in range(1, sheet.nrows):
 
 orders.append(order)
 
+print 'Total Order: ', total_order
+      
 f = open('orders_orig.txt', 'w+')
 json.dump(orders, f)
 f.close()

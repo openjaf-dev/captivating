@@ -13,8 +13,12 @@ f.close()
 #db = 'captivating'
 
 ### server
-host = 'http://178.62.38.154:8079'
-db = 'captivatingcuba_comelytravel_com'
+#host = 'http://178.62.38.154:8079'
+#db = 'captivatingcuba_comelytravel_com'
+
+### server
+host = 'http://192.168.0.109:8079'
+db = 'captivating'
 
 
 #host = 'http://95.211.225.143:8069'

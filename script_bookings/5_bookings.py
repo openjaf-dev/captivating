@@ -11,9 +11,14 @@ orders = json.load(f)
 f.close()
 
 # Importing to openerp
+
 ### server
-host = 'http://178.62.38.154:8079'
-db = 'captivatingcuba_comelytravel_com'
+#host = 'http://178.62.38.154:8079'
+#db = 'captivatingcuba_comelytravel_com'
+
+### server
+host = 'http://192.168.0.109:8079'
+db = 'captivating'
 
 ###local
 # host = 'http://localhost:8069'
@@ -63,6 +68,10 @@ partner_model = conn.model('res.partner')
 category_model = conn.model('product.category')
 supplier_model = conn.model('res.partner')
 
+cant_order = 0
+total_order = 0
+orders_exist = '\n '
+
 for order in orders:
     partner_id = partner_model.search([('name', '=ilike', order['client'].upper())])
 
@@ -78,8 +87,9 @@ for order in orders:
     # Check if the order already exists
     order_ids = order_model.search([('client_order_ref', '=ilike', order['reference'])])
     if order_ids:
-        print 'Warning: order already in the system ', order['reference']
-        continue
+		orders_exist += order['reference'] + '\n '
+		print 'Warning: order already in the system ', order['reference']
+		continue
 
     pax_ids = []
     for pax in order['paxs']:
@@ -104,6 +114,10 @@ for order in orders:
     }
 
     order_id = order_model.create(order_vals).id
+    
+    cant_order += 1
+    total_order += 1
+    print 'Order: ', cant_order
     print 'Order created: ', order['reference']
 
     res_price = {}
@@ -182,5 +196,9 @@ for order in orders:
         
         order_line_model.create(order_line_vals)
         print "  Order line created: ", ol['product_category'], ' ', ol['product_name']
+
+
+print 'Total Order: ', total_order
+print 'Order Exist: ', orders_exist
 
 print 'Done!'
